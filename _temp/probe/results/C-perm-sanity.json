@@ -1,0 +1,485 @@
+{
+  "summary": {
+    "label": "sanity",
+    "permPatch": {},
+    "prompt": "请只回复：连通测试成功。",
+    "reply": "none",
+    "session": "ses_e0138ccc8ffedIRKxIr1FkqC0O",
+    "eventTypes": {
+      "server.connected": 1,
+      "message.updated": 6,
+      "message.part.updated": 6,
+      "session.updated": 4,
+      "session.status": 4,
+      "tui.toast.show": 1,
+      "session.diff": 2,
+      "message.part.delta": 1,
+      "session.idle": 1
+    },
+    "asked": [],
+    "toolParts": [],
+    "errors": [],
+    "replied": 0
+  },
+  "events": [
+    {
+      "type": "server.connected",
+      "properties": {}
+    },
+    {
+      "type": "message.updated",
+      "properties": {
+        "sessionID": "ses_e0138ccc8ffedIRKxIr1FkqC0O",
+        "info": {
+          "id": "msgperm_sanity",
+          "role": "user",
+          "sessionID": "ses_e0138ccc8ffedIRKxIr1FkqC0O",
+          "time": {
+            "created": 1795275831345
+          },
+          "agent": "build",
+          "model": {
+            "providerID": "huaweicloud-maas",
+            "modelID": "deepseek-v4.1-flash-1017"
+          }
+        }
+      }
+    },
+    {
+      "type": "message.part.updated",
+      "properties": {
+        "sessionID": "ses_e0138ccc8ffedIRKxIr1FkqC0O",
+        "part": {
+          "type": "text",
+          "text": "请只回复：连通测试成功。",
+          "messageID": "msgperm_sanity",
+          "sessionID": "ses_e0138ccc8ffedIRKxIr1FkqC0O",
+          "id": "prt_1fec73831001HgoJQJqmUfw1dJ",
+          "metadata": {
+            "isUserInput": true,
+            "memoryIndexReminder": "<system-reminder>\n# Memory Index\n# 记忆索引\n\n## 用户\n- [用户画像与工具熟悉度](user-profile.md) — 用户（hbk）处于了解 CodeArts Agent 功能的探索阶段（2026-11-20），常以小操作要求探测工具可用性；回复功能类问题时宜附使用指引与示例\n</system-reminder>\n"
+          }
+        },
+        "time": 1795275831449
+      }
+    },
+    {
+      "type": "message.part.updated",
+      "properties": {
+        "sessionID": "ses_e0138ccc8ffedIRKxIr1FkqC0O",
+        "part": {
+          "id": "prt_1fec73831001HgoJQJqmUfw1dJ_codeagent",
+          "sessionID": "ses_e0138ccc8ffedIRKxIr1FkqC0O",
+          "messageID": "msgperm_sanity",
+          "type": "text",
+          "text": "<system-reminder>重要提示：你必须使用简体中文回复，包括内部思考和推理过程也必须使用简体中文。即使用户用英文提问，也必须用简体中文回复。</system-reminder>",
+          "synthetic": true
+        },
+        "time": 1795275831451
+      }
+    },
+    {
+      "type": "session.updated",
+      "properties": {
+        "sessionID": "ses_e0138ccc8ffedIRKxIr1FkqC0O",
+        "info": {
+          "id": "ses_e0138ccc8ffedIRKxIr1FkqC0O",
+          "slug": "sunny-island",
+          "projectID": "global",
+          "directory": "C:\\Users\\hbk",
+          "title": "perm-sanity",
+          "version": "26.11.11",
+          "time": {
+            "created": 1795275830071,
+            "updated": 1795275831453
+          }
+        }
+      }
+    },
+    {
+      "type": "session.status",
+      "properties": {
+        "sessionID": "ses_e0138ccc8ffedIRKxIr1FkqC0O",
+        "status": {
+          "type": "busy"
+        }
+      }
+    },
+    {
+      "type": "tui.toast.show",
+      "properties": {
+        "message": "Initializing MCP server...",
+        "variant": "info",
+        "duration": 30000
+      }
+    },
+    {
+      "type": "message.updated",
+      "properties": {
+        "sessionID": "ses_e0138ccc8ffedIRKxIr1FkqC0O",
+        "info": {
+          "id": "msg_1fec73989001XECX3HK3NdKhm7",
+          "parentID": "msgperm_sanity",
+          "role": "assistant",
+          "mode": "build",
+          "agent": "build",
+          "path": {
+            "cwd": "C:\\Users\\hbk",
+            "root": "/"
+          },
+          "cost": 0,
+          "tokens": {
+            "input": 0,
+            "output": 0,
+            "reasoning": 0,
+            "cache": {
+              "read": 0,
+              "write": 0
+            }
+          },
+          "modelID": "deepseek-v4.1-flash-1017",
+          "providerID": "huaweicloud-maas",
+          "time": {
+            "created": 1795275831689
+          },
+          "sessionID": "ses_e0138ccc8ffedIRKxIr1FkqC0O"
+        }
+      }
+    },
+    {
+      "type": "session.updated",
+      "properties": {
+        "sessionID": "ses_e0138ccc8ffedIRKxIr1FkqC0O",
+        "info": {
+          "id": "ses_e0138ccc8ffedIRKxIr1FkqC0O",
+          "slug": "sunny-island",
+          "projectID": "global",
+          "directory": "C:\\Users\\hbk",
+          "title": "perm-sanity",
+          "version": "26.11.11",
+          "summary": {
+            "additions": 0,
+            "deletions": 0,
+            "files": 0
+          },
+          "time": {
+            "created": 1795275830071,
+            "updated": 1795275831729
+          }
+        }
+      }
+    },
+    {
+      "type": "session.diff",
+      "properties": {
+        "sessionID": "ses_e0138ccc8ffedIRKxIr1FkqC0O",
+        "diff": []
+      }
+    },
+    {
+      "type": "message.updated",
+      "properties": {
+        "sessionID": "ses_e0138ccc8ffedIRKxIr1FkqC0O",
+        "info": {
+          "role": "user",
+          "time": {
+            "created": 1795275831345
+          },
+          "agent": "build",
+          "model": {
+            "providerID": "huaweicloud-maas",
+            "modelID": "deepseek-v4.1-flash-1017"
+          },
+          "id": "msgperm_sanity",
+          "sessionID": "ses_e0138ccc8ffedIRKxIr1FkqC0O",
+          "summary": {
+            "diffs": []
+          }
+        }
+      }
+    },
+    {
+      "type": "session.status",
+      "properties": {
+        "sessionID": "ses_e0138ccc8ffedIRKxIr1FkqC0O",
+        "status": {
+          "type": "busy"
+        }
+      }
+    },
+    {
+      "type": "session.updated",
+      "properties": {
+        "sessionID": "ses_e0138ccc8ffedIRKxIr1FkqC0O",
+        "info": {
+          "id": "ses_e0138ccc8ffedIRKxIr1FkqC0O",
+          "slug": "sunny-island",
+          "projectID": "global",
+          "directory": "C:\\Users\\hbk",
+          "title": "连通测试",
+          "version": "26.11.11",
+          "summary": {
+            "additions": 0,
+            "deletions": 0,
+            "files": 0
+          },
+          "time": {
+            "created": 1795275830071,
+            "updated": 1795275836331
+          }
+        }
+      }
+    },
+    {
+      "type": "message.part.updated",
+      "properties": {
+        "sessionID": "ses_e0138ccc8ffedIRKxIr1FkqC0O",
+        "part": {
+          "id": "prt_1fec74bd8001tbBO5aaj64rrLT",
+          "messageID": "msg_1fec73989001XECX3HK3NdKhm7",
+          "sessionID": "ses_e0138ccc8ffedIRKxIr1FkqC0O",
+          "type": "step-start"
+        },
+        "time": 1795275836376
+      }
+    },
+    {
+      "type": "message.part.updated",
+      "properties": {
+        "sessionID": "ses_e0138ccc8ffedIRKxIr1FkqC0O",
+        "part": {
+          "id": "prt_1fec74bda001Xy9b4xB3HuNXp2",
+          "messageID": "msg_1fec73989001XECX3HK3NdKhm7",
+          "sessionID": "ses_e0138ccc8ffedIRKxIr1FkqC0O",
+          "type": "text",
+          "text": "",
+          "time": {
+            "start": 1795275836378
+          }
+        },
+        "time": 1795275836379
+      }
+    },
+    {
+      "type": "message.part.delta",
+      "properties": {
+        "sessionID": "ses_e0138ccc8ffedIRKxIr1FkqC0O",
+        "messageID": "msg_1fec73989001XECX3HK3NdKhm7",
+        "partID": "prt_1fec74bda001Xy9b4xB3HuNXp2",
+        "field": "text",
+        "delta": "连通测试成功。"
+      }
+    },
+    {
+      "type": "message.part.updated",
+      "properties": {
+        "sessionID": "ses_e0138ccc8ffedIRKxIr1FkqC0O",
+        "part": {
+          "id": "prt_1fec74bda001Xy9b4xB3HuNXp2",
+          "messageID": "msg_1fec73989001XECX3HK3NdKhm7",
+          "sessionID": "ses_e0138ccc8ffedIRKxIr1FkqC0O",
+          "type": "text",
+          "text": "连通测试成功。",
+          "time": {
+            "start": 1795275836684,
+            "end": 1795275836684
+          }
+        },
+        "time": 1795275836684
+      }
+    },
+    {
+      "type": "message.part.updated",
+      "properties": {
+        "sessionID": "ses_e0138ccc8ffedIRKxIr1FkqC0O",
+        "part": {
+          "id": "prt_1fec74d0e001XB4l3K6mIejELN",
+          "reason": "stop",
+          "messageID": "msg_1fec73989001XECX3HK3NdKhm7",
+          "sessionID": "ses_e0138ccc8ffedIRKxIr1FkqC0O",
+          "type": "step-finish",
+          "tokens": {
+            "total": 15455,
+            "input": 601,
+            "output": 6,
+            "reasoning": 0,
+            "cache": {
+              "write": 0,
+              "read": 14848
+            },
+            "context": {
+              "tools": 0,
+              "mcp": 0,
+              "messages": 482,
+              "skills": 0,
+              "system_prompts": 14973
+            }
+          },
+          "cost": 0
+        },
+        "time": 1795275836687
+      }
+    },
+    {
+      "type": "message.updated",
+      "properties": {
+        "sessionID": "ses_e0138ccc8ffedIRKxIr1FkqC0O",
+        "info": {
+          "id": "msg_1fec73989001XECX3HK3NdKhm7",
+          "parentID": "msgperm_sanity",
+          "role": "assistant",
+          "mode": "build",
+          "agent": "build",
+          "path": {
+            "cwd": "C:\\Users\\hbk",
+            "root": "/"
+          },
+          "cost": 0,
+          "tokens": {
+            "total": 15455,
+            "input": 601,
+            "output": 6,
+            "reasoning": 0,
+            "cache": {
+              "write": 0,
+              "read": 14848
+            },
+            "context": {
+              "tools": 0,
+              "mcp": 0,
+              "messages": 482,
+              "skills": 0,
+              "system_prompts": 14973
+            }
+          },
+          "modelID": "deepseek-v4.1-flash-1017",
+          "providerID": "huaweicloud-maas",
+          "time": {
+            "created": 1795275831689
+          },
+          "sessionID": "ses_e0138ccc8ffedIRKxIr1FkqC0O",
+          "finish": "stop"
+        }
+      }
+    },
+    {
+      "type": "session.updated",
+      "properties": {
+        "sessionID": "ses_e0138ccc8ffedIRKxIr1FkqC0O",
+        "info": {
+          "id": "ses_e0138ccc8ffedIRKxIr1FkqC0O",
+          "slug": "sunny-island",
+          "projectID": "global",
+          "directory": "C:\\Users\\hbk",
+          "title": "连通测试",
+          "version": "26.11.11",
+          "summary": {
+            "additions": 0,
+            "deletions": 0,
+            "files": 0
+          },
+          "time": {
+            "created": 1795275830071,
+            "updated": 1795275836692
+          }
+        }
+      }
+    },
+    {
+      "type": "message.updated",
+      "properties": {
+        "sessionID": "ses_e0138ccc8ffedIRKxIr1FkqC0O",
+        "info": {
+          "id": "msg_1fec73989001XECX3HK3NdKhm7",
+          "parentID": "msgperm_sanity",
+          "role": "assistant",
+          "mode": "build",
+          "agent": "build",
+          "path": {
+            "cwd": "C:\\Users\\hbk",
+            "root": "/"
+          },
+          "cost": 0,
+          "tokens": {
+            "total": 15455,
+            "input": 601,
+            "output": 6,
+            "reasoning": 0,
+            "cache": {
+              "write": 0,
+              "read": 14848
+            },
+            "context": {
+              "tools": 0,
+              "mcp": 0,
+              "messages": 482,
+              "skills": 0,
+              "system_prompts": 14973
+            }
+          },
+          "modelID": "deepseek-v4.1-flash-1017",
+          "providerID": "huaweicloud-maas",
+          "time": {
+            "created": 1795275831689,
+            "completed": 1795275836697
+          },
+          "sessionID": "ses_e0138ccc8ffedIRKxIr1FkqC0O",
+          "finish": "stop"
+        }
+      }
+    },
+    {
+      "type": "session.status",
+      "properties": {
+        "sessionID": "ses_e0138ccc8ffedIRKxIr1FkqC0O",
+        "status": {
+          "type": "busy"
+        }
+      }
+    },
+    {
+      "type": "session.status",
+      "properties": {
+        "sessionID": "ses_e0138ccc8ffedIRKxIr1FkqC0O",
+        "status": {
+          "type": "idle"
+        }
+      }
+    },
+    {
+      "type": "session.idle",
+      "properties": {
+        "sessionID": "ses_e0138ccc8ffedIRKxIr1FkqC0O"
+      }
+    },
+    {
+      "type": "session.diff",
+      "properties": {
+        "sessionID": "ses_e0138ccc8ffedIRKxIr1FkqC0O",
+        "diff": []
+      }
+    },
+    {
+      "type": "message.updated",
+      "properties": {
+        "sessionID": "ses_e0138ccc8ffedIRKxIr1FkqC0O",
+        "info": {
+          "role": "user",
+          "time": {
+            "created": 1795275831345
+          },
+          "agent": "build",
+          "model": {
+            "providerID": "huaweicloud-maas",
+            "modelID": "deepseek-v4.1-flash-1017"
+          },
+          "summary": {
+            "diffs": []
+          },
+          "id": "msgperm_sanity",
+          "sessionID": "ses_e0138ccc8ffedIRKxIr1FkqC0O"
+        }
+      }
+    }
+  ]
+}

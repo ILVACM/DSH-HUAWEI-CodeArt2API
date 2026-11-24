@@ -1,0 +1,30 @@
+===== 阻塞记录：CodeArts CLI 凭据缺失 =====
+日期: 2026-11-21
+
+现象（以下命令均报同一错误）:
+  codearts serve
+  codearts auth list
+  codearts auth login
+  codearts models
+  codearts debug paths
+错误文案:
+  "认证失败，没有设置环境变量CODEARTS_CLI_AK/CODEARTS_CLI_SK
+   请在华为云统一身份认证页面申请AK/SK，通过配置环境变量的方式使用cli命令。"
+
+环境变量:
+  CODEARTS_CLI_AK: 未设置
+  CODEARTS_CLI_SK: 未设置
+
+本机凭据文件字段（仅字段名，未读取值）:
+  ~/.codeartsdoer/cli-data/auth.json -> 仅 "inferhub-provider"（自定义模型凭据，非华为云 CLI 登录态）
+
+结论:
+  本机未完成华为云 CodeArts CLI 授权，serve 无法启动。
+  P1（serve 启动）、P2（只读接口）、P3（鉴权）、P4（会话/流式）、P5（权限）全部阻塞。
+
+需要人工处理:
+  在华为云统一身份认证页面申请 AK/SK，并设置环境变量:
+    CODEARTS_CLI_AK=<AccessKey ID>
+    CODEARTS_CLI_SK=<Secret Access Key>
+  参考: https://codearts.huaweicloud.com/portal/settings/cli-auth
+  设置后重跑 P1-P5。

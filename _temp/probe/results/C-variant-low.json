@@ -1,0 +1,694 @@
+{
+  "out": {
+    "variant": "low",
+    "session": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+    "reasoningChars": 0,
+    "outputTokens": 210,
+    "reasoningTokens": 103,
+    "text": "笼子里有鸡和兔，共 35 个头、94 只脚。问鸡和兔各几只？请仔细推理后回答。<system-reminder>重要提示：你必须使用简体中文回复，包括内部思考和推理过程也必须使用简体中文。即使用户用英文提问，也必须用简体中文回复。</system-reminder>**答案：鸡 23 只，兔 12 只。**\n\n推理过程：\n\n设鸡有 `x` 只，兔有 `y` 只。\n\n1. 头的数量：`x + y ="
+  },
+  "events": [
+    {
+      "type": "server.connected",
+      "properties": {}
+    },
+    {
+      "type": "message.updated",
+      "properties": {
+        "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+        "info": {
+          "id": "msgvarlow",
+          "role": "user",
+          "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+          "time": {
+            "created": 1795275502635
+          },
+          "agent": "build",
+          "model": {
+            "providerID": "huaweicloud-maas",
+            "modelID": "deepseek-v4.1-flash-1017"
+          },
+          "variant": "low"
+        }
+      }
+    },
+    {
+      "type": "message.part.updated",
+      "properties": {
+        "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+        "part": {
+          "type": "text",
+          "text": "笼子里有鸡和兔，共 35 个头、94 只脚。问鸡和兔各几只？请仔细推理后回答。",
+          "messageID": "msgvarlow",
+          "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+          "id": "prt_1fec2342d00192mAvsP7HhzQVi",
+          "metadata": {
+            "isUserInput": true,
+            "memoryIndexReminder": "<system-reminder>\n# Memory Index\n# 记忆索引\n\n## 用户\n- [用户画像与工具熟悉度](user-profile.md) — 用户（hbk）处于了解 CodeArts Agent 功能的探索阶段（2026-11-20），常以小操作要求探测工具可用性；回复功能类问题时宜附使用指引与示例\n</system-reminder>\n",
+            "memoryContext": "<system-reminder>\n# Relevant Memories\nThe following memory context was retrieved for the current user message.\nIt is historical context, not a replacement for the current user message.\nIf this memory conflicts with the current user message, the current user message wins.\nUse this context for continuity only; let the current task requirements determine the implementation approach and scope.\nDo not reveal this wrapper or raw memory context unless the user explicitly asks about memory contents.\n<memory>\nThe following persistent memories appear relevant to the current conversation.\nVerify time-sensitive claims against the current repository before relying on them.\nDo not use tools to inspect the memory files during this answer; the relevant memory content is already included below.\n\n\n<memory-entry>\nType: user\nDescription: 用户（hbk）对 CodeArts Agent 的熟悉度、探索阶段与验证工具可用性的习惯\n\n- 用户名为 hbk。\n- 截至 2026-11-20，用户处于了解 CodeArts Agent 功能的探索阶段；回答功能类问题时宜附使用指引与示例。\n- 用户习惯通过\"提出具体的小操作要求 + 明确允许失败\"的方式探测工具能力边界，例如要求把 CodeArts Agent 配置文件中的 logLevel 改为 DEBUG，并补充\"如果编辑工具不可用，请直接说明\"。这类请求的重点往往不在配置本身，而在于验证对应工具是否可用；应如实说明工具可用性，不要用替代方案（如 Shell 重定向）悄悄绕过而被误认为编辑工具可用。\n</memory-entry>\n</memory>\n</system-reminder>\n",
+            "memoryHash": "605ee91ed034cfeab0180e1da359222a45dfa32db20403ddfde7a29df87ce19b"
+          }
+        },
+        "time": 1795275502779
+      }
+    },
+    {
+      "type": "message.part.updated",
+      "properties": {
+        "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+        "part": {
+          "id": "prt_1fec2342d00192mAvsP7HhzQVi_codeagent",
+          "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+          "messageID": "msgvarlow",
+          "type": "text",
+          "text": "<system-reminder>重要提示：你必须使用简体中文回复，包括内部思考和推理过程也必须使用简体中文。即使用户用英文提问，也必须用简体中文回复。</system-reminder>",
+          "synthetic": true
+        },
+        "time": 1795275502781
+      }
+    },
+    {
+      "type": "session.updated",
+      "properties": {
+        "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+        "info": {
+          "id": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+          "slug": "witty-island",
+          "projectID": "global",
+          "directory": "C:\\Users\\hbk",
+          "title": "variant-low",
+          "version": "26.11.11",
+          "time": {
+            "created": 1795275501336,
+            "updated": 1795275502782
+          }
+        }
+      }
+    },
+    {
+      "type": "session.status",
+      "properties": {
+        "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+        "status": {
+          "type": "busy"
+        }
+      }
+    },
+    {
+      "type": "tui.toast.show",
+      "properties": {
+        "message": "Initializing MCP server...",
+        "variant": "info",
+        "duration": 30000
+      }
+    },
+    {
+      "type": "message.updated",
+      "properties": {
+        "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+        "info": {
+          "id": "msg_1fec235c6001wa9X4ci536Y8ng",
+          "parentID": "msgvarlow",
+          "role": "assistant",
+          "mode": "build",
+          "agent": "build",
+          "variant": "low",
+          "path": {
+            "cwd": "C:\\Users\\hbk",
+            "root": "/"
+          },
+          "cost": 0,
+          "tokens": {
+            "input": 0,
+            "output": 0,
+            "reasoning": 0,
+            "cache": {
+              "read": 0,
+              "write": 0
+            }
+          },
+          "modelID": "deepseek-v4.1-flash-1017",
+          "providerID": "huaweicloud-maas",
+          "time": {
+            "created": 1795275503046
+          },
+          "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb"
+        }
+      }
+    },
+    {
+      "type": "session.updated",
+      "properties": {
+        "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+        "info": {
+          "id": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+          "slug": "witty-island",
+          "projectID": "global",
+          "directory": "C:\\Users\\hbk",
+          "title": "variant-low",
+          "version": "26.11.11",
+          "summary": {
+            "additions": 0,
+            "deletions": 0,
+            "files": 0
+          },
+          "time": {
+            "created": 1795275501336,
+            "updated": 1795275503090
+          }
+        }
+      }
+    },
+    {
+      "type": "session.diff",
+      "properties": {
+        "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+        "diff": []
+      }
+    },
+    {
+      "type": "message.updated",
+      "properties": {
+        "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+        "info": {
+          "role": "user",
+          "time": {
+            "created": 1795275502635
+          },
+          "agent": "build",
+          "model": {
+            "providerID": "huaweicloud-maas",
+            "modelID": "deepseek-v4.1-flash-1017"
+          },
+          "variant": "low",
+          "id": "msgvarlow",
+          "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+          "summary": {
+            "diffs": []
+          }
+        }
+      }
+    },
+    {
+      "type": "session.status",
+      "properties": {
+        "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+        "status": {
+          "type": "busy"
+        }
+      }
+    },
+    {
+      "type": "message.part.updated",
+      "properties": {
+        "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+        "part": {
+          "id": "prt_1fec2466b001WpJX2t1x2Wu4iG",
+          "messageID": "msg_1fec235c6001wa9X4ci536Y8ng",
+          "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+          "type": "step-start"
+        },
+        "time": 1795275507307
+      }
+    },
+    {
+      "type": "message.part.updated",
+      "properties": {
+        "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+        "part": {
+          "id": "prt_1fec2466c001SNtg4vRlxWdAmJ",
+          "messageID": "msg_1fec235c6001wa9X4ci536Y8ng",
+          "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+          "type": "reasoning",
+          "text": "",
+          "time": {
+            "start": 1795275507308
+          }
+        },
+        "time": 1795275507308
+      }
+    },
+    {
+      "type": "message.part.delta",
+      "properties": {
+        "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+        "messageID": "msg_1fec235c6001wa9X4ci536Y8ng",
+        "partID": "prt_1fec2466c001SNtg4vRlxWdAmJ",
+        "field": "text",
+        "delta": "这是一个"
+      }
+    },
+    {
+      "type": "message.part.delta",
+      "properties": {
+        "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+        "messageID": "msg_1fec235c6001wa9X4ci536Y8ng",
+        "partID": "prt_1fec2466c001SNtg4vRlxWdAmJ",
+        "field": "text",
+        "delta": "经典的鸡兔同笼问题，直接推理即可，不需要工具。\n\n设鸡"
+      }
+    },
+    {
+      "type": "message.part.delta",
+      "properties": {
+        "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+        "messageID": "msg_1fec235c6001wa9X4ci536Y8ng",
+        "partID": "prt_1fec2466c001SNtg4vRlxWdAmJ",
+        "field": "text",
+        "delta": " x，兔 y。\n"
+      }
+    },
+    {
+      "type": "message.part.delta",
+      "properties": {
+        "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+        "messageID": "msg_1fec235c6001wa9X4ci536Y8ng",
+        "partID": "prt_1fec2466c001SNtg4vRlxWdAmJ",
+        "field": "text",
+        "delta": "x + y = 35\n2x + 4"
+      }
+    },
+    {
+      "type": "message.part.delta",
+      "properties": {
+        "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+        "messageID": "msg_1fec235c6001wa9X4ci536Y8ng",
+        "partID": "prt_1fec2466c001SNtg4vRlxWdAmJ",
+        "field": "text",
+        "delta": "y = 94\n\n第二"
+      }
+    },
+    {
+      "type": "message.part.delta",
+      "properties": {
+        "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+        "messageID": "msg_1fec235c6001wa9X4ci536Y8ng",
+        "partID": "prt_1fec2466c001SNtg4vRlxWdAmJ",
+        "field": "text",
+        "delta": "式减两倍第一式：2y = 94 - 70 = 24，y = 12，x = 23。\n\n验证"
+      }
+    },
+    {
+      "type": "session.updated",
+      "properties": {
+        "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+        "info": {
+          "id": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+          "slug": "witty-island",
+          "projectID": "global",
+          "directory": "C:\\Users\\hbk",
+          "title": "鸡兔同笼：35头94脚求解",
+          "version": "26.11.11",
+          "summary": {
+            "additions": 0,
+            "deletions": 0,
+            "files": 0
+          },
+          "time": {
+            "created": 1795275501336,
+            "updated": 1795275507856
+          }
+        }
+      }
+    },
+    {
+      "type": "message.part.delta",
+      "properties": {
+        "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+        "messageID": "msg_1fec235c6001wa9X4ci536Y8ng",
+        "partID": "prt_1fec2466c001SNtg4vRlxWdAmJ",
+        "field": "text",
+        "delta": "：23*2 + 12*4 = 46 + 48 = 94 ✓\n\n简洁"
+      }
+    },
+    {
+      "type": "message.part.delta",
+      "properties": {
+        "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+        "messageID": "msg_1fec235c6001wa9X4ci536Y8ng",
+        "partID": "prt_1fec2466c001SNtg4vRlxWdAmJ",
+        "field": "text",
+        "delta": "回答即可，用户要求仔细推理。用中文。"
+      }
+    },
+    {
+      "type": "message.part.updated",
+      "properties": {
+        "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+        "part": {
+          "id": "prt_1fec2466c001SNtg4vRlxWdAmJ",
+          "messageID": "msg_1fec235c6001wa9X4ci536Y8ng",
+          "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+          "type": "reasoning",
+          "text": "这是一个经典的鸡兔同笼问题，直接推理即可，不需要工具。\n\n设鸡 x，兔 y。\nx + y = 35\n2x + 4y = 94\n\n第二式减两倍第一式：2y = 94 - 70 = 24，y = 12，x = 23。\n\n验证：23*2 + 12*4 = 46 + 48 = 94 ✓\n\n简洁回答即可，用户要求仔细推理。用中文。",
+          "time": {
+            "start": 1795275507308,
+            "end": 1795275508267
+          }
+        },
+        "time": 1795275508267
+      }
+    },
+    {
+      "type": "message.part.updated",
+      "properties": {
+        "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+        "part": {
+          "id": "prt_1fec24a2c0017XorL6cJSfZvyB",
+          "messageID": "msg_1fec235c6001wa9X4ci536Y8ng",
+          "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+          "type": "text",
+          "text": "",
+          "time": {
+            "start": 1795275508268
+          }
+        },
+        "time": 1795275508268
+      }
+    },
+    {
+      "type": "message.part.delta",
+      "properties": {
+        "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+        "messageID": "msg_1fec235c6001wa9X4ci536Y8ng",
+        "partID": "prt_1fec24a2c0017XorL6cJSfZvyB",
+        "field": "text",
+        "delta": "**答案：鸡 23 只，兔 12 只。**\n\n推理过程：\n\n"
+      }
+    },
+    {
+      "type": "message.part.delta",
+      "properties": {
+        "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+        "messageID": "msg_1fec235c6001wa9X4ci536Y8ng",
+        "partID": "prt_1fec24a2c0017XorL6cJSfZvyB",
+        "field": "text",
+        "delta": "设鸡有 `x` 只，兔有 `y` 只。\n\n1"
+      }
+    },
+    {
+      "type": "message.part.delta",
+      "properties": {
+        "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+        "messageID": "msg_1fec235c6001wa9X4ci536Y8ng",
+        "partID": "prt_1fec24a2c0017XorL6cJSfZvyB",
+        "field": "text",
+        "delta": ". 头的数量：`x + y = 35`\n"
+      }
+    },
+    {
+      "type": "message.part.delta",
+      "properties": {
+        "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+        "messageID": "msg_1fec235c6001wa9X4ci536Y8ng",
+        "partID": "prt_1fec24a2c0017XorL6cJSfZvyB",
+        "field": "text",
+        "delta": "2. 脚的数量：`2x + 4y = 94`（鸡 2 脚，兔 4 脚）\n\n将"
+      }
+    },
+    {
+      "type": "message.part.delta",
+      "properties": {
+        "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+        "messageID": "msg_1fec235c6001wa9X4ci536Y8ng",
+        "partID": "prt_1fec24a2c0017XorL6cJSfZvyB",
+        "field": "text",
+        "delta": "第 1 式两边乘以 2，得到 `2x + 2y = 70`，再用第 2 式减去它：\n\n```\n"
+      }
+    },
+    {
+      "type": "message.part.delta",
+      "properties": {
+        "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+        "messageID": "msg_1fec235c6001wa9X4ci536Y8ng",
+        "partID": "prt_1fec24a2c0017XorL6cJSfZvyB",
+        "field": "text",
+        "delta": "(2x + 4y) - (2x + 2y) = 94 - 70\n"
+      }
+    },
+    {
+      "type": "message.part.delta",
+      "properties": {
+        "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+        "messageID": "msg_1fec235c6001wa9X4ci536Y8ng",
+        "partID": "prt_1fec24a2c0017XorL6cJSfZvyB",
+        "field": "text",
+        "delta": "                2y = 24\n"
+      }
+    },
+    {
+      "type": "message.part.delta",
+      "properties": {
+        "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+        "messageID": "msg_1fec235c6001wa9X4ci536Y8ng",
+        "partID": "prt_1fec24a2c0017XorL6cJSfZvyB",
+        "field": "text",
+        "delta": "                 y = 12\n"
+      }
+    },
+    {
+      "type": "message.part.delta",
+      "properties": {
+        "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+        "messageID": "msg_1fec235c6001wa9X4ci536Y8ng",
+        "partID": "prt_1fec24a2c0017XorL6cJSfZvyB",
+        "field": "text",
+        "delta": "```\n\n代"
+      }
+    },
+    {
+      "type": "message.part.delta",
+      "properties": {
+        "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+        "messageID": "msg_1fec235c6001wa9X4ci536Y8ng",
+        "partID": "prt_1fec24a2c0017XorL6cJSfZvyB",
+        "field": "text",
+        "delta": "回 `x + y = 35`，得 `x = 23`。\n\n验证：`23"
+      }
+    },
+    {
+      "type": "message.part.delta",
+      "properties": {
+        "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+        "messageID": "msg_1fec235c6001wa9X4ci536Y8ng",
+        "partID": "prt_1fec24a2c0017XorL6cJSfZvyB",
+        "field": "text",
+        "delta": " × 2 + 12 × 4 = 46 + 48 = 94`，头数 `23 + 12 = 35`，均吻合。"
+      }
+    },
+    {
+      "type": "message.part.updated",
+      "properties": {
+        "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+        "part": {
+          "id": "prt_1fec24a2c0017XorL6cJSfZvyB",
+          "messageID": "msg_1fec235c6001wa9X4ci536Y8ng",
+          "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+          "type": "text",
+          "text": "**答案：鸡 23 只，兔 12 只。**\n\n推理过程：\n\n设鸡有 `x` 只，兔有 `y` 只。\n\n1. 头的数量：`x + y = 35`\n2. 脚的数量：`2x + 4y = 94`（鸡 2 脚，兔 4 脚）\n\n将第 1 式两边乘以 2，得到 `2x + 2y = 70`，再用第 2 式减去它：\n\n```\n(2x + 4y) - (2x + 2y) = 94 - 70\n                2y = 24\n                 y = 12\n```\n\n代回 `x + y = 35`，得 `x = 23`。\n\n验证：`23 × 2 + 12 × 4 = 46 + 48 = 94`，头数 `23 + 12 = 35`，均吻合。",
+          "time": {
+            "start": 1795275508650,
+            "end": 1795275508650
+          }
+        },
+        "time": 1795275508650
+      }
+    },
+    {
+      "type": "message.part.updated",
+      "properties": {
+        "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+        "part": {
+          "id": "prt_1fec24bad001r4zG4YtMqwj96i",
+          "reason": "stop",
+          "messageID": "msg_1fec235c6001wa9X4ci536Y8ng",
+          "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+          "type": "step-finish",
+          "tokens": {
+            "total": 16104,
+            "input": 13487,
+            "output": 210,
+            "reasoning": 103,
+            "cache": {
+              "write": 0,
+              "read": 2304
+            },
+            "context": {
+              "tools": 0,
+              "mcp": 0,
+              "messages": 994,
+              "skills": 0,
+              "system_prompts": 15110
+            }
+          },
+          "cost": 0
+        },
+        "time": 1795275508654
+      }
+    },
+    {
+      "type": "message.updated",
+      "properties": {
+        "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+        "info": {
+          "id": "msg_1fec235c6001wa9X4ci536Y8ng",
+          "parentID": "msgvarlow",
+          "role": "assistant",
+          "mode": "build",
+          "agent": "build",
+          "variant": "low",
+          "path": {
+            "cwd": "C:\\Users\\hbk",
+            "root": "/"
+          },
+          "cost": 0,
+          "tokens": {
+            "total": 16104,
+            "input": 13487,
+            "output": 210,
+            "reasoning": 103,
+            "cache": {
+              "write": 0,
+              "read": 2304
+            },
+            "context": {
+              "tools": 0,
+              "mcp": 0,
+              "messages": 994,
+              "skills": 0,
+              "system_prompts": 15110
+            }
+          },
+          "modelID": "deepseek-v4.1-flash-1017",
+          "providerID": "huaweicloud-maas",
+          "time": {
+            "created": 1795275503046
+          },
+          "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+          "finish": "stop"
+        }
+      }
+    },
+    {
+      "type": "session.updated",
+      "properties": {
+        "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+        "info": {
+          "id": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+          "slug": "witty-island",
+          "projectID": "global",
+          "directory": "C:\\Users\\hbk",
+          "title": "鸡兔同笼：35头94脚求解",
+          "version": "26.11.11",
+          "summary": {
+            "additions": 0,
+            "deletions": 0,
+            "files": 0
+          },
+          "time": {
+            "created": 1795275501336,
+            "updated": 1795275508659
+          }
+        }
+      }
+    },
+    {
+      "type": "message.updated",
+      "properties": {
+        "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+        "info": {
+          "id": "msg_1fec235c6001wa9X4ci536Y8ng",
+          "parentID": "msgvarlow",
+          "role": "assistant",
+          "mode": "build",
+          "agent": "build",
+          "variant": "low",
+          "path": {
+            "cwd": "C:\\Users\\hbk",
+            "root": "/"
+          },
+          "cost": 0,
+          "tokens": {
+            "total": 16104,
+            "input": 13487,
+            "output": 210,
+            "reasoning": 103,
+            "cache": {
+              "write": 0,
+              "read": 2304
+            },
+            "context": {
+              "tools": 0,
+              "mcp": 0,
+              "messages": 994,
+              "skills": 0,
+              "system_prompts": 15110
+            }
+          },
+          "modelID": "deepseek-v4.1-flash-1017",
+          "providerID": "huaweicloud-maas",
+          "time": {
+            "created": 1795275503046,
+            "completed": 1795275508666
+          },
+          "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+          "finish": "stop"
+        }
+      }
+    },
+    {
+      "type": "session.status",
+      "properties": {
+        "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+        "status": {
+          "type": "busy"
+        }
+      }
+    },
+    {
+      "type": "session.status",
+      "properties": {
+        "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+        "status": {
+          "type": "idle"
+        }
+      }
+    },
+    {
+      "type": "session.idle",
+      "properties": {
+        "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb"
+      }
+    },
+    {
+      "type": "session.diff",
+      "properties": {
+        "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+        "diff": []
+      }
+    },
+    {
+      "type": "message.updated",
+      "properties": {
+        "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb",
+        "info": {
+          "role": "user",
+          "time": {
+            "created": 1795275502635
+          },
+          "agent": "build",
+          "model": {
+            "providerID": "huaweicloud-maas",
+            "modelID": "deepseek-v4.1-flash-1017"
+          },
+          "variant": "low",
+          "summary": {
+            "diffs": []
+          },
+          "id": "msgvarlow",
+          "sessionID": "ses_e013dd0e7ffeGUwa5vddsp25Rb"
+        }
+      }
+    }
+  ]
+}

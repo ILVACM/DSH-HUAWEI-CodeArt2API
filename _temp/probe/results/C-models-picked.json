@@ -1,0 +1,62 @@
+[
+  {
+    "providerID": "huaweicloud-maas",
+    "modelID": "deepseek-v4.1-flash-1017",
+    "name": "DeepSeek-V4.1-Flash-1017"
+  },
+  {
+    "providerID": "huaweicloud-maas",
+    "modelID": "glm-5.3-flash",
+    "name": "GLM-5.3-Flash"
+  },
+  {
+    "providerID": "huaweicloud-maas",
+    "modelID": "deepseek-v4.1-flash",
+    "name": "DeepSeek-V4.1-Flash"
+  },
+  {
+    "providerID": "huaweicloud-maas",
+    "modelID": "glm-5.3",
+    "name": "GLM-5.3"
+  },
+  {
+    "providerID": "huaweicloud-maas",
+    "modelID": "kimi-k3.1-pro",
+    "name": "Kimi-K3.1-Pro"
+  },
+  {
+    "providerID": "huaweicloud-maas",
+    "modelID": "kimi-k3",
+    "name": "Kimi-K3"
+  },
+  {
+    "providerID": "huaweicloud-maas",
+    "modelID": "GLM-5.2",
+    "name": "GLM-5.2"
+  },
+  {
+    "providerID": "huaweicloud-maas",
+    "modelID": "glm-5.2-sft-harmony",
+    "name": "GLM-5.2-ArkTS-SPARK"
+  },
+  {
+    "providerID": "huaweicloud-maas",
+    "modelID": "openpangu-2.1-pro",
+    "name": "OpenPangu-2.1-Pro"
+  },
+  {
+    "providerID": "huaweicloud-maas",
+    "modelID": "openpangu-2.0-pro",
+    "name": "OpenPangu-2.0-Pro"
+  },
+  {
+    "providerID": "huaweicloud-maas",
+    "modelID": "openpangu-2.0-flash",
+    "name": "OpenPangu-2.0-Flash"
+  },
+  {
+    "providerID": "huaweicloud-maas",
+    "modelID": "speed",
+    "name": "智速模式"
+  }
+]

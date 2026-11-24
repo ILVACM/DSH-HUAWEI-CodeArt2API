@@ -1,0 +1,369 @@
+{
+  "out": {
+    "session": "ses_e013d32aaffe6GkhN4gtqpSL6V",
+    "statusEvents": [
+      "busy",
+      "idle",
+      "session.idle",
+      "idle",
+      "session.idle"
+    ],
+    "finishReasons": []
+  },
+  "events": [
+    {
+      "type": "server.connected",
+      "properties": {}
+    },
+    {
+      "type": "message.updated",
+      "properties": {
+        "sessionID": "ses_e013d32aaffe6GkhN4gtqpSL6V",
+        "info": {
+          "id": "msgabort",
+          "role": "user",
+          "sessionID": "ses_e013d32aaffe6GkhN4gtqpSL6V",
+          "time": {
+            "created": 1795275542869
+          },
+          "agent": "build",
+          "model": {
+            "providerID": "huaweicloud-maas",
+            "modelID": "deepseek-v4.1-flash-1017"
+          }
+        }
+      }
+    },
+    {
+      "type": "message.part.updated",
+      "properties": {
+        "sessionID": "ses_e013d32aaffe6GkhN4gtqpSL6V",
+        "part": {
+          "type": "text",
+          "text": "请写一篇关于人工智能发展史的 3000 字详细文章，分五个章节。",
+          "messageID": "msgabort",
+          "sessionID": "ses_e013d32aaffe6GkhN4gtqpSL6V",
+          "id": "prt_1fec2d155001FcHFbEOSm3nZfT",
+          "metadata": {
+            "isUserInput": true,
+            "memoryIndexReminder": "<system-reminder>\n# Memory Index\n# 记忆索引\n\n## 用户\n- [用户画像与工具熟悉度](user-profile.md) — 用户（hbk）处于了解 CodeArts Agent 功能的探索阶段（2026-11-20），常以小操作要求探测工具可用性；回复功能类问题时宜附使用指引与示例\n</system-reminder>\n"
+          }
+        },
+        "time": 1795275542968
+      }
+    },
+    {
+      "type": "message.part.updated",
+      "properties": {
+        "sessionID": "ses_e013d32aaffe6GkhN4gtqpSL6V",
+        "part": {
+          "id": "prt_1fec2d155001FcHFbEOSm3nZfT_codeagent",
+          "sessionID": "ses_e013d32aaffe6GkhN4gtqpSL6V",
+          "messageID": "msgabort",
+          "type": "text",
+          "text": "<system-reminder>重要提示：你必须使用简体中文回复，包括内部思考和推理过程也必须使用简体中文。即使用户用英文提问，也必须用简体中文回复。</system-reminder>",
+          "synthetic": true
+        },
+        "time": 1795275542969
+      }
+    },
+    {
+      "type": "session.updated",
+      "properties": {
+        "sessionID": "ses_e013d32aaffe6GkhN4gtqpSL6V",
+        "info": {
+          "id": "ses_e013d32aaffe6GkhN4gtqpSL6V",
+          "slug": "glowing-sailor",
+          "projectID": "global",
+          "directory": "C:\\Users\\hbk",
+          "title": "abort-test",
+          "version": "26.11.11",
+          "time": {
+            "created": 1795275541845,
+            "updated": 1795275542970
+          }
+        }
+      }
+    },
+    {
+      "type": "session.status",
+      "properties": {
+        "sessionID": "ses_e013d32aaffe6GkhN4gtqpSL6V",
+        "status": {
+          "type": "busy"
+        }
+      }
+    },
+    {
+      "type": "message.updated",
+      "properties": {
+        "sessionID": "ses_e013d32aaffe6GkhN4gtqpSL6V",
+        "info": {
+          "id": "msg_1fec2d345001HFOFbMoNHVfDEX",
+          "parentID": "msgabort",
+          "role": "assistant",
+          "mode": "build",
+          "agent": "build",
+          "path": {
+            "cwd": "C:\\Users\\hbk",
+            "root": "/"
+          },
+          "cost": 0,
+          "tokens": {
+            "input": 0,
+            "output": 0,
+            "reasoning": 0,
+            "cache": {
+              "read": 0,
+              "write": 0
+            }
+          },
+          "modelID": "deepseek-v4.1-flash-1017",
+          "providerID": "huaweicloud-maas",
+          "time": {
+            "created": 1795275543365
+          },
+          "sessionID": "ses_e013d32aaffe6GkhN4gtqpSL6V"
+        }
+      }
+    },
+    {
+      "type": "session.updated",
+      "properties": {
+        "sessionID": "ses_e013d32aaffe6GkhN4gtqpSL6V",
+        "info": {
+          "id": "ses_e013d32aaffe6GkhN4gtqpSL6V",
+          "slug": "glowing-sailor",
+          "projectID": "global",
+          "directory": "C:\\Users\\hbk",
+          "title": "abort-test",
+          "version": "26.11.11",
+          "summary": {
+            "additions": 0,
+            "deletions": 0,
+            "files": 0
+          },
+          "time": {
+            "created": 1795275541845,
+            "updated": 1795275543389
+          }
+        }
+      }
+    },
+    {
+      "type": "session.diff",
+      "properties": {
+        "sessionID": "ses_e013d32aaffe6GkhN4gtqpSL6V",
+        "diff": []
+      }
+    },
+    {
+      "type": "message.updated",
+      "properties": {
+        "sessionID": "ses_e013d32aaffe6GkhN4gtqpSL6V",
+        "info": {
+          "role": "user",
+          "time": {
+            "created": 1795275542869
+          },
+          "agent": "build",
+          "model": {
+            "providerID": "huaweicloud-maas",
+            "modelID": "deepseek-v4.1-flash-1017"
+          },
+          "id": "msgabort",
+          "sessionID": "ses_e013d32aaffe6GkhN4gtqpSL6V",
+          "summary": {
+            "diffs": []
+          }
+        }
+      }
+    },
+    {
+      "type": "message.updated",
+      "properties": {
+        "sessionID": "ses_e013d32aaffe6GkhN4gtqpSL6V",
+        "info": {
+          "id": "msg_1fec2d345001HFOFbMoNHVfDEX",
+          "parentID": "msgabort",
+          "role": "assistant",
+          "mode": "build",
+          "agent": "build",
+          "path": {
+            "cwd": "C:\\Users\\hbk",
+            "root": "/"
+          },
+          "cost": 0,
+          "tokens": {
+            "input": 0,
+            "output": 0,
+            "reasoning": 0,
+            "cache": {
+              "read": 0,
+              "write": 0
+            }
+          },
+          "modelID": "deepseek-v4.1-flash-1017",
+          "providerID": "huaweicloud-maas",
+          "time": {
+            "created": 1795275543365,
+            "completed": 1795275545395
+          },
+          "sessionID": "ses_e013d32aaffe6GkhN4gtqpSL6V",
+          "error": {
+            "name": "MessageAbortedError",
+            "data": {
+              "message": "Aborted"
+            }
+          }
+        }
+      }
+    },
+    {
+      "type": "session.error",
+      "properties": {
+        "sessionID": "ses_e013d32aaffe6GkhN4gtqpSL6V",
+        "messageID": "msg_1fec2d345001HFOFbMoNHVfDEX",
+        "error": {
+          "name": "MessageAbortedError",
+          "data": {
+            "message": "Aborted"
+          }
+        }
+      }
+    },
+    {
+      "type": "session.status",
+      "properties": {
+        "sessionID": "ses_e013d32aaffe6GkhN4gtqpSL6V",
+        "status": {
+          "type": "idle"
+        }
+      }
+    },
+    {
+      "type": "session.idle",
+      "properties": {
+        "sessionID": "ses_e013d32aaffe6GkhN4gtqpSL6V"
+      }
+    },
+    {
+      "type": "message.updated",
+      "properties": {
+        "sessionID": "ses_e013d32aaffe6GkhN4gtqpSL6V",
+        "info": {
+          "id": "msg_1fec2d345001HFOFbMoNHVfDEX",
+          "parentID": "msgabort",
+          "role": "assistant",
+          "mode": "build",
+          "agent": "build",
+          "path": {
+            "cwd": "C:\\Users\\hbk",
+            "root": "/"
+          },
+          "cost": 0,
+          "tokens": {
+            "input": 0,
+            "output": 0,
+            "reasoning": 0,
+            "cache": {
+              "read": 0,
+              "write": 0
+            }
+          },
+          "modelID": "deepseek-v4.1-flash-1017",
+          "providerID": "huaweicloud-maas",
+          "time": {
+            "created": 1795275543365,
+            "completed": 1795275545395
+          },
+          "sessionID": "ses_e013d32aaffe6GkhN4gtqpSL6V",
+          "error": {
+            "name": "MessageAbortedError",
+            "data": {
+              "message": "Aborted"
+            }
+          }
+        }
+      }
+    },
+    {
+      "type": "message.updated",
+      "properties": {
+        "sessionID": "ses_e013d32aaffe6GkhN4gtqpSL6V",
+        "info": {
+          "id": "msg_1fec2d345001HFOFbMoNHVfDEX",
+          "parentID": "msgabort",
+          "role": "assistant",
+          "mode": "build",
+          "agent": "build",
+          "path": {
+            "cwd": "C:\\Users\\hbk",
+            "root": "/"
+          },
+          "cost": 0,
+          "tokens": {
+            "input": 0,
+            "output": 0,
+            "reasoning": 0,
+            "cache": {
+              "read": 0,
+              "write": 0
+            }
+          },
+          "modelID": "deepseek-v4.1-flash-1017",
+          "providerID": "huaweicloud-maas",
+          "time": {
+            "created": 1795275543365,
+            "completed": 1795275545395
+          },
+          "sessionID": "ses_e013d32aaffe6GkhN4gtqpSL6V",
+          "error": {
+            "name": "MessageAbortedError",
+            "data": {
+              "message": "Aborted"
+            }
+          }
+        }
+      }
+    },
+    {
+      "type": "session.status",
+      "properties": {
+        "sessionID": "ses_e013d32aaffe6GkhN4gtqpSL6V",
+        "status": {
+          "type": "idle"
+        }
+      }
+    },
+    {
+      "type": "session.idle",
+      "properties": {
+        "sessionID": "ses_e013d32aaffe6GkhN4gtqpSL6V"
+      }
+    },
+    {
+      "type": "session.updated",
+      "properties": {
+        "sessionID": "ses_e013d32aaffe6GkhN4gtqpSL6V",
+        "info": {
+          "id": "ses_e013d32aaffe6GkhN4gtqpSL6V",
+          "slug": "glowing-sailor",
+          "projectID": "global",
+          "directory": "C:\\Users\\hbk",
+          "title": "人工智能发展史五章节文章撰写",
+          "version": "26.11.11",
+          "summary": {
+            "additions": 0,
+            "deletions": 0,
+            "files": 0
+          },
+          "time": {
+            "created": 1795275541845,
+            "updated": 1795275547752
+          }
+        }
+      }
+    }
+  ]
+}

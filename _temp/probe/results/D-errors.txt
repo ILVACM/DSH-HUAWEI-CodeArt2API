@@ -1,0 +1,12 @@
+=== GET 不存在会话 ===
+{"name":"NotFoundError","data":{"message":"Session not found: ses_notexist"}}
+HTTP 404
+
+=== DELETE 探针会话 ===
+true
+HTTP 200
+
+=== 无效模型 prompt ===
+Malformed JSON in request body
+HTTP 400
+

@@ -1,0 +1,13 @@
+{
+  "toolParts": [],
+  "perm": [],
+  "typeCount": {
+    "server.connected": 1,
+    "message.updated": 1,
+    "message.part.updated": 2,
+    "session.updated": 1,
+    "session.status": 2,
+    "session.idle": 1,
+    "session.error": 1
+  }
+}

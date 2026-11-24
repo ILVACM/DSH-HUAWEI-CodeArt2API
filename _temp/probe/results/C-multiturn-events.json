@@ -1,0 +1,54 @@
+[
+  {
+    "type": "server.connected",
+    "properties": {}
+  },
+  {
+    "type": "server.heartbeat",
+    "properties": {}
+  },
+  {
+    "type": "server.heartbeat",
+    "properties": {}
+  },
+  {
+    "type": "server.heartbeat",
+    "properties": {}
+  },
+  {
+    "type": "server.heartbeat",
+    "properties": {}
+  },
+  {
+    "type": "server.heartbeat",
+    "properties": {}
+  },
+  {
+    "type": "server.heartbeat",
+    "properties": {}
+  },
+  {
+    "type": "server.heartbeat",
+    "properties": {}
+  },
+  {
+    "type": "server.heartbeat",
+    "properties": {}
+  },
+  {
+    "type": "server.heartbeat",
+    "properties": {}
+  },
+  {
+    "type": "server.heartbeat",
+    "properties": {}
+  },
+  {
+    "type": "server.heartbeat",
+    "properties": {}
+  },
+  {
+    "type": "server.heartbeat",
+    "properties": {}
+  }
+]

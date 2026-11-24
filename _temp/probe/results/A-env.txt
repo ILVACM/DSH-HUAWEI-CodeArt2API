@@ -1,0 +1,47 @@
+===== P0 环境盘点 2026-11-21 =====
+
+--- codearts --version ---
+26.11.11
+
+--- codearts serve --help（实测参数）---
+Options:
+  --print-logs / --log-level / --pure
+  --port         [number] [default: 0]        ← 注意：实测默认 0（随机），文档写 4096
+  --hostname     [string] [default: "127.0.0.1"]
+  --mdns         [boolean] [default: false]
+  --mdns-domain  [string] [default: "codearts.local"]
+  --cors         [array] [default: []]
+
+--- opencode --version ---
+opencode v2.3.2
+
+--- node -v ---
+v24.18.0
+
+--- pwsh ---
+7.6.10
+
+--- 路径 ---
+codearts: C:\Users\hbk\.codeartsdoer\installers\codearts(.cmd)
+opencode: C:\nodejs\aliases\default\opencode(.cmd)
+dsh:      C:\Users\hbk\AppData\Local\Programs\DeepSeek Harness\resources\runtime\cli\bin\dsh.cmd
+
+--- 端口 ---
+4196: 空闲
+4096: 被 opencode.exe (PID 24592) 占用（常驻 opencode serve）
+28894: 未见
+
+--- DSH ---
+版本: 0.2.2-rc.3
+DSH_HOME: C:\Users\hbk\.dsh
+profiles: desktop, web
+web profile 已装本地 tgz 插件: @hbk/dsh-opencode-local, dsh-connect-catpaw, dsh-deveco2api-plugin
+
+--- CodeArts 凭据 ---
+CODEARTS_CLI_AK/SK: 均未设置
+~/.codeartsdoer/cli-data/auth.json: 仅字段 "inferhub-provider"（非华为云 CLI 登录态）
+结论: 本机未完成 CodeArts CLI 授权
+
+--- 与文档不符之处 ---
+1. serve 默认端口：文档 4096，实测 --help 为 0。
+2. 授权方式：文档提到网页登录授权，实测当前版本只接受 CODEARTS_CLI_AK/SK 环境变量。

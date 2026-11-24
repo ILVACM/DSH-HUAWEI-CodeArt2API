@@ -1,0 +1,30 @@
+// abort 探针：长任务中途 abort
+import fs from 'node:fs';
+const BASE = 'http://127.0.0.1:4196';
+const AUTH = 'Basic ' + Buffer.from('probe:probe-pass-2026').toString('base64');
+const H = { Authorization: AUTH, 'Content-Type': 'application/json' };
+const RES = 'D:/DSH-HUAWEI-CodeArt2API/_temp/probe/results';
+const j = async (r) => { const t = await r.text(); try { return JSON.parse(t); } catch { return t; } };
+const provider = await j(await fetch(`${BASE}/provider`, { headers: H }));
+let pick = null;
+for (const p of provider?.all || []) for (const [mid, m] of Object.entries(p.models || {})) { if (m?.capabilities?.toolcall) { pick = { providerID: p.id, modelID: mid }; break; } if (pick) break; }
+const session = await j(await fetch(`${BASE}/session`, { method: 'POST', headers: H, body: JSON.stringify({ title: 'abort-test' }) }));
+const sid = session?.id;
+const ac = new AbortController();
+const evtRes = await fetch(`${BASE}/event`, { headers: { ...H, Accept: 'text/event-stream' }, signal: ac.signal });
+const reader = evtRes.body.getReader(); const dec = new TextDecoder(); let buf = ''; const events = [];
+const loop = (async () => { while (true) { const { done, value } = await reader.read(); if (done) break; buf += dec.decode(value, { stream: true }); let i; while ((i = buf.indexOf('\n\n')) >= 0) { const c = buf.slice(0, i); buf = buf.slice(i + 2); for (const l of c.split('\n')) if (l.startsWith('data:')) { const r = l.slice(5).trim(); try { events.push(JSON.parse(r)); } catch { events.push({ _raw: r }); } } } } })().catch(() => {});
+await new Promise((r) => setTimeout(r, 1000));
+await fetch(`${BASE}/session/${sid}/prompt_async`, { method: 'POST', headers: H, body: JSON.stringify({ messageID: 'msgabort', model: pick, agent: 'build', parts: [{ type: 'text', text: '请写一篇关于人工智能发展史的 3000 字详细文章，分五个章节。' }] }) });
+console.log('prompt sent, wait 2.5s then abort');
+await new Promise((r) => setTimeout(r, 2500));
+const ab = await fetch(`${BASE}/session/${sid}/abort`, { method: 'POST', headers: H });
+console.log('abort status', ab.status, (await ab.text()).slice(0, 80));
+await new Promise((r) => setTimeout(r, 4000));
+ac.abort(); await loop;
+const status = events.filter((e) => e?.type === 'session.status' || e?.type === 'session.idle').map((e) => e.properties?.status?.type || e.type);
+const finish = events.filter((e) => e?.properties?.info?.finish).map((e) => e.properties.info.finish);
+const out = { session: sid, statusEvents: status, finishReasons: finish };
+fs.writeFileSync(`${RES}/C-abort.json`, JSON.stringify({ out, events }, null, 2));
+console.log(JSON.stringify(out, null, 1));
+console.log('DONE');

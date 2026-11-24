@@ -1,0 +1,16 @@
+{
+  "label": "long-input",
+  "note": "约100KB输入",
+  "session": "ses_e013c79f8ffePFdtaVXc7h2Bo0",
+  "promptStatus": 204,
+  "errors": [],
+  "outputTokens": 15,
+  "contextTokens": {
+    "tools": 0,
+    "mcp": 0,
+    "messages": 19684,
+    "skills": 0,
+    "system_prompts": 24152
+  },
+  "finish": "stop"
+}

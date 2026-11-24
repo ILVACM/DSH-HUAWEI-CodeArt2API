@@ -1,0 +1,78 @@
+{
+  "steps": [
+    [
+      "provider.status",
+      200
+    ],
+    [
+      "provider.count",
+      1
+    ],
+    [
+      "models.count",
+      12
+    ],
+    [
+      "config.status",
+      200
+    ],
+    [
+      "session.list.status",
+      200
+    ],
+    [
+      "session.list.count",
+      1
+    ],
+    [
+      "session.create.status",
+      200
+    ],
+    [
+      "session.id",
+      "ses_e01770538ffehsL8qsm2Ea2k4q"
+    ],
+    [
+      "model.pick",
+      {
+        "providerID": "huaweicloud-maas",
+        "modelID": "deepseek-v4.1-flash-1017",
+        "name": "DeepSeek-V4.1-Flash-1017"
+      }
+    ],
+    [
+      "prompt.status",
+      204
+    ],
+    [
+      "prompt.body",
+      ""
+    ],
+    [
+      "sse.events",
+      30
+    ],
+    [
+      "sse.types",
+      {
+        "server.connected": 1,
+        "message.updated": 6,
+        "message.part.updated": 8,
+        "session.updated": 4,
+        "session.status": 4,
+        "tui.toast.show": 1,
+        "session.diff": 2,
+        "message.part.delta": 3,
+        "session.idle": 1
+      }
+    ],
+    [
+      "permission.replied",
+      0
+    ],
+    [
+      "abort.status",
+      200
+    ]
+  ]
+}

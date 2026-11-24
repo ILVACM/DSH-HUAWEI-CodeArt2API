@@ -1,0 +1,1738 @@
+华为云码道 CodeArts 代码智能体
+API 参考
+文档版本 01
+发布日期 2026-11-17
+华为云计算技术有限公司
+
+版权所有 © 华为云计算技术有限公司 2026。 保留一切权利。
+非经本公司书面许可，任何单位和个人不得擅自摘抄、复制本文档内容的部分或全部，并不得以任何形式传
+播。
+商标声明
+和其他华为商标均为华为技术有限公司的商标。
+本文档提及的其他所有商标或注册商标，由各自的所有人拥有。
+注意
+您购买的产品、服务或特性等应受华为云计算技术有限公司商业合同和条款的约束，本文档中描述的全部或部
+分产品、服务或特性可能不在您的购买或使用范围之内。除非合同另有约定，华为云计算技术有限公司对本文
+档内容不做任何明示或暗示的声明或保证。
+由于产品版本升级或其他原因，本文档内容会不定期进行更新。除非另有约定，本文档仅作为使用指导，本文
+档中的所有陈述、信息和建议不构成任何明示或暗示的担保。
+华为云计算技术有限公司
+地址： 贵州省贵安新区黔中大道交兴功路华为云数据中心 邮编：550029
+网址： https://www.huaweicloud.com/
+文档版本 01 (2026-11-17) 版权所有 © 华为云计算技术有限公司 i
+
+华为云码道CodeArts代码智能体
+API参考 目 录
+目 录
+1 使用前必读..................................................................................................................................1
+2 API概览...................................................................................................................................... 3
+3 如何调用API...............................................................................................................................4
+3.1 构造请求......................................................................................................................................................................................4
+3.2 认证鉴权......................................................................................................................................................................................7
+3.3 返回结果......................................................................................................................................................................................9
+4 API.............................................................................................................................................11
+4.1 用量与代码同步增量同步接口............................................................................................................................................11
+4.1.1 成员每日用量指标增量同步 - SyncUserDailyIndicators..........................................................................................11
+4.1.2 租户每日用量指标增量同步 - SyncDomainDailyIndicators...................................................................................18
+4.1.3 commit提交增量同步 - SyncCodeCommitIndicators.............................................................................................24
+4.1.4 代码生成增量同步 - SyncCodeGenerateIndicators..................................................................................................31
+5 附录........................................................................................................................................... 39
+5.1 状态码........................................................................................................................................................................................39
+5.2 错误码........................................................................................................................................................................................41
+5.3 获取项目ID..............................................................................................................................................................................42
+5.4 获取账号名、账号ID、IAM用户ID.................................................................................................................................43
+文档版本 01 (2026-11-17) 版权所有 © 华为云计算技术有限公司 ii
+
+华为云码道CodeArts代码智能体
+API参考 1 使用前必读
+1
+使用前必读
+欢迎使用华为云码道CodeArts代码智能体。华为云码道CodeArts代码智能体是面向工
+程实践的代码智能体，提供多种产品形态与灵活使用入口，可支撑专业软件研发、个
+人创意开发等各类场景，让每一个想法都能快速落地。
+本文档提供了华为云码道CodeArts代码智能体API的描述、语法、参数说明及样例等内
+容。支持的全部操作请参见API概览。
+华为云码道CodeArts代码智能体提供了REST（Representational State Transfer）风格
+API，支持您通过HTTPS请求调用，调用方法请参见如何调用API。
+终端节点
+终端节点（Endpoint）即调用API的请求地址，不同服务不同区域的终端节点不同，您
+可以从地区和终端节点中查询所有服务的终端节点。
+基本概念
+● 账号
+用户注册时的账号，账号对其所拥有的资源及云服务具有完全的访问权限，可以
+重置用户密码、分配用户权限等。由于账号是付费主体，为了确保账号安全，建
+议您不要直接使用账号进行日常管理工作，而是创建用户并使用他们进行日常管
+理工作。
+● 用户
+由账号在IAM中创建的用户，是云服务的使用人员，具有身份凭证（密码和访问
+密钥）。
+在我的凭证下，您可以查看账号ID和用户ID。通常在调用API的鉴权过程中，您需
+要用到账号、用户和密码等信息。
+● 区域（Region）
+从地理位置和网络时延维度划分，同一个Region内共享弹性计算、块存储、对象
+存储、VPC网络、弹性公网IP、镜像等公共服务。Region分为通用Region和专属
+Region，通用Region指面向公共租户提供通用云服务的Region；专属Region指只
+承载同一类业务或只面向特定租户提供业务服务的专用Region。
+● 可用区（AZ，Availability Zone）
+一个可用区是一个或多个物理数据中心的集合，有独立的风火水电，AZ内逻辑上
+再将计算、网络、存储等资源划分成多个集群。一个Region中的多个AZ间通过高
+速光纤相连，以满足用户跨AZ构建高可用性系统的需求。
+文档版本 01 (2026-11-17) 版权所有 © 华为云计算技术有限公司 1
+
+华为云码道CodeArts代码智能体
+API参考 1 使用前必读
+● 项目
+区域默认对应一个项目，这个项目由系统预置，用来隔离物理区域间的资源（计
+算资源、存储资源和网络资源），以默认项目为单位进行授权，用户可以访问您
+账号中该区域的所有资源。如果您希望进行更加精细的权限控制，可以在区域默
+认的项目中创建子项目，并在子项目中创建资源，然后以子项目为单位进行授
+权，使得用户仅能访问特定子项目中资源，使得资源的权限控制更加精确。
+图1-1 项目隔离模型
+同样在我的凭证下，您可以查看项目ID。
+● 企业项目
+企业项目是项目的升级版，针对企业不同项目间资源的分组和管理，是逻辑隔
+离。企业项目中可以包含多个区域的资源，且项目中的资源可以迁入迁出。
+关于企业项目ID的获取及企业项目特性的详细信息，请参见《企业管理服务用户
+指南》。
+文档版本 01 (2026-11-17) 版权所有 © 华为云计算技术有限公司 2
+
+华为云码道CodeArts代码智能体
+API参考 2 API概览
+2
+API 概览
+表2-1 API接口说明
+API 说明 适用场景
+用户每日用量 企业管理员和成员都可以调用。 ● 成员查看个人指定时间段用
+指标增量同步 量
+● 成员调用时，传入个人
+user_id，固定查询自身用 ● 企业管理员定向核查单个成
+量。 员用量
+● 企业管理员调用时，可传他 ● 企业管理员查询全企业用量
+人user_id，查询指定成员用 汇总
+量；不传user_id则查询企业
+全部成员汇总用量。
+租户每日用量 仅企业管理员可调用，返回全部 企业管理员查询全部成员的用量
+指标增量同步 成员的汇总用量 汇总
+commit提交增 企业管理员和成员都可以调用。 ● 成员查看个人指定时间段
+量同步 commit提交量
+● 成员调用时，传入个人
+user_id，固定查询自身 ● 企业管理员定向核查单个成
+commit提交量。 员commit提交量
+● 企业管理员调用时，可传他 ● 企业管理员查询全企业
+人user_id，查询指定成员 commit提交量汇总
+commit提交量；不传user_id
+则查询企业全部成员汇总
+commit提交量。
+代码生成增量 企业管理员和成员都可以调用。 ● 成员查看个人指定时间段代
+同步 码生成量
+● 成员调用时，传入个人
+user_id，固定查询自身代码 ● 企业管理员定向核查单个成
+生成量。 员代码生成量
+● 企业管理员调用时，可传他 ● 企业管理员查询全企业代码
+人user_id，查询指定成员代 生成量汇总
+码生成量；不传user_id则查
+询企业全部成员汇总代码生
+成量。
+文档版本 01 (2026-11-17) 版权所有 © 华为云计算技术有限公司 3
+
+华为云码道CodeArts代码智能体
+API参考 3 如何调用API
+3
+如何调用 API
+3.1 构造请求
+本节介绍REST API请求的组成，并以调用IAM服务的管理员创建IAM用户来说明如何
+调用API。
+您还可以通过这个视频教程了解如何构造请求调用API：https://
+bbs.huaweicloud.com/videos/102987。
+请求 URI
+请求URI由如下部分组成。
+{URI-scheme}://{Endpoint}/{resource-path}?{query-string}
+尽管请求URI包含在请求消息头中，但大多数语言或框架都要求您从请求消息中单独传
+递它，所以在此单独强调。
+表3-1 URI中的参数说明
+参数 描述
+URI-scheme 表示用于传输请求的协议，当前所有API均采用HTTPS协议。
+Endpoint 指定承载REST服务端点的服务器域名或IP，不同服务不同区域的
+Endpoint不同，您可以从地区和终端节点获取。
+例如IAM服务在“华北-北京四”区域的Endpoint为“iam.cn-
+north-4.myhuaweicloud.com”。
+resource-path 资源路径，即API访问路径。从具体API的URI模块获取，例如“管
+理员创建IAM用户”API的resource-path为“/v3.0/OS-USER/
+users”。
+query-string 查询参数，是可选部分，并不是每个API都有查询参数。查询参数
+前面需要带一个“?”，形式为“参数名=参数取值”，例如“?
+limit=10”，表示查询不超过10条数据。
+文档版本 01 (2026-11-17) 版权所有 © 华为云计算技术有限公司 4
+
+华为云码道CodeArts代码智能体
+API参考 3 如何调用API
+例如您需要创建IAM用户，由于IAM为全局服务，则使用任一区域的Endpoint（比如
+“华北-北京四”区域的Endpoint：“iam.cn-north-4.myhuaweicloud.com”），并
+在管理员创建IAM用户的URI部分找到resource-path（/v3.0/OS-USER/users），拼接
+起来如下所示。
+https://iam.cn-north-4.myhuaweicloud.com/v3.0/OS-USER/users
+图3-1 URI示意图
+说明
+为查看方便，在每个具体API的URI部分，只给出resource-path部分，并将请求方法写在一起。
+这是因为URI-scheme都是HTTPS，而Endpoint在同一个区域也相同，所以简洁起见将这两部分
+省略。
+请求方法
+HTTP请求方法（也称为操作或动词），它告诉服务你正在请求什么类型的操作。
+● GET：请求服务器返回指定资源。
+● PUT：请求服务器更新指定资源。
+● POST：请求服务器新增资源或执行特殊操作。
+● DELETE：请求服务器删除指定资源，如删除对象等。
+● HEAD：请求服务器资源头部。
+● PATCH：请求服务器更新资源的部分内容。当资源不存在的时候，PATCH可能会
+去创建一个新的资源。
+在管理员创建IAM用户的URI部分，您可以看到其请求方法为“POST”，则其请求
+为：
+POST https://iam.cn-north-4.myhuaweicloud.com/v3.0/OS-USER/users
+请求消息头
+附加请求头字段，如指定的URI和HTTP方法所要求的字段。例如定义消息体类型的请
+求头“Content-Type”，请求鉴权信息等。
+详细的公共请求消息头字段请参见表3-2。
+文档版本 01 (2026-11-17) 版权所有 © 华为云计算技术有限公司 5
+
+华为云码道CodeArts代码智能体
+API参考 3 如何调用API
+表3-2 公共请求消息头
+名称 描述 是否必选 示例
+Host 请求的服务器信 否 code.test.com
+息，从服务API的
+使用AK/SK认 or
+URL中获取。值为
+证时该字段必
+code.test.com:443
+hostname[:port]。
+选。
+端口缺省时使用默
+认的端口，https的
+默认端口为443。
+Content-Type 消息体的类型（格 是 application/json
+式）。推荐用户使
+用默认值
+application/json，
+有其他取值时会在
+具体接口中说明。
+Content- 请求body长度，单 否 3495
+Length 位为Byte。
+X-Project-Id project id，项目编 否 e9993fc787d94b6c886cb
+号。请参考获取项 aa340f9c0f4
+如果是专属云
+目ID章节获取项目
+场景采用
+编号。
+AK/SK认证方
+式的接口请
+求，或者多
+project场景采
+用AK/SK认证
+的接口请求，
+则该字段必
+选。
+X-Auth-Token 用户Token。 否 注：以下仅为Token示例片
+段。
+用户Token也就是调 使用Token认
+用获取用户Token接 证时该字段必 MIIPAgYJKoZIhvcNAQcCo
+口的响应值，该接 选。 ...ggg1BBIINPXsidG9rZ
+口是唯一不需要认
+证的接口。
+请求响应成功后在
+响应消息头
+（Headers）中包含
+的“X-Subject-
+Token”的值即为
+Token值。
+说明
+API同时支持使用AK/SK认证，AK/SK认证是使用SDK对请求进行签名，签名过程会自动往请求中
+添加Authorization（签名认证信息）和X-Sdk-Date（请求发送的时间）请求头。
+AK/SK认证的详细说明请参见认证鉴权的“AK/SK认证”。
+文档版本 01 (2026-11-17) 版权所有 © 华为云计算技术有限公司 6
+
+华为云码道CodeArts代码智能体
+API参考 3 如何调用API
+对于管理员创建IAM用户接口，使用AK/SK方式认证时，添加消息头后的请求如下所
+示。
+POST https://iam.cn-north-4.myhuaweicloud.com/v3.0/OS-USER/users
+Content-Type: application/json
+X-Sdk-Date: 20240416T095341Z
+Authorization: SDK-HMAC-SHA256 Access=****************, SignedHeaders=content-type;host;x-sdk-date,
+Signature=****************
+请求消息体（可选）
+该部分可选。请求消息体通常以结构化格式（如JSON或XML）发出，与请求消息头中
+Content-type对应，传递除请求消息头之外的内容。若请求消息体中参数支持中文，
+则中文字符必须为UTF-8编码。
+每个接口的请求消息体内容不同，也并不是每个接口都需要有请求消息体（或者说消
+息体为空），GET、DELETE操作类型的接口就不需要消息体，消息体具体内容需要根
+据具体接口而定。
+对于管理员创建IAM用户接口，您可以从接口的请求部分看到所需的请求参数及参数
+说明，将消息体加入后的请求如下所示，其中加粗的字段需要根据实际值填写。
+● accountid为IAM用户所属的账号ID。
+● username为要创建的IAM用户名。
+● email为IAM用户的邮箱。
+● **********为IAM用户的登录密码。
+POST https://iam.cn-north-4.myhuaweicloud.com/v3.0/OS-USER/users
+Content-Type: application/json
+X-Sdk-Date: 20240416T095341Z
+Authorization: SDK-HMAC-SHA256 Access=****************, SignedHeaders=content-type;host;x-sdk-date,
+Signature=****************
+{
+"user": {
+"domain_id": "accountid",
+"name": "username",
+"password": "**********",
+"email": "email",
+"description": "IAM User Description"
+}
+}
+到这里为止这个请求需要的内容就具备齐全了，您可以使用curl、Postman或直接编
+写代码等方式发送请求调用API。
+3.2 认证鉴权
+调用接口有如下两种认证方式，您可以选择其中一种进行认证鉴权。
+● AK/SK认证：通过AK（Access Key ID）/SK（Secret Access Key）加密调用请求。
+推荐使用AK/SK认证，其安全性比Token认证要高。
+● Token认证：通过Token认证调用请求。
+AK/SK 认证
+说明
+AK/SK签名认证方式仅支持消息体大小12M以内，12M以上的请求请使用Token认证。
+文档版本 01 (2026-11-17) 版权所有 © 华为云计算技术有限公司 7
+
+华为云码道CodeArts代码智能体
+API参考 3 如何调用API
+AK/SK认证就是使用AK/SK对请求进行签名，在请求时将签名信息添加到消息头，从而
+通过身份认证。
+● AK(Access Key ID)：访问密钥ID。与私有访问密钥关联的唯一标识符；访问密钥
+ID和私有访问密钥一起使用，对请求进行加密签名。
+● SK(Secret Access Key)：与访问密钥ID结合使用的密钥，对请求进行加密签名，
+可标识发送方，并防止请求被修改。
+使用AK/SK认证时，您可以基于签名算法使用AK/SK对请求进行签名，也可以使用专门
+的签名SDK对请求进行签名。详细的签名方法和SDK使用方法请参见API签名指南。
+须知
+签名SDK只提供签名功能，与服务提供的SDK不同，使用时请注意。
+Token 认证
+说明
+Token的有效期为24小时，需要使用一个Token鉴权时，可以先缓存起来，避免频繁调用。
+Token在计算机系统中代表令牌（临时）的意思，拥有Token就代表拥有某种权限。
+Token认证就是在调用API的时候将Token加到请求消息头，从而通过身份认证，获得
+操作API的权限。Token可通过调用获取用户Token接口获取。
+云服务存在两种部署方式：项目级服务和全局级服务。其中：
+● 项目级服务需要获取项目级别的Token，此时请求body中auth.scope的取值为
+project。
+● 全局级服务需要获取全局级别的Token，此时请求body中auth.scope的取值为
+domain。
+调用本服务API需要project级别的Token，即调用获取用户Token接口时，请求body中
+auth.scope的取值需要选择project，如下所示。
+{
+"auth": {
+"identity": {
+"methods": [
+"password"
+],
+"password": {
+"user": {
+"name": "username", //IAM用户名
+"password": $ADMIN_PASS, //IAM用户密码，建议在配置文件或者环境变量中密文存放，使用时
+解密，确保安全
+"domain": {
+"name": "domainname" //IAM用户所属账号名
+}
+}
+}
+},
+"scope": {
+"project": {
+"name": "xxxxxxxx" //项目名称
+}
+}
+}
+}
+文档版本 01 (2026-11-17) 版权所有 © 华为云计算技术有限公司 8
+
+华为云码道CodeArts代码智能体
+API参考 3 如何调用API
+获取Token后，再调用其他接口时，您需要在请求消息头中添加“X-Auth-Token”，
+其值即为Token。例如Token值为“ABCDEFG....”，则调用接口时将“X-Auth-Token:
+ABCDEFG....”加到请求消息头即可，如下所示。
+POST https://iam.cn-north-4.myhuaweicloud.com/v3.0/OS-USER/users
+Content-Type: application/json
+X-Auth-Token: ABCDEFG....
+您还可以通过这个视频教程了解如何使用Token认证：https://
+bbs.huaweicloud.com/videos/101333。
+3.3 返回结果
+状态码
+请求发送以后，您会收到响应，包含状态码、响应消息头和消息体。
+状态码是一组从1xx到5xx的数字代码，状态码表示了请求响应的状态，完整的状态码
+列表请参见状态码。
+对于管理员创建IAM用户接口，如果调用后返回状态码为“201”，则表示请求成功。
+响应消息头
+对应请求消息头，响应同样也有消息头，如“Content-type”。
+对于管理员创建IAM用户接口，返回如图3-2所示的消息头。
+图3-2 管理员创建IAM用户响应消息头
+响应消息体（可选）
+该部分可选。响应消息体通常以结构化格式（如JSON或XML）返回，与响应消息头中
+Content-type对应，传递除响应消息头之外的内容。
+对于管理员创建IAM用户接口，返回如下消息体。为篇幅起见，这里只展示部分内
+容。
+{
+"user": {
+"id": "c131886aec...",
+"name": "IAMUser",
+"description": "IAM User Description",
+"areacode": "",
+文档版本 01 (2026-11-17) 版权所有 © 华为云计算技术有限公司 9
+
+华为云码道CodeArts代码智能体
+API参考 3 如何调用API
+"phone": "",
+"email": "***@***.com",
+"status": null,
+"enabled": true,
+"pwd_status": false,
+"access_mode": "default",
+"is_domain_owner": false,
+"xuser_id": "",
+"xuser_type": "",
+"password_expires_at": null,
+"create_time": "2024-05-21T09:03:41.000000",
+"domain_id": "d78cbac1..........",
+"xdomain_id": "30086000........",
+"xdomain_type": "",
+"default_project_id": null
+}
+}
+当接口调用出错时，会返回错误码及错误信息说明，错误响应的Body体格式如下所
+示。
+{
+"error_msg": "The format of message is error",
+"error_code": "AS.0001"
+}
+其中，error_code表示错误码，error_msg表示错误描述信息。
+文档版本 01 (2026-11-17) 版权所有 © 华为云计算技术有限公司 10
+
+华为云码道CodeArts代码智能体
+API参考 4 API
+4
+API
+4.1 用量与代码同步增量同步接口
+4.1.1 成员每日用量指标增量同步 - SyncUserDailyIndicators
+功能介绍
+按复合游标增量返回成员每日用量数据。通过start_date和end_date参数限定同步时间
+范围。
+使用约束：
+● 该接口数据刷新时间约1小时一次。
+● 该接口返回的是聚合数据，数据更新可能造成数据变化，推荐使用D+1周期同
+步，即次日同步前一日数据，若实际服务使用场景可能跨天，需额外留出更多时
+间。
+● 该接口为天级数据接口，刷新过程中pk_id可能变化，不建议使用pk_id进行数据
+upsert，推荐按天全量爬取数据
+鉴权规则：
+● 企业管理员（enterprise_admin）：可传入user_id查询本租户下指定成员数据，
+或不传user_id查询全部成员数据。
+● 其他成员：仅可根据传入的认证信息中携带的账号user_id查询单个成员的数据。
+调用方法
+请参见如何调用API。
+URI
+POST https://collector-agents-access.cn-north-4.myhuaweicloud.com/
+dataflywheel/datapreprocess/v1/sync/usage/user-daily
+文档版本 01 (2026-11-17) 版权所有 © 华为云计算技术有限公司 11
+
+华为云码道CodeArts代码智能体
+API参考 4 API
+请求参数
+表4-1 请求Body参数
+参数 是否必选 参数类型 描述
+user_id 否 String 参数解释：
+用户ID，获取方式请参见：获取
+账号名、账号ID、IAM用户ID。
+● 企业管理员：可传本租户下
+指定成员的user_id查询指定
+成员数据，不传时返回全部
+成员数据。
+● 成员：仅可传自己的
+user_id，传他人user_id返回
+403。
+取值范围：
+不涉及
+约束限制：
+不涉及
+默认取值：
+不涉及
+cursor 否 String 参数解释：
+增量游标。
+● 首次同步：不传或传空，从
+最小键开始。
+● 增量同步：传入上次响应的
+next_cursor。
+取值范围：
+不涉及
+约束限制：
+必须传入上次请求时返回的
+next_cursor参数，首次请求时
+可不传。
+默认取值：
+不涉及
+文档版本 01 (2026-11-17) 版权所有 © 华为云计算技术有限公司 12
+
+华为云码道CodeArts代码智能体
+API参考 4 API
+参数 是否必选 参数类型 描述
+page_size 是 Integer 参数解释：
+每页条数
+取值范围：
+1-500
+约束限制：
+不涉及
+默认取值：
+不涉及
+start_date 是 String 参数解释：
+起始时间
+取值范围：
+不涉及
+约束限制：
+yyyy-MM-dd，闭区间。
+默认取值：
+不涉及
+end_date 是 String 参数解释：
+结束时间
+取值范围：
+不涉及
+约束限制：
+yyyy-MM-dd，闭区间，与
+start_date最大跨度60天。
+默认取值：
+不涉及
+响应参数
+状态码：200
+表4-2 响应Body参数
+参数 参数类型 描述
+code Integer 参数解释：
+HTTP状态码
+取值范围：
+200：响应成功
+文档版本 01 (2026-11-17) 版权所有 © 华为云计算技术有限公司 13
+
+华为云码道CodeArts代码智能体
+API参考 4 API
+参数 参数类型 描述
+data SyncUserDailyDa 参数解释：
+ta object
+数据同步信息
+表4-3 SyncUserDailyData
+参数 参数类型 描述
+items Array of 参数解释：
+SyncUserDailyIte
+用量详情
+m objects
+next_cursor String 参数解释：
+下一页游标
+取值范围：
+不涉及
+has_more Boolean 参数解释：
+是否还有更多数据
+取值范围：
+● true：还有更多数据
+● false：已同步完成
+表4-4 SyncUserDailyItem
+参数 参数类型 描述
+user_id String 参数解释：
+用户ID
+取值范围：
+不涉及
+user_name String 参数解释：
+用户名
+取值范围：
+不涉及
+team_id String 参数解释：
+团队ID
+取值范围：
+不涉及
+文档版本 01 (2026-11-17) 版权所有 © 华为云计算技术有限公司 14
+
+华为云码道CodeArts代码智能体
+API参考 4 API
+参数 参数类型 描述
+team_name String 参数解释：
+团队名称
+取值范围：
+不涉及
+pk_id String 参数解释：
+记录唯一键
+取值范围：
+不涉及
+dt String 参数解释：
+数据日期
+取值范围：
+不涉及
+model_id String 参数解释：
+模型ID
+取值范围：
+不涉及
+model_name String 参数解释：
+模型名称
+取值范围：
+不涉及
+service_function String 参数解释：
+功能模块名
+取值范围：
+不涉及
+input_token_cnt Long 参数解释：
+输入Token数
+取值范围：
+≥0
+output_token_cnt Long 参数解释：
+输出Token数
+取值范围：
+≥0
+total_token_cnt Long 参数解释：
+Token总消耗
+取值范围：
+≥0
+文档版本 01 (2026-11-17) 版权所有 © 华为云计算技术有限公司 15
+
+华为云码道CodeArts代码智能体
+API参考 4 API
+参数 参数类型 描述
+total_credit_cnt Double 参数解释：
+积分消耗
+取值范围：
+≥0
+agent_duration Long 参数解释：
+智能体运行时长，单位：秒
+取值范围：
+≥0
+请求示例
+● 企业管理员查询指定成员，示例如下：
+POST https://collector-agents-access.cn-north-4.myhuaweicloud.com:443/dataflywheel/
+datapreprocess/v1/sync/usage/user-daily
+{
+"user_id" : "u-10001",
+"page_size" : 500,
+"start_date" : "2026-04-01",
+"end_date" : "2026-04-30"
+}
+● 首次同步（企业管理员查询全部成员），示例如下：
+POST https://collector-agents-access.cn-north-4.myhuaweicloud.com:443/dataflywheel/
+datapreprocess/v1/sync/usage/user-daily
+{
+"page_size" : 500,
+"start_date" : "2026-04-01",
+"end_date" : "2026-04-30"
+}
+● 增量同步（翻页），示例如下：
+POST https://collector-agents-access.cn-north-4.myhuaweicloud.com:443/dataflywheel/
+datapreprocess/v1/sync/usage/user-daily
+{
+"cursor" : "u-10001|a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+"page_size" : 500,
+"start_date" : "2026-04-01",
+"end_date" : "2026-04-30"
+}
+响应示例
+状态码：200
+● 同步成功（还有下一页），示例如下：
+{
+"code" : 200,
+"data" : {
+"items" : [ {
+"user_id" : "u-10001",
+"user_name" : "张三",
+"team_id" : "team-001",
+文档版本 01 (2026-11-17) 版权所有 © 华为云计算技术有限公司 16
+
+华为云码道CodeArts代码智能体
+API参考 4 API
+"team_name" : "平台组",
+"pk_id" : "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+"dt" : "2026-04-01",
+"model_id" : "gpt-4",
+"model_name" : "gpt-4",
+"service_function" : "Agent",
+"input_token_cnt" : 8000,
+"output_token_cnt" : 4000,
+"total_token_cnt" : 12000,
+"total_credit_cnt" : 1.25,
+"agent_duration" : 3600
+} ],
+"next_cursor" : "u-10001|a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+"has_more" : true
+}
+}
+● 同步完成（无更多数据），示例如下：
+{
+"code" : 200,
+"data" : {
+"items" : [ ],
+"next_cursor" : null,
+"has_more" : false
+}
+}
+状态码：403
+{
+"code" : 403,
+"status" : "DataFlywheel.00000403",
+"msg" : "Access denied"
+}
+状态码：429
+{
+"code" : 429,
+"status" : "DataFlywheel.00000429",
+"msg" : "Too many sync requests, please try again later."
+}
+状态码：500
+{
+"code" : 500,
+"status" : "DataFlywheel.00000500",
+"msg" : "Failed to sync usage indicators."
+}
+状态码
+状态码 描述
+200 OK
+400 参数校验失败（page_size超界、start_date > end_date、时间跨度超
+过60天、游标格式错误、日期格式错误）
+403 鉴权失败（token无效或越权查询）
+429 请求频率超限（单位时间内请求过多）
+500 服务端异常
+文档版本 01 (2026-11-17) 版权所有 © 华为云计算技术有限公司 17
+
+华为云码道CodeArts代码智能体
+API参考 4 API
+错误码
+请参见错误码。
+4.1.2 租户每日用量指标增量同步 - SyncDomainDailyIndicators
+功能介绍
+按复合游标增量返回租户每日用量数据。通过start_date和end_date参数限定同步时间
+范围。
+使用约束：
+● 该接口数据刷新时间约1小时一次。
+● 该接口返回的是聚合数据，数据更新可能造成数据变化，推荐使用D+1周期同
+步，即次日同步前一日数据，若实际服务使用场景可能跨天，需额外留出更多时
+间。
+● 该接口为天级数据接口，刷新过程中pk_id可能变化，不建议使用pk_id进行数据
+upsert，推荐按天全量爬取数据
+注意：仅企业管理员（enterprise_admin）可调用。
+调用方法
+请参见如何调用API。
+URI
+POST https://collector-agents-access.cn-north-4.myhuaweicloud.com/
+dataflywheel/datapreprocess/v1/sync/usage/domain-daily
+文档版本 01 (2026-11-17) 版权所有 © 华为云计算技术有限公司 18
+
+华为云码道CodeArts代码智能体
+API参考 4 API
+请求参数
+表4-5 请求Body参数
+参数 是否必选 参数类型 描述
+cursor 否 String 参数解释：
+增量游标。
+● 首次同步：不传或传空，从
+最小键开始。
+● 增量同步：传入上次响应的
+next_cursor。
+取值范围：
+不涉及
+约束限制：
+必须传入上次请求时返回的
+next_cursor参数，首次请求时
+可不传。
+默认取值：
+不涉及
+page_size 是 Integer 参数解释：
+每页条数
+取值范围：
+1-500
+约束限制：
+不涉及
+默认取值：
+不涉及
+start_date 是 String 参数解释：
+起始时间
+取值范围：
+不涉及
+约束限制：
+yyyy-MM-dd，闭区间。
+默认取值：
+不涉及
+文档版本 01 (2026-11-17) 版权所有 © 华为云计算技术有限公司 19
+
+华为云码道CodeArts代码智能体
+API参考 4 API
+参数 是否必选 参数类型 描述
+end_date 是 String 参数解释：
+结束时间
+取值范围：
+不涉及
+约束限制：
+yyyy-MM-dd，闭区间，与
+start_date最大跨度60天。
+默认取值：
+不涉及
+响应参数
+状态码：200
+表4-6 响应Body参数
+参数 参数类型 描述
+code Integer 参数解释：
+HTTP状态码
+取值范围：
+200：响应成功
+data SyncDomainDaily 参数解释：
+Data object
+用量数据同步信息
+表4-7 SyncDomainDailyData
+参数 参数类型 描述
+items Array of 参数解释：
+SyncDomainDaily
+用量详情
+Item objects
+next_cursor String 参数解释：
+下一页游标
+取值范围：
+不涉及
+文档版本 01 (2026-11-17) 版权所有 © 华为云计算技术有限公司 20
+
+华为云码道CodeArts代码智能体
+API参考 4 API
+参数 参数类型 描述
+has_more Boolean 参数解释：
+是否还有更多数据
+取值范围：
+● true: 还有更多数据
+● false: 已同步完成
+表4-8 SyncDomainDailyItem
+参数 参数类型 描述
+team_id String 参数解释：
+团队ID
+取值范围：
+不涉及
+team_name String 参数解释：
+团队名称
+取值范围：
+不涉及
+pk_id String 参数解释：
+记录唯一键
+取值范围：
+不涉及
+dt String 参数解释：
+数据日期
+取值范围：
+不涉及
+model_id String 参数解释：
+模型ID
+取值范围：
+不涉及
+model_name String 参数解释：
+模型名称
+取值范围：
+不涉及
+文档版本 01 (2026-11-17) 版权所有 © 华为云计算技术有限公司 21
+
+华为云码道CodeArts代码智能体
+API参考 4 API
+参数 参数类型 描述
+service_function String 参数解释：
+功能模块名
+取值范围：
+不涉及
+input_token_cnt Long 参数解释：
+输入Token数
+取值范围：
+≥0
+output_token_cnt Long 参数解释：
+输出Token数
+取值范围：
+≥0
+total_token_cnt Long 参数解释：
+Token总消耗
+取值范围：
+≥0
+total_credit_cnt Double 参数解释：
+积分消耗
+取值范围：
+≥0
+agent_duration Long 参数解释：
+智能体运行时长，单位：秒
+取值范围：
+≥0
+请求示例
+● 首次同步，示例如下：
+POST https://collector-agents-access.cn-north-4.myhuaweicloud.com:443/dataflywheel/
+datapreprocess/v1/sync/usage/domain-daily
+{
+"page_size" : 500,
+"start_date" : "2026-04-01",
+"end_date" : "2026-04-30"
+}
+● 增量同步（翻页），示例如下：
+POST https://collector-agents-access.cn-north-4.myhuaweicloud.com:443/dataflywheel/
+datapreprocess/v1/sync/usage/domain-daily
+{
+"cursor" : "domain-001|a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+"page_size" : 500,
+文档版本 01 (2026-11-17) 版权所有 © 华为云计算技术有限公司 22
+
+华为云码道CodeArts代码智能体
+API参考 4 API
+"start_date" : "2026-04-01",
+"end_date" : "2026-04-30"
+}
+响应示例
+状态码：200
+● 同步成功（还有下一页），示例如下：
+{
+"code" : 200,
+"data" : {
+"items" : [ {
+"team_id" : "team-001",
+"team_name" : "平台组",
+"pk_id" : "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+"dt" : "2026-04-01",
+"model_id" : "gpt-4",
+"model_name" : "gpt-4",
+"service_function" : "Agent",
+"input_token_cnt" : 234560,
+"output_token_cnt" : 333240,
+"total_token_cnt" : 567800,
+"total_credit_cnt" : 56.78,
+"agent_duration" : 7200
+} ],
+"next_cursor" : "domain-001|a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+"has_more" : true
+}
+}
+● 同步完成（无更多数据），示例如下：
+{
+"code" : 200,
+"data" : {
+"items" : [ ],
+"next_cursor" : null,
+"has_more" : false
+}
+}
+状态码：403
+{
+"code" : 403,
+"status" : "DataFlywheel.00000403",
+"msg" : "Access denied"
+}
+状态码：429
+{
+"code" : 429,
+"status" : "DataFlywheel.00000429",
+"msg" : "Too many sync requests, please try again later."
+}
+状态码：500
+{
+"code" : 500,
+"status" : "DataFlywheel.00000500",
+"msg" : "Failed to sync usage indicators."
+}
+文档版本 01 (2026-11-17) 版权所有 © 华为云计算技术有限公司 23
+
+华为云码道CodeArts代码智能体
+API参考 4 API
+状态码
+状态码 描述
+200 OK
+400 参数校验失败（page_size超界、start_date > end_date、时间跨度超
+过60天、游标格式错误、日期格式错误）
+403 鉴权失败（token无效或越权查询）
+429 请求频率超限（单位时间内请求过多）
+500 服务端异常
+错误码
+请参见错误码。
+4.1.3 commit 提交增量同步 - SyncCodeCommitIndicators
+功能介绍
+按复合游标增量返回commit提交数据。按提交时间submission_time过滤，通过
+start_date和end_date参数限定同步时间范围。落盘时间单调递增，续传可捕获新增
+（含迟到）数据。
+使用约束：
+● 该接口数据刷新时间约10分钟。
+鉴权规则：
+● 企业管理员（enterprise_admin）：可传入user_id查询本租户下指定成员数据，
+或不传user_id查询全部成员数据。
+● 其他成员：仅可根据传入的认证信息中携带的账号user_id查询单个成员的数据。
+调用方法
+请参见如何调用API。
+URI
+POST https://collector-agents-access.cn-north-4.myhuaweicloud.com/
+dataflywheel/datapreprocess/v1/sync/code/commit
+文档版本 01 (2026-11-17) 版权所有 © 华为云计算技术有限公司 24
+
+华为云码道CodeArts代码智能体
+API参考 4 API
+请求参数
+表4-9 请求Body参数
+参数 是否必选 参数类型 描述
+user_id 否 String 参数解释：
+用户ID，获取方式请参见：获取
+账号名、账号ID、IAM用户ID。
+● 企业管理员：可传本租户下
+指定成员的user_id查询指定
+成员数据，不传时返回全部
+成员数据。
+● 成员：仅可传自己的
+user_id，传他人user_id返回
+403。
+取值范围：
+不涉及
+约束限制：
+不涉及
+默认取值：
+不涉及
+cursor 否 String 参数解释：
+增量游标。
+● 首次同步：不传或传空，从
+最小键开始。
+● 增量同步：传入上次响应的
+next_cursor。
+取值范围：
+不涉及
+约束限制：
+必须传入上次请求时返回的
+next_cursor参数，首次请求时
+可不传。
+默认取值：
+不涉及
+文档版本 01 (2026-11-17) 版权所有 © 华为云计算技术有限公司 25
+
+华为云码道CodeArts代码智能体
+API参考 4 API
+参数 是否必选 参数类型 描述
+page_size 是 Integer 参数解释：
+每页条数
+取值范围：
+1-500
+约束限制：
+不涉及
+默认取值：
+不涉及
+start_date 是 String 参数解释：
+起始时间
+取值范围：
+不涉及
+约束限制：
+yyyy-MM-dd，闭区间，按提交
+时间submission_time过滤。
+默认取值：
+不涉及
+end_date 是 String 参数解释：
+结束时间
+取值范围：
+不涉及
+约束限制：
+yyyy-MM-dd，闭区间，与
+start_date最大跨度60天。
+默认取值：
+不涉及
+响应参数
+状态码：200
+表4-10 响应Body参数
+参数 参数类型 描述
+code Integer 参数解释：
+HTTP状态码
+取值范围：
+200：响应成功
+文档版本 01 (2026-11-17) 版权所有 © 华为云计算技术有限公司 26
+
+华为云码道CodeArts代码智能体
+API参考 4 API
+参数 参数类型 描述
+data SyncCodeCommit 参数解释：
+Data object
+数据同步信息
+表4-11 SyncCodeCommitData
+参数 参数类型 描述
+items Array of 参数解释：
+SyncCodeCommit
+提交详情
+Item objects
+next_cursor String 参数解释：
+下一页游标
+取值范围：
+不涉及
+has_more Boolean 参数解释：
+是否还有更多数据
+取值范围：
+● true：还有更多数据
+● false：已同步完成
+表4-12 SyncCodeCommitItem
+参数 参数类型 描述
+pk_id String 参数解释：
+记录唯一键
+取值范围：
+不涉及
+event_timestamp String 参数解释：
+提交时间
+取值范围：
+不涉及
+user_id String 参数解释：
+用户ID
+取值范围：
+不涉及
+文档版本 01 (2026-11-17) 版权所有 © 华为云计算技术有限公司 27
+
+华为云码道CodeArts代码智能体
+API参考 4 API
+参数 参数类型 描述
+user_name String 参数解释：
+用户名
+取值范围：
+不涉及
+team_id String 参数解释：
+团队ID
+取值范围：
+不涉及
+team_name String 参数解释：
+团队名称
+取值范围：
+不涉及
+operator_name String 参数解释：
+操作人标识
+取值范围：
+不涉及
+commit_id String 参数解释：
+提交ID
+取值范围：
+不涉及
+commit_message String 参数解释：
+提交信息
+取值范围：
+不涉及
+repo_url String 参数解释：
+代码仓URL
+取值范围：
+不涉及
+repo_source_branc String 参数解释：
+h
+源分支名
+取值范围：
+不涉及
+repo_target_branc String 参数解释：
+h
+目标分支名
+取值范围：
+不涉及
+文档版本 01 (2026-11-17) 版权所有 © 华为云计算技术有限公司 28
+
+华为云码道CodeArts代码智能体
+API参考 4 API
+参数 参数类型 描述
+total_added_code Long 参数解释：
+_lines
+总代码增加行数
+取值范围：
+≥0
+total_deleted_cod Long 参数解释：
+e_lines
+总代码删除行数
+取值范围：
+≥0
+ai_added_code_lin Long 参数解释：
+es
+AI代码增加行数
+取值范围：
+≥0
+manual_added_co Long 参数解释：
+de_lines
+人工代码增加行数
+取值范围：
+≥0
+unknown_added_c Long 参数解释：
+ode_lines
+未归类代码增加行数
+取值范围：
+≥0
+submission_time String 参数解释：
+提交实际发生时间
+取值范围：
+不涉及
+patch_id String 参数解释：
+补丁ID
+取值范围：
+不涉及
+请求示例
+● 企业管理员查询指定成员，示例如下：
+POST https://collector-agents-access.cn-north-4.myhuaweicloud.com:443/dataflywheel/
+datapreprocess/v1/sync/code/commit
+{
+"user_id" : "u-10001",
+"page_size" : 500,
+"start_date" : "2026-04-01",
+"end_date" : "2026-04-30"
+}
+文档版本 01 (2026-11-17) 版权所有 © 华为云计算技术有限公司 29
+
+华为云码道CodeArts代码智能体
+API参考 4 API
+● 首次同步（企业管理员查询全部成员），示例如下：
+POST https://collector-agents-access.cn-north-4.myhuaweicloud.com:443/dataflywheel/
+datapreprocess/v1/sync/code/commit
+{
+"page_size" : 500,
+"start_date" : "2026-04-01",
+"end_date" : "2026-04-30"
+}
+● 增量同步（翻页），示例如下：
+POST https://collector-agents-access.cn-north-4.myhuaweicloud.com:443/dataflywheel/
+datapreprocess/v1/sync/code/commit
+{
+"cursor" : "2026-11-01 09:30:00.123456|a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+"page_size" : 500,
+"start_date" : "2026-04-01",
+"end_date" : "2026-04-30"
+}
+响应示例
+状态码：200
+● 同步成功（还有下一页），示例如下：
+{
+"code" : 200,
+"data" : {
+"items" : [ {
+"pk_id" : "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+"event_timestamp" : "2026-04-01 09:30:00.123",
+"user_id" : "u-10001",
+"user_name" : "张三",
+"team_id" : "team-001",
+"team_name" : "平台组",
+"operator_name" : "zhangsan",
+"commit_id" : "1a2b3c4d5e6f",
+"commit_message" : "feat: add login api",
+"repo_url" : "https://example.com/repo.git",
+"repo_source_branch" : "feat/login",
+"repo_target_branch" : "master",
+"total_added_code_lines" : 120,
+"total_deleted_code_lines" : 30,
+"ai_added_code_lines" : 80,
+"manual_added_code_lines" : 35,
+"unknown_added_code_lines" : 5,
+"submission_time" : "2026-04-01 09:29:55.000",
+"patch_id" : "patch-001"
+} ],
+"next_cursor" : "2026-11-01 09:30:00.123456|a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+"has_more" : true
+}
+}
+● 同步完成（无更多数据），示例如下：
+{
+"code" : 200,
+"data" : {
+"items" : [ ],
+"next_cursor" : null,
+"has_more" : false
+}
+}
+状态码：403
+文档版本 01 (2026-11-17) 版权所有 © 华为云计算技术有限公司 30
+
+华为云码道CodeArts代码智能体
+API参考 4 API
+{
+"code" : 403,
+"status" : "DataFlywheel.00000403",
+"msg" : "Access denied"
+}
+状态码：429
+{
+"code" : 429,
+"status" : "DataFlywheel.00000429",
+"msg" : "Too many sync requests, please try again later."
+}
+状态码：500
+{
+"code" : 500,
+"status" : "DataFlywheel.00000500",
+"msg" : "Failed to sync usage indicators."
+}
+状态码
+状态码 描述
+200 OK
+400 参数校验失败（page_size超界、start_date > end_date、时间跨度超
+过60天、游标格式错误、日期格式错误）
+403 鉴权失败（token无效或越权查询）
+429 请求频率超限（单位时间内请求过多）
+500 服务端异常
+错误码
+请参见错误码。
+4.1.4 代码生成增量同步 - SyncCodeGenerateIndicators
+功能介绍
+按复合游标增量返回代码生成数据。按事件时间event_timestamp过滤，通过
+start_date和end_date参数限定同步时间范围。落盘时间单调递增，续传可捕获新增
+（含迟到）数据。
+鉴权规则：
+● 企业管理员（enterprise_admin）：可传入user_id查询本租户下指定成员数据，
+或不传user_id查询全部成员数据。
+● 其他成员：仅可根据传入的认证信息中携带的账号user_id查询单个成员的数据。
+调用方法
+请参见如何调用API。
+文档版本 01 (2026-11-17) 版权所有 © 华为云计算技术有限公司 31
+
+华为云码道CodeArts代码智能体
+API参考 4 API
+URI
+POST https://collector-agents-access.cn-north-4.myhuaweicloud.com/
+dataflywheel/datapreprocess/v1/sync/code/generate
+请求参数
+表4-13 请求Body参数
+参数 是否必选 参数类型 描述
+user_id 否 String 参数解释：
+用户ID，获取方式请参见：获取
+账号名、账号ID、IAM用户ID。
+● 企业管理员：可传本租户下
+指定成员的user_id查询指定
+成员数据，不传时返回全部
+成员数据。
+● 成员：仅可传自己的
+user_id，传他人user_id返回
+403。
+取值范围：
+不涉及
+约束限制：
+不涉及
+默认取值：
+不涉及
+cursor 否 String 参数解释：
+增量游标。
+● 首次同步：不传或传空，从
+最小键开始。
+● 增量同步：传入上次响应的
+next_cursor。
+取值范围：
+不涉及
+约束限制：
+必须传入上次请求时返回的
+next_cursor参数，首次请求时
+可不传。
+默认取值：
+不涉及
+文档版本 01 (2026-11-17) 版权所有 © 华为云计算技术有限公司 32
+
+华为云码道CodeArts代码智能体
+API参考 4 API
+参数 是否必选 参数类型 描述
+page_size 是 Integer 参数解释：
+每页条数
+取值范围：
+1-500
+约束限制：
+不涉及
+默认取值：
+不涉及
+start_date 是 String 参数解释：
+起始时间
+取值范围：
+不涉及
+约束限制：
+yyyy-MM-dd，闭区间。
+默认取值：
+不涉及
+end_date 是 String 参数解释：
+结束时间
+取值范围：
+不涉及
+约束限制：
+yyyy-MM-dd，闭区间，与
+start_date最大跨度60天。
+默认取值：
+不涉及
+响应参数
+状态码：200
+表4-14 响应Body参数
+参数 参数类型 描述
+code Integer 参数解释：
+HTTP状态码
+取值范围：
+200：响应成功
+文档版本 01 (2026-11-17) 版权所有 © 华为云计算技术有限公司 33
+
+华为云码道CodeArts代码智能体
+API参考 4 API
+参数 参数类型 描述
+data SyncCodeGenerat 参数解释：
+eData object
+数据同步信息
+表4-15 SyncCodeGenerateData
+参数 参数类型 描述
+items Array of 参数解释：
+SyncCodeGenerat
+生成详情
+eItem objects
+next_cursor String 参数解释：
+下一页游标
+取值范围：
+不涉及
+has_more Boolean 参数解释：
+是否还有更多数据
+取值范围：
+● true：还有更多数据
+● false：已同步完成
+表4-16 SyncCodeGenerateItem
+参数 参数类型 描述
+pk_id String 参数解释：
+记录唯一键
+取值范围：
+不涉及
+event_timestamp String 参数解释：
+请求时间
+取值范围：
+不涉及
+user_id String 参数解释：
+用户ID
+取值范围：
+不涉及
+文档版本 01 (2026-11-17) 版权所有 © 华为云计算技术有限公司 34
+
+华为云码道CodeArts代码智能体
+API参考 4 API
+参数 参数类型 描述
+user_name String 参数解释：
+用户名
+取值范围：
+不涉及
+team_id String 参数解释：
+团队ID
+取值范围：
+不涉及
+team_name String 参数解释：
+团队名称
+取值范围：
+不涉及
+client_type String 参数解释：
+客户端
+取值范围：
+不涉及
+service_function String 参数解释：
+功能模块名
+取值范围：
+不涉及
+model_id String 参数解释：
+模型ID
+取值范围：
+不涉及
+model_name String 参数解释：
+模型名称
+取值范围：
+不涉及
+model_access_cha String 参数解释：
+nnel
+模型接入渠道
+取值范围：
+● plugin_provider：端侧提供商
+● plugin_custom：端侧自定义
+● null：除以上两类之外的其他场景
+文档版本 01 (2026-11-17) 版权所有 © 华为云计算技术有限公司 35
+
+华为云码道CodeArts代码智能体
+API参考 4 API
+参数 参数类型 描述
+code_added_lines Long 参数解释：
+生成代码行数
+取值范围：
+≥0
+code_deleted_line Long 参数解释：
+s
+删除代码行数
+取值范围：
+≥0
+trace_id String 参数解释：
+关联Trace ID
+取值范围：
+不涉及
+span_id String 参数解释：
+关联Span ID
+取值范围：
+不涉及
+session_id String 参数解释：
+会话ID
+取值范围：
+不涉及
+请求示例
+● 企业管理员查询指定成员，示例如下：
+POST https://collector-agents-access.cn-north-4.myhuaweicloud.com:443/dataflywheel/
+datapreprocess/v1/sync/code/generate
+{
+"user_id" : "u-10001",
+"page_size" : 500,
+"start_date" : "2026-04-01",
+"end_date" : "2026-04-30"
+}
+● 首次同步（企业管理员查询全部成员），示例如下：
+POST https://collector-agents-access.cn-north-4.myhuaweicloud.com:443/dataflywheel/
+datapreprocess/v1/sync/code/generate
+{
+"page_size" : 500,
+"start_date" : "2026-04-01",
+"end_date" : "2026-04-30"
+}
+● 增量同步（翻页），示例如下：
+POST https://collector-agents-access.cn-north-4.myhuaweicloud.com:443/dataflywheel/
+datapreprocess/v1/sync/code/generate
+文档版本 01 (2026-11-17) 版权所有 © 华为云计算技术有限公司 36
+
+华为云码道CodeArts代码智能体
+API参考 4 API
+{
+"cursor" : "2026-11-01 09:30:00.123456|c3d4e5f6-a7b8-9012-cdef-012345678901",
+"page_size" : 500,
+"start_date" : "2026-04-01",
+"end_date" : "2026-04-30"
+}
+响应示例
+状态码：200
+● 同步成功（还有下一页），示例如下：
+{
+"code" : 200,
+"data" : {
+"items" : [ {
+"pk_id" : "c3d4e5f6-a7b8-9012-cdef-012345678901",
+"event_timestamp" : "2026-04-01 08:15:00.456",
+"user_id" : "u-10001",
+"user_name" : "张三",
+"team_id" : "team-001",
+"team_name" : "平台组",
+"client_type" : "vscode",
+"service_function" : "Agent",
+"model_id" : "model-001",
+"model_name" : "gpt-4",
+"model_access_channel" : "plugin_provider",
+"code_added_lines" : 45,
+"code_deleted_lines" : 12,
+"trace_id" : "trace-abc123",
+"span_id" : "span-def456",
+"session_id" : "ses_xxx789"
+} ],
+"next_cursor" : "2026-11-01 09:30:00.123456|c3d4e5f6-a7b8-9012-cdef-012345678901",
+"has_more" : true
+}
+}
+● 同步完成（无更多数据），示例如下：
+{
+"code" : 200,
+"data" : {
+"items" : [ ],
+"next_cursor" : null,
+"has_more" : false
+}
+}
+状态码：403
+{
+"code" : 403,
+"status" : "DataFlywheel.00000403",
+"msg" : "Access denied"
+}
+状态码：429
+{
+"code" : 429,
+"status" : "DataFlywheel.00000429",
+"msg" : "Too many sync requests, please try again later."
+}
+状态码：500
+{
+"code" : 500,
+文档版本 01 (2026-11-17) 版权所有 © 华为云计算技术有限公司 37
+
+华为云码道CodeArts代码智能体
+API参考 4 API
+"status" : "DataFlywheel.00000500",
+"msg" : "Failed to sync usage indicators."
+}
+状态码
+状态码 描述
+200 OK
+400 参数校验失败（page_size超界、start_date > end_date、时间跨度超
+过60天、游标格式错误、日期格式错误）
+403 鉴权失败（token无效或越权查询）
+429 请求频率超限（单位时间内请求过多）
+500 服务端异常
+错误码
+请参见错误码。
+文档版本 01 (2026-11-17) 版权所有 © 华为云计算技术有限公司 38
+
+华为云码道CodeArts代码智能体
+API参考 5 附录
+5
+附录
+5.1 状态码
+状态码如表5-1所示
+表5-1 状态码
+状态码 编码 错误码说明
+100 Continue 继续请求。
+这个临时响应用来通知客户端，它的部分请求已经
+被服务器接收，且仍未被拒绝。
+101 Switching 切换协议。只能切换到更高级的协议。
+Protocols
+例如，切换到HTTP的新版本协议。
+200 OK 请求成功。
+201 Created 创建类的请求完全成功。
+202 Accepted 已经接受请求，但未处理完成。
+203 Non- 非授权信息，请求成功。
+Authoritative
+Information
+204 NoContent 请求完全成功，同时HTTP响应不包含响应体。
+在响应OPTIONS方法的HTTP请求时返回此状态
+码。
+205 Reset Content 重置内容，服务器处理成功。
+206 Partial Content 服务器成功处理了部分GET请求。
+300 Multiple Choices 多种选择。请求的资源可包括多个位置，相应可返
+回一个资源特征与地址的列表用于用户终端（例
+如：浏览器）选择。
+文档版本 01 (2026-11-17) 版权所有 © 华为云计算技术有限公司 39
+
+华为云码道CodeArts代码智能体
+API参考 5 附录
+状态码 编码 错误码说明
+301 Moved 永久移动，请求的资源已被永久的移动到新的
+Permanently URI，返回信息会包括新的URI。
+302 Found 资源被临时移动。
+303 See Other 查看其他地址。
+使用GET和POST请求查看。
+304 Not Modified 所请求的资源未修改，服务器返回此状态码时，不
+会返回任何资源。
+305 Use Proxy 所请求的资源必须通过代理访问。
+306 Unused 已经被废弃的HTTP状态码。
+400 BadRequest 非法请求。
+建议直接修改该请求，不要重试该请求。
+401 Unauthorized 在客户端提供认证信息后，返回该状态码，表明服
+务端指出客户端所提供的认证信息不正确或非法。
+402 Payment 保留请求。
+Required
+403 Forbidden 请求被拒绝访问。
+返回该状态码，表明请求能够到达服务端，且服务
+端能够理解用户请求，但是拒绝做更多的事情，因
+为该请求被设置为拒绝访问，建议直接修改该请
+求，不要重试该请求。
+404 NotFound 所请求的资源不存在。
+建议直接修改该请求，不要重试该请求。
+405 MethodNotAllow 请求中带有该资源不支持的方法。
+ed
+建议直接修改该请求，不要重试该请求。
+406 Not Acceptable 服务器无法根据客户端请求的内容特性完成请求。
+407 Proxy 请求要求代理的身份认证，与401类似，但请求者
+Authentication 应当使用代理进行授权。
+Required
+408 Request Time-out 服务器等候请求时发生超时。
+客户端可以随时再次提交该请求而无需进行任何更
+改。
+409 Conflict 服务器在完成请求时发生冲突。
+返回该状态码，表明客户端尝试创建的资源已经存
+在，或者由于冲突请求的更新操作不能被完成。
+410 Gone 客户端请求的资源已经不存在。
+返回该状态码，表明请求的资源已被永久删除。
+文档版本 01 (2026-11-17) 版权所有 © 华为云计算技术有限公司 40
+
+华为云码道CodeArts代码智能体
+API参考 5 附录
+状态码 编码 错误码说明
+411 Length Required 服务器无法处理客户端发送的不带Content-Length
+的请求信息。
+412 Precondition 未满足前提条件，服务器未满足请求者在请求中设
+Failed 置的其中一个前提条件。
+413 Request Entity 由于请求的实体过大，服务器无法处理，因此拒绝
+Too Large 请求。为防止客户端的连续请求，服务器可能会关
+闭连接。如果只是服务器暂时无法处理，则会包含
+一个Retry-After的响应信息。
+414 Request-URI Too 请求的URI过长（URI通常为网址），服务器无法处
+Large 理。
+415 Unsupported 服务器无法处理请求附带的媒体格式。
+Media Type
+416 Requested range 客户端请求的范围无效。
+not satisfiable
+417 Expectation 服务器无法满足Expect的请求头信息。
+Failed
+422 UnprocessableEnt 请求格式正确，但是由于含有语义错误，无法响
+ity 应。
+429 TooManyRequest 表明请求超出了客户端访问频率的限制或者服务端
+s 接收到多于它能处理的请求。建议客户端读取相应
+的Retry-After首部，然后等待该首部指出的时间后
+再重试。
+500 InternalServerErr 表明服务端能被请求访问到，但是不能理解用户的
+or 请求。
+501 Not Implemented 服务器不支持请求的功能，无法完成请求。
+502 Bad Gateway 充当网关或代理的服务器，从远端服务器接收到了
+一个无效的请求。
+503 ServiceUnavailabl 被请求的服务无效。
+e
+建议直接修改该请求，不要重试该请求。
+504 ServerTimeout 请求在给定的时间内无法完成。客户端仅在为请求
+指定超时（Timeout）参数时会得到该响应。
+505 HTTP Version not 服务器不支持请求的HTTP协议的版本，无法完成
+supported 处理。
+5.2 错误码
+当您调用API时，如果遇到“APIGW”开头的错误码，请参见API网关错误码进行处
+理。
+文档版本 01 (2026-11-17) 版权所有 © 华为云计算技术有限公司 41
+
+华为云码道CodeArts代码智能体
+API参考 5 附录
+状态码 错误码 错误信息 描述 处理措施
+400 DataFlywheel. 调用参数错误 调用参数错误 请检查是否传递了
+00000400 所有必传参数，并
+检查参数的格式、
+取值范围是否符合
+要求
+403 DataFlywheel. 缺少必要权限 缺少必要权限 请使用具有对应权
+00000403 限的账号，或联系
+管理员
+429 DataFlywheel. 调用频次过 调用频次过 请稍后再试
+00000429 高，触发限流 高，触发限流
+500 DataFlywheel. 服务器内部异 服务器内部异 请联系客服或稍后
+00000500 常 常 再试
+5.3 获取项目 ID
+操作场景
+在调用接口的时候，部分URL中需要填入项目ID，所以需要获取到项目ID。有如下两
+种获取方式：
+● 调用API获取项目ID
+● 从控制台获取项目ID
+调用 API 获取项目 ID
+项目ID可以通过调用查询指定条件下的项目信息API获取。
+获取项目ID的接口为“GET https://{Endpoint}/v3/projects”，其中{Endpoint}为IAM
+的终端节点，可以从地区和终端节点获取。接口的认证鉴权请参见认证鉴权。
+响应示例如下，其中projects下的“id”即为项目ID。
+{
+"projects": [
+{
+"domain_id": "65382450e8f64ac0870cd180d14e684b",
+"is_domain": false,
+"parent_id": "65382450e8f64ac0870cd180d14e684b",
+"name": "xxx-xxx-xxx",
+"description": "",
+"links": {
+"next": null,
+"previous": null,
+"self": "https://www.example.com/v3/projects/a4a5d4098fb4474fa22cd05f897d6b99"
+},
+"id": "a4a5d4098fb4474fa22cd05f897d6b99",
+"enabled": true
+}
+],
+"links": {
+"next": null,
+"previous": null,
+文档版本 01 (2026-11-17) 版权所有 © 华为云计算技术有限公司 42
+
+华为云码道CodeArts代码智能体
+API参考 5 附录
+"self": "https://www.example.com/v3/projects"
+}
+}
+从控制台获取项目 ID
+在调用接口的时候，部分URL中需要填入项目ID（project_id），所以需要先在管理控
+制台上获取到项目ID。
+项目ID获取步骤如下：
+步骤1 登录管理控制台。
+步骤2 鼠标悬停在右上角的用户名，选择下拉列表中的“我的凭证”。
+在“API凭证”页面的项目列表中查看项目ID。
+图5-1 查看项目ID
+----结束
+5.4 获取账号名、账号 ID、IAM 用户 ID
+在调用接口的时候，部分URL中需要填入账号名、账号ID或IAM用户ID，所以需要先在
+管理控制台上获取到账号名、账号ID、IAM用户ID。账号名、账号ID、IAM用户ID获取
+步骤如下：
+1. 登录管理控制台。
+2. 鼠标悬停在右上角的用户名，选择下拉列表中的“我的凭证”。
+查看账号名、账号ID、IAM用户ID。
+文档版本 01 (2026-11-17) 版权所有 © 华为云计算技术有限公司 43
+
+华为云码道CodeArts代码智能体
+API参考 5 附录
+图5-2 查看账号名、账号ID、IAM用户ID
+文档版本 01 (2026-11-17) 版权所有 © 华为云计算技术有限公司 44

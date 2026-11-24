@@ -1,0 +1,717 @@
+{
+  "all": [
+    {
+      "id": "huaweicloud-maas",
+      "name": "huaweicloud-maas",
+      "env": [],
+      "options": {},
+      "source": "config",
+      "models": {
+        "deepseek-v4.1-flash-1017": {
+          "id": "deepseek-v4.1-flash-1017",
+          "providerID": "huaweicloud-maas",
+          "api": {
+            "id": "deepseek-v4.1-flash-1017",
+            "url": "https://snap-access.cn-north-4.myhuaweicloud.com/api/v2/",
+            "npm": "@ai-sdk/inferhub-provider"
+          },
+          "name": "DeepSeek-V4.1-Flash-1017",
+          "model_type": "",
+          "capabilities": {
+            "temperature": false,
+            "reasoning": false,
+            "attachment": false,
+            "toolcall": true,
+            "input": {
+              "text": true,
+              "audio": false,
+              "image": false,
+              "video": false,
+              "pdf": false
+            },
+            "output": {
+              "text": true,
+              "audio": false,
+              "image": false,
+              "video": false,
+              "pdf": false
+            },
+            "interleaved": false
+          },
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cache": {
+              "read": 0,
+              "write": 0
+            }
+          },
+          "limit": {
+            "context": 1048576,
+            "input": 1044480,
+            "output": 65536
+          },
+          "status": "active",
+          "options": {
+            "creditRatioDisplay": "0.18x"
+          },
+          "headers": {},
+          "release_date": "",
+          "variants": {
+            "low": {
+              "reasoningEffort": "low"
+            },
+            "high": {
+              "reasoningEffort": "high"
+            },
+            "max": {
+              "reasoningEffort": "max"
+            }
+          }
+        },
+        "glm-5.3-flash": {
+          "id": "glm-5.3-flash",
+          "providerID": "huaweicloud-maas",
+          "api": {
+            "id": "glm-5.3-flash",
+            "url": "https://snap-access.cn-north-4.myhuaweicloud.com/api/v2/",
+            "npm": "@ai-sdk/inferhub-provider"
+          },
+          "name": "GLM-5.3-Flash",
+          "model_type": "",
+          "capabilities": {
+            "temperature": false,
+            "reasoning": false,
+            "attachment": false,
+            "toolcall": true,
+            "input": {
+              "text": true,
+              "audio": false,
+              "image": false,
+              "video": false,
+              "pdf": false
+            },
+            "output": {
+              "text": true,
+              "audio": false,
+              "image": false,
+              "video": false,
+              "pdf": false
+            },
+            "interleaved": false
+          },
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cache": {
+              "read": 0,
+              "write": 0
+            }
+          },
+          "limit": {
+            "context": 1048576,
+            "input": 1044480,
+            "output": 65536
+          },
+          "status": "active",
+          "options": {
+            "creditRatioDisplay": "0.08x"
+          },
+          "headers": {},
+          "release_date": "",
+          "variants": {
+            "low": {
+              "reasoningEffort": "low"
+            },
+            "high": {
+              "reasoningEffort": "high"
+            },
+            "max": {
+              "reasoningEffort": "max"
+            }
+          }
+        },
+        "deepseek-v4.1-flash": {
+          "id": "deepseek-v4.1-flash",
+          "providerID": "huaweicloud-maas",
+          "api": {
+            "id": "deepseek-v4.1-flash",
+            "url": "https://snap-access.cn-north-4.myhuaweicloud.com/api/v2/",
+            "npm": "@ai-sdk/inferhub-provider"
+          },
+          "name": "DeepSeek-V4.1-Flash",
+          "model_type": "",
+          "capabilities": {
+            "temperature": false,
+            "reasoning": false,
+            "attachment": false,
+            "toolcall": true,
+            "input": {
+              "text": true,
+              "audio": false,
+              "image": false,
+              "video": false,
+              "pdf": false
+            },
+            "output": {
+              "text": true,
+              "audio": false,
+              "image": false,
+              "video": false,
+              "pdf": false
+            },
+            "interleaved": false
+          },
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cache": {
+              "read": 0,
+              "write": 0
+            }
+          },
+          "limit": {
+            "context": 1048576,
+            "input": 1044480,
+            "output": 65536
+          },
+          "status": "active",
+          "options": {
+            "creditRatioDisplay": "0.18x"
+          },
+          "headers": {},
+          "release_date": "",
+          "variants": {
+            "low": {
+              "reasoningEffort": "low"
+            },
+            "high": {
+              "reasoningEffort": "high"
+            },
+            "max": {
+              "reasoningEffort": "max"
+            }
+          }
+        },
+        "glm-5.3": {
+          "id": "glm-5.3",
+          "providerID": "huaweicloud-maas",
+          "api": {
+            "id": "glm-5.3",
+            "url": "https://snap-access.cn-north-4.myhuaweicloud.com/api/v2/",
+            "npm": "@ai-sdk/inferhub-provider"
+          },
+          "name": "GLM-5.3",
+          "model_type": "",
+          "capabilities": {
+            "temperature": false,
+            "reasoning": false,
+            "attachment": false,
+            "toolcall": true,
+            "input": {
+              "text": true,
+              "audio": false,
+              "image": false,
+              "video": false,
+              "pdf": false
+            },
+            "output": {
+              "text": true,
+              "audio": false,
+              "image": false,
+              "video": false,
+              "pdf": false
+            },
+            "interleaved": false
+          },
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cache": {
+              "read": 0,
+              "write": 0
+            }
+          },
+          "limit": {
+            "context": 1048576,
+            "input": 1044480,
+            "output": 65536
+          },
+          "status": "active",
+          "options": {
+            "creditRatioDisplay": "0.79x"
+          },
+          "headers": {},
+          "release_date": "",
+          "variants": {
+            "low": {
+              "reasoningEffort": "low"
+            },
+            "high": {
+              "reasoningEffort": "high"
+            },
+            "max": {
+              "reasoningEffort": "max"
+            }
+          }
+        },
+        "kimi-k3.1-pro": {
+          "id": "kimi-k3.1-pro",
+          "providerID": "huaweicloud-maas",
+          "api": {
+            "id": "kimi-k3.1-pro",
+            "url": "https://snap-access.cn-north-4.myhuaweicloud.com/api/v2/",
+            "npm": "@ai-sdk/inferhub-provider"
+          },
+          "name": "Kimi-K3.1-Pro",
+          "model_type": "",
+          "capabilities": {
+            "temperature": false,
+            "reasoning": false,
+            "attachment": false,
+            "toolcall": true,
+            "input": {
+              "text": true,
+              "audio": false,
+              "image": false,
+              "video": false,
+              "pdf": false
+            },
+            "output": {
+              "text": true,
+              "audio": false,
+              "image": false,
+              "video": false,
+              "pdf": false
+            },
+            "interleaved": false
+          },
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cache": {
+              "read": 0,
+              "write": 0
+            }
+          },
+          "limit": {
+            "context": 1048576,
+            "input": 1044480,
+            "output": 65536
+          },
+          "status": "active",
+          "options": {
+            "creditRatioDisplay": "1.63x"
+          },
+          "headers": {},
+          "release_date": "",
+          "variants": {
+            "low": {
+              "reasoningEffort": "low"
+            },
+            "high": {
+              "reasoningEffort": "high"
+            },
+            "max": {
+              "reasoningEffort": "max"
+            }
+          }
+        },
+        "kimi-k3": {
+          "id": "kimi-k3",
+          "providerID": "huaweicloud-maas",
+          "api": {
+            "id": "kimi-k3",
+            "url": "https://snap-access.cn-north-4.myhuaweicloud.com/api/v2/",
+            "npm": "@ai-sdk/inferhub-provider"
+          },
+          "name": "Kimi-K3",
+          "model_type": "",
+          "capabilities": {
+            "temperature": false,
+            "reasoning": false,
+            "attachment": false,
+            "toolcall": true,
+            "input": {
+              "text": true,
+              "audio": false,
+              "image": false,
+              "video": false,
+              "pdf": false
+            },
+            "output": {
+              "text": true,
+              "audio": false,
+              "image": false,
+              "video": false,
+              "pdf": false
+            },
+            "interleaved": false
+          },
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cache": {
+              "read": 0,
+              "write": 0
+            }
+          },
+          "limit": {
+            "context": 1048576,
+            "input": 1044480,
+            "output": 65536
+          },
+          "status": "active",
+          "options": {
+            "creditRatioDisplay": "2.38x"
+          },
+          "headers": {},
+          "release_date": "",
+          "variants": {
+            "low": {
+              "reasoningEffort": "low"
+            },
+            "high": {
+              "reasoningEffort": "high"
+            },
+            "max": {
+              "reasoningEffort": "max"
+            }
+          }
+        },
+        "GLM-5.2": {
+          "id": "GLM-5.2",
+          "providerID": "huaweicloud-maas",
+          "api": {
+            "id": "GLM-5.2",
+            "url": "https://snap-access.cn-north-4.myhuaweicloud.com/api/v2/",
+            "npm": "@ai-sdk/inferhub-provider"
+          },
+          "name": "GLM-5.2",
+          "model_type": "",
+          "capabilities": {
+            "temperature": false,
+            "reasoning": false,
+            "attachment": false,
+            "toolcall": true,
+            "input": {
+              "text": true,
+              "audio": false,
+              "image": false,
+              "video": false,
+              "pdf": false
+            },
+            "output": {
+              "text": true,
+              "audio": false,
+              "image": false,
+              "video": false,
+              "pdf": false
+            },
+            "interleaved": false
+          },
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cache": {
+              "read": 0,
+              "write": 0
+            }
+          },
+          "limit": {
+            "context": 202752,
+            "input": 196608,
+            "output": 65536
+          },
+          "status": "active",
+          "options": {
+            "creditRatioDisplay": "0.7x"
+          },
+          "headers": {},
+          "release_date": "",
+          "variants": {
+            "high": {
+              "reasoningEffort": "high"
+            },
+            "max": {
+              "reasoningEffort": "max"
+            }
+          }
+        },
+        "glm-5.2-sft-harmony": {
+          "id": "glm-5.2-sft-harmony",
+          "providerID": "huaweicloud-maas",
+          "api": {
+            "id": "glm-5.2-sft-harmony",
+            "url": "https://snap-access.cn-north-4.myhuaweicloud.com/api/v2/",
+            "npm": "@ai-sdk/inferhub-provider"
+          },
+          "name": "GLM-5.2-ArkTS-SPARK",
+          "model_type": "",
+          "capabilities": {
+            "temperature": false,
+            "reasoning": false,
+            "attachment": false,
+            "toolcall": true,
+            "input": {
+              "text": true,
+              "audio": false,
+              "image": false,
+              "video": false,
+              "pdf": false
+            },
+            "output": {
+              "text": true,
+              "audio": false,
+              "image": false,
+              "video": false,
+              "pdf": false
+            },
+            "interleaved": false
+          },
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cache": {
+              "read": 0,
+              "write": 0
+            }
+          },
+          "limit": {
+            "context": 202752,
+            "input": 196608,
+            "output": 65535
+          },
+          "status": "active",
+          "options": {
+            "creditRatioDisplay": "0.7x"
+          },
+          "headers": {},
+          "release_date": "",
+          "variants": {
+            "high": {
+              "reasoningEffort": "high"
+            },
+            "max": {
+              "reasoningEffort": "max"
+            }
+          }
+        },
+        "openpangu-2.1-pro": {
+          "id": "openpangu-2.1-pro",
+          "providerID": "huaweicloud-maas",
+          "api": {
+            "id": "openpangu-2.1-pro",
+            "url": "https://snap-access.cn-north-4.myhuaweicloud.com/api/v2/",
+            "npm": "@ai-sdk/inferhub-provider"
+          },
+          "name": "OpenPangu-2.1-Pro",
+          "model_type": "",
+          "capabilities": {
+            "temperature": false,
+            "reasoning": false,
+            "attachment": false,
+            "toolcall": true,
+            "input": {
+              "text": true,
+              "audio": false,
+              "image": false,
+              "video": false,
+              "pdf": false
+            },
+            "output": {
+              "text": true,
+              "audio": false,
+              "image": false,
+              "video": false,
+              "pdf": false
+            },
+            "interleaved": false
+          },
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cache": {
+              "read": 0,
+              "write": 0
+            }
+          },
+          "limit": {
+            "context": 524288,
+            "input": 512000,
+            "output": 65535
+          },
+          "status": "active",
+          "options": {
+            "creditRatioDisplay": "0.07x"
+          },
+          "headers": {},
+          "release_date": "",
+          "variants": {}
+        },
+        "openpangu-2.0-pro": {
+          "id": "openpangu-2.0-pro",
+          "providerID": "huaweicloud-maas",
+          "api": {
+            "id": "openpangu-2.0-pro",
+            "url": "https://snap-access.cn-north-4.myhuaweicloud.com/api/v2/",
+            "npm": "@ai-sdk/inferhub-provider"
+          },
+          "name": "OpenPangu-2.0-Pro",
+          "model_type": "",
+          "capabilities": {
+            "temperature": false,
+            "reasoning": false,
+            "attachment": false,
+            "toolcall": true,
+            "input": {
+              "text": true,
+              "audio": false,
+              "image": false,
+              "video": false,
+              "pdf": false
+            },
+            "output": {
+              "text": true,
+              "audio": false,
+              "image": false,
+              "video": false,
+              "pdf": false
+            },
+            "interleaved": false
+          },
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cache": {
+              "read": 0,
+              "write": 0
+            }
+          },
+          "limit": {
+            "context": 524288,
+            "input": 512000,
+            "output": 65535
+          },
+          "status": "active",
+          "options": {
+            "creditRatioDisplay": "0.7x"
+          },
+          "headers": {},
+          "release_date": "",
+          "variants": {}
+        },
+        "openpangu-2.0-flash": {
+          "id": "openpangu-2.0-flash",
+          "providerID": "huaweicloud-maas",
+          "api": {
+            "id": "openpangu-2.0-flash",
+            "url": "https://snap-access.cn-north-4.myhuaweicloud.com/api/v2/",
+            "npm": "@ai-sdk/inferhub-provider"
+          },
+          "name": "OpenPangu-2.0-Flash",
+          "model_type": "",
+          "capabilities": {
+            "temperature": false,
+            "reasoning": false,
+            "attachment": false,
+            "toolcall": true,
+            "input": {
+              "text": true,
+              "audio": false,
+              "image": false,
+              "video": false,
+              "pdf": false
+            },
+            "output": {
+              "text": true,
+              "audio": false,
+              "image": false,
+              "video": false,
+              "pdf": false
+            },
+            "interleaved": false
+          },
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cache": {
+              "read": 0,
+              "write": 0
+            }
+          },
+          "limit": {
+            "context": 524288,
+            "input": 512000,
+            "output": 65535
+          },
+          "status": "active",
+          "options": {
+            "creditRatioDisplay": "0.32x"
+          },
+          "headers": {},
+          "release_date": "",
+          "variants": {}
+        },
+        "speed": {
+          "id": "speed",
+          "providerID": "huaweicloud-maas",
+          "api": {
+            "id": "speed",
+            "url": "https://snap-access.cn-north-4.myhuaweicloud.com/api/v2/",
+            "npm": "@ai-sdk/inferhub-provider"
+          },
+          "name": "智速模式",
+          "model_type": "",
+          "capabilities": {
+            "temperature": false,
+            "reasoning": false,
+            "attachment": false,
+            "toolcall": true,
+            "input": {
+              "text": true,
+              "audio": false,
+              "image": false,
+              "video": false,
+              "pdf": false
+            },
+            "output": {
+              "text": true,
+              "audio": false,
+              "image": false,
+              "video": false,
+              "pdf": false
+            },
+            "interleaved": false
+          },
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cache": {
+              "read": 0,
+              "write": 0
+            }
+          },
+          "limit": {
+            "context": 1048576,
+            "input": 1044480,
+            "output": 65536
+          },
+          "status": "active",
+          "options": {
+            "creditRatioDisplay": "0.18x"
+          },
+          "headers": {},
+          "release_date": "",
+          "variants": {}
+        }
+      }
+    }
+  ],
+  "default": {
+    "huaweicloud-maas": "speed"
+  },
+  "connected": [
+    "huaweicloud-maas"
+  ]
+}

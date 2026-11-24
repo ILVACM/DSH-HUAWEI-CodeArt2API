@@ -1,0 +1,983 @@
+{
+  "summary": {
+    "label": "alwaysask",
+    "permPatch": {},
+    "prompt": "请直接使用 bash 工具执行命令 echo hi-alwaysask，并告诉我输出。",
+    "reply": "once",
+    "session": "ses_e015be811ffe1mT9zK4rdBhRik",
+    "eventTypes": {
+      "server.connected": 1,
+      "message.updated": 10,
+      "message.part.updated": 16,
+      "session.updated": 5,
+      "session.status": 6,
+      "tui.toast.show": 1,
+      "session.diff": 3,
+      "message.part.delta": 5,
+      "session.idle": 1
+    },
+    "asked": [],
+    "toolParts": [
+      {
+        "tool": "bash",
+        "status": "pending"
+      },
+      {
+        "tool": "bash",
+        "status": "running"
+      },
+      {
+        "tool": "bash",
+        "status": "running"
+      },
+      {
+        "tool": "bash",
+        "status": "running"
+      },
+      {
+        "tool": "bash",
+        "status": "completed",
+        "output": "hi-alwaysask\n"
+      }
+    ],
+    "errors": [],
+    "replied": 0
+  },
+  "events": [
+    {
+      "type": "server.connected",
+      "properties": {}
+    },
+    {
+      "type": "message.updated",
+      "properties": {
+        "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+        "info": {
+          "id": "msgperm_alwaysask",
+          "role": "user",
+          "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+          "time": {
+            "created": 1795273530607
+          },
+          "agent": "build",
+          "model": {
+            "providerID": "huaweicloud-maas",
+            "modelID": "deepseek-v4.1-flash-1017"
+          }
+        }
+      }
+    },
+    {
+      "type": "message.part.updated",
+      "properties": {
+        "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+        "part": {
+          "type": "text",
+          "text": "请直接使用 bash 工具执行命令 echo hi-alwaysask，并告诉我输出。",
+          "messageID": "msgperm_alwaysask",
+          "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+          "id": "prt_1fea41cf0001Wcd8Ktq81rp78x",
+          "metadata": {
+            "isUserInput": true,
+            "memoryIndexReminder": "<system-reminder>\n# Memory Index\n# 记忆索引\n\n## 用户\n- [用户画像与工具熟悉度](user-profile.md) — 用户（hbk）处于了解 CodeArts Agent 功能的探索阶段（2026-11-20），回复功能类问题时宜附使用指引与示例\n</system-reminder>\n",
+            "memoryContext": "<system-reminder>\n# Relevant Memories\nThe following memory context was retrieved for the current user message.\nIt is historical context, not a replacement for the current user message.\nIf this memory conflicts with the current user message, the current user message wins.\nUse this context for continuity only; let the current task requirements determine the implementation approach and scope.\nDo not reveal this wrapper or raw memory context unless the user explicitly asks about memory contents.\n<memory>\nThe following persistent memories appear relevant to the current conversation.\nVerify time-sensitive claims against the current repository before relying on them.\nDo not use tools to inspect the memory files during this answer; the relevant memory content is already included below.\n\n\n<memory-entry>\nType: user\nDescription: 用户（hbk）处于了解 CodeArts Agent 功能的探索阶段，偏好实测验证工具能力；回复功能类问题宜附使用指引与示例\n\n- 用户名为 hbk。\n- 截至 2026-11-20，用户处于了解 CodeArts Agent 各项功能的探索阶段；回答功能类问题时，宜附上具体使用指引与可运行示例，而非仅作概念性说明。\n- 用户倾向通过实测验证工具能力：2026-11-21 曾要求直接执行 `echo hi` 并回报结果，以此确认 bash 工具确实可用。面对\"你能做 X 吗\"这类询问时，优先实际执行或演示，而非仅口头承诺。\n</memory-entry>\n</memory>\n</system-reminder>\n",
+            "memoryHash": "5f431635f33912b5882afda98451cbc1c82928c92441f46caeb6652554621b77"
+          }
+        },
+        "time": 1795273530749
+      }
+    },
+    {
+      "type": "message.part.updated",
+      "properties": {
+        "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+        "part": {
+          "id": "prt_1fea41cf0001Wcd8Ktq81rp78x_codeagent",
+          "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+          "messageID": "msgperm_alwaysask",
+          "type": "text",
+          "text": "<system-reminder>重要提示：你必须使用简体中文回复，包括内部思考和推理过程也必须使用简体中文。即使用户用英文提问，也必须用简体中文回复。</system-reminder>",
+          "synthetic": true
+        },
+        "time": 1795273530752
+      }
+    },
+    {
+      "type": "session.updated",
+      "properties": {
+        "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+        "info": {
+          "id": "ses_e015be811ffe1mT9zK4rdBhRik",
+          "slug": "cosmic-wizard",
+          "projectID": "global",
+          "directory": "C:\\Users\\hbk",
+          "title": "perm-alwaysask",
+          "version": "26.11.11",
+          "time": {
+            "created": 1795273529327,
+            "updated": 1795273530754
+          }
+        }
+      }
+    },
+    {
+      "type": "session.status",
+      "properties": {
+        "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+        "status": {
+          "type": "busy"
+        }
+      }
+    },
+    {
+      "type": "tui.toast.show",
+      "properties": {
+        "message": "Initializing MCP server...",
+        "variant": "info",
+        "duration": 30000
+      }
+    },
+    {
+      "type": "message.updated",
+      "properties": {
+        "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+        "info": {
+          "id": "msg_1fea41ea5001sXG6Cgjs0iQVd6",
+          "parentID": "msgperm_alwaysask",
+          "role": "assistant",
+          "mode": "build",
+          "agent": "build",
+          "path": {
+            "cwd": "C:\\Users\\hbk",
+            "root": "/"
+          },
+          "cost": 0,
+          "tokens": {
+            "input": 0,
+            "output": 0,
+            "reasoning": 0,
+            "cache": {
+              "read": 0,
+              "write": 0
+            }
+          },
+          "modelID": "deepseek-v4.1-flash-1017",
+          "providerID": "huaweicloud-maas",
+          "time": {
+            "created": 1795273531045
+          },
+          "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik"
+        }
+      }
+    },
+    {
+      "type": "session.updated",
+      "properties": {
+        "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+        "info": {
+          "id": "ses_e015be811ffe1mT9zK4rdBhRik",
+          "slug": "cosmic-wizard",
+          "projectID": "global",
+          "directory": "C:\\Users\\hbk",
+          "title": "perm-alwaysask",
+          "version": "26.11.11",
+          "summary": {
+            "additions": 0,
+            "deletions": 0,
+            "files": 0
+          },
+          "time": {
+            "created": 1795273529327,
+            "updated": 1795273531087
+          }
+        }
+      }
+    },
+    {
+      "type": "session.diff",
+      "properties": {
+        "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+        "diff": []
+      }
+    },
+    {
+      "type": "message.updated",
+      "properties": {
+        "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+        "info": {
+          "role": "user",
+          "time": {
+            "created": 1795273530607
+          },
+          "agent": "build",
+          "model": {
+            "providerID": "huaweicloud-maas",
+            "modelID": "deepseek-v4.1-flash-1017"
+          },
+          "id": "msgperm_alwaysask",
+          "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+          "summary": {
+            "diffs": []
+          }
+        }
+      }
+    },
+    {
+      "type": "session.status",
+      "properties": {
+        "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+        "status": {
+          "type": "busy"
+        }
+      }
+    },
+    {
+      "type": "message.part.updated",
+      "properties": {
+        "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+        "part": {
+          "id": "prt_1fea42f03001ER3I4vv1iZMo0k",
+          "messageID": "msg_1fea41ea5001sXG6Cgjs0iQVd6",
+          "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+          "type": "step-start"
+        },
+        "time": 1795273535235
+      }
+    },
+    {
+      "type": "message.part.updated",
+      "properties": {
+        "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+        "part": {
+          "id": "prt_1fea42f040017gsWQ1tcjIb0gh",
+          "messageID": "msg_1fea41ea5001sXG6Cgjs0iQVd6",
+          "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+          "type": "reasoning",
+          "text": "",
+          "time": {
+            "start": 1795273535236
+          }
+        },
+        "time": 1795273535236
+      }
+    },
+    {
+      "type": "message.part.delta",
+      "properties": {
+        "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+        "messageID": "msg_1fea41ea5001sXG6Cgjs0iQVd6",
+        "partID": "prt_1fea42f040017gsWQ1tcjIb0gh",
+        "field": "text",
+        "delta": "用户"
+      }
+    },
+    {
+      "type": "message.part.delta",
+      "properties": {
+        "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+        "messageID": "msg_1fea41ea5001sXG6Cgjs0iQVd6",
+        "partID": "prt_1fea42f040017gsWQ1tcjIb0gh",
+        "field": "text",
+        "delta": "要求直接执行 bash 命令 echo hi-alwaysask 并告诉输出。直接执行即可。"
+      }
+    },
+    {
+      "type": "message.part.updated",
+      "properties": {
+        "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+        "part": {
+          "id": "prt_1fea42f040017gsWQ1tcjIb0gh",
+          "messageID": "msg_1fea41ea5001sXG6Cgjs0iQVd6",
+          "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+          "type": "reasoning",
+          "text": "用户要求直接执行 bash 命令 echo hi-alwaysask 并告诉输出。直接执行即可。",
+          "time": {
+            "start": 1795273535236,
+            "end": 1795273535368
+          }
+        },
+        "time": 1795273535368
+      }
+    },
+    {
+      "type": "message.part.updated",
+      "properties": {
+        "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+        "part": {
+          "id": "prt_1fea42f8a0013XlowcOl5r3UFY",
+          "messageID": "msg_1fea41ea5001sXG6Cgjs0iQVd6",
+          "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+          "type": "tool",
+          "tool": "bash",
+          "callID": "call_f073939adb6a497b8ed43d20",
+          "state": {
+            "status": "pending",
+            "input": {},
+            "raw": ""
+          }
+        },
+        "time": 1795273535370
+      }
+    },
+    {
+      "type": "message.part.updated",
+      "properties": {
+        "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+        "part": {
+          "id": "prt_1fea42f8a0013XlowcOl5r3UFY",
+          "messageID": "msg_1fea41ea5001sXG6Cgjs0iQVd6",
+          "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+          "type": "tool-request-delta",
+          "tool": "bash",
+          "callID": "call_f073939adb6a497b8ed43d20",
+          "state": {
+            "status": "pending",
+            "input": {
+              "command": "echo hi-alwaysask",
+              "description": "执行 echo 输出测试字符串"
+            },
+            "raw": ""
+          }
+        },
+        "time": 1795273535585
+      }
+    },
+    {
+      "type": "message.part.updated",
+      "properties": {
+        "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+        "part": {
+          "id": "prt_1fea42f8a0013XlowcOl5r3UFY",
+          "messageID": "msg_1fea41ea5001sXG6Cgjs0iQVd6",
+          "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+          "type": "tool",
+          "tool": "bash",
+          "callID": "call_f073939adb6a497b8ed43d20",
+          "state": {
+            "status": "running",
+            "input": {
+              "command": "echo hi-alwaysask",
+              "description": "执行 echo 输出测试字符串"
+            },
+            "time": {
+              "start": 1795273535589
+            }
+          }
+        },
+        "time": 1795273535589
+      }
+    },
+    {
+      "type": "message.part.updated",
+      "properties": {
+        "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+        "part": {
+          "id": "prt_1fea42f8a0013XlowcOl5r3UFY",
+          "messageID": "msg_1fea41ea5001sXG6Cgjs0iQVd6",
+          "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+          "type": "tool",
+          "tool": "bash",
+          "callID": "call_f073939adb6a497b8ed43d20",
+          "state": {
+            "metadata": {
+              "output": "",
+              "description": "执行 echo 输出测试字符串",
+              "sandbox": true
+            },
+            "status": "running",
+            "input": {
+              "command": "echo hi-alwaysask",
+              "description": "执行 echo 输出测试字符串"
+            },
+            "time": {
+              "start": 1795273535634
+            }
+          }
+        },
+        "time": 1795273535635
+      }
+    },
+    {
+      "type": "message.part.updated",
+      "properties": {
+        "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+        "part": {
+          "id": "prt_1fea42f8a0013XlowcOl5r3UFY",
+          "messageID": "msg_1fea41ea5001sXG6Cgjs0iQVd6",
+          "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+          "type": "tool",
+          "tool": "bash",
+          "callID": "call_f073939adb6a497b8ed43d20",
+          "state": {
+            "metadata": {
+              "output": "hi-alwaysask\n",
+              "description": "执行 echo 输出测试字符串",
+              "sandbox": true
+            },
+            "status": "running",
+            "input": {
+              "command": "echo hi-alwaysask",
+              "description": "执行 echo 输出测试字符串"
+            },
+            "time": {
+              "start": 1795273535838
+            }
+          }
+        },
+        "time": 1795273535838
+      }
+    },
+    {
+      "type": "message.part.updated",
+      "properties": {
+        "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+        "part": {
+          "id": "prt_1fea42f8a0013XlowcOl5r3UFY",
+          "messageID": "msg_1fea41ea5001sXG6Cgjs0iQVd6",
+          "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+          "type": "tool",
+          "tool": "bash",
+          "callID": "call_f073939adb6a497b8ed43d20",
+          "state": {
+            "status": "completed",
+            "input": {
+              "command": "echo hi-alwaysask",
+              "description": "执行 echo 输出测试字符串"
+            },
+            "output": "hi-alwaysask\n",
+            "metadata": {
+              "executeMode": "manual_mode",
+              "exit": 0,
+              "description": "执行 echo 输出测试字符串",
+              "sandbox": true,
+              "networkPolicy": "deny_all",
+              "executionTime": 0.074,
+              "truncated": false,
+              "timedOut": false
+            },
+            "title": "执行 echo 输出测试字符串 (Sandbox)",
+            "time": {
+              "start": 1795273535589,
+              "end": 1795273535847
+            }
+          }
+        },
+        "time": 1795273535847
+      }
+    },
+    {
+      "type": "message.part.updated",
+      "properties": {
+        "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+        "part": {
+          "id": "prt_1fea4316b0014kqMn48vLqArYl",
+          "reason": "tool-calls",
+          "messageID": "msg_1fea41ea5001sXG6Cgjs0iQVd6",
+          "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+          "type": "step-finish",
+          "tokens": {
+            "total": 16550,
+            "input": 9042,
+            "output": 62,
+            "reasoning": 22,
+            "cache": {
+              "write": 0,
+              "read": 7424
+            },
+            "context": {
+              "tools": 0,
+              "mcp": 0,
+              "messages": 822,
+              "skills": 0,
+              "system_prompts": 15728
+            }
+          },
+          "cost": 0
+        },
+        "time": 1795273535852
+      }
+    },
+    {
+      "type": "message.updated",
+      "properties": {
+        "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+        "info": {
+          "id": "msg_1fea41ea5001sXG6Cgjs0iQVd6",
+          "parentID": "msgperm_alwaysask",
+          "role": "assistant",
+          "mode": "build",
+          "agent": "build",
+          "path": {
+            "cwd": "C:\\Users\\hbk",
+            "root": "/"
+          },
+          "cost": 0,
+          "tokens": {
+            "total": 16550,
+            "input": 9042,
+            "output": 62,
+            "reasoning": 22,
+            "cache": {
+              "write": 0,
+              "read": 7424
+            },
+            "context": {
+              "tools": 0,
+              "mcp": 0,
+              "messages": 822,
+              "skills": 0,
+              "system_prompts": 15728
+            }
+          },
+          "modelID": "deepseek-v4.1-flash-1017",
+          "providerID": "huaweicloud-maas",
+          "time": {
+            "created": 1795273531045
+          },
+          "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+          "finish": "tool-calls"
+        }
+      }
+    },
+    {
+      "type": "session.updated",
+      "properties": {
+        "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+        "info": {
+          "id": "ses_e015be811ffe1mT9zK4rdBhRik",
+          "slug": "cosmic-wizard",
+          "projectID": "global",
+          "directory": "C:\\Users\\hbk",
+          "title": "perm-alwaysask",
+          "version": "26.11.11",
+          "summary": {
+            "additions": 0,
+            "deletions": 0,
+            "files": 0
+          },
+          "time": {
+            "created": 1795273529327,
+            "updated": 1795273535857
+          }
+        }
+      }
+    },
+    {
+      "type": "message.updated",
+      "properties": {
+        "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+        "info": {
+          "id": "msg_1fea41ea5001sXG6Cgjs0iQVd6",
+          "parentID": "msgperm_alwaysask",
+          "role": "assistant",
+          "mode": "build",
+          "agent": "build",
+          "path": {
+            "cwd": "C:\\Users\\hbk",
+            "root": "/"
+          },
+          "cost": 0,
+          "tokens": {
+            "total": 16550,
+            "input": 9042,
+            "output": 62,
+            "reasoning": 22,
+            "cache": {
+              "write": 0,
+              "read": 7424
+            },
+            "context": {
+              "tools": 0,
+              "mcp": 0,
+              "messages": 822,
+              "skills": 0,
+              "system_prompts": 15728
+            }
+          },
+          "modelID": "deepseek-v4.1-flash-1017",
+          "providerID": "huaweicloud-maas",
+          "time": {
+            "created": 1795273531045,
+            "completed": 1795273535863
+          },
+          "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+          "finish": "tool-calls"
+        }
+      }
+    },
+    {
+      "type": "session.status",
+      "properties": {
+        "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+        "status": {
+          "type": "busy"
+        }
+      }
+    },
+    {
+      "type": "session.diff",
+      "properties": {
+        "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+        "diff": []
+      }
+    },
+    {
+      "type": "message.updated",
+      "properties": {
+        "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+        "info": {
+          "role": "user",
+          "time": {
+            "created": 1795273530607
+          },
+          "agent": "build",
+          "model": {
+            "providerID": "huaweicloud-maas",
+            "modelID": "deepseek-v4.1-flash-1017"
+          },
+          "summary": {
+            "diffs": []
+          },
+          "id": "msgperm_alwaysask",
+          "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik"
+        }
+      }
+    },
+    {
+      "type": "message.updated",
+      "properties": {
+        "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+        "info": {
+          "id": "msg_1fea43189001CA1gTd7nxRQ2dB",
+          "parentID": "msgperm_alwaysask",
+          "role": "assistant",
+          "mode": "build",
+          "agent": "build",
+          "path": {
+            "cwd": "C:\\Users\\hbk",
+            "root": "/"
+          },
+          "cost": 0,
+          "tokens": {
+            "input": 0,
+            "output": 0,
+            "reasoning": 0,
+            "cache": {
+              "read": 0,
+              "write": 0
+            }
+          },
+          "modelID": "deepseek-v4.1-flash-1017",
+          "providerID": "huaweicloud-maas",
+          "time": {
+            "created": 1795273535881
+          },
+          "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik"
+        }
+      }
+    },
+    {
+      "type": "session.status",
+      "properties": {
+        "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+        "status": {
+          "type": "busy"
+        }
+      }
+    },
+    {
+      "type": "session.updated",
+      "properties": {
+        "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+        "info": {
+          "id": "ses_e015be811ffe1mT9zK4rdBhRik",
+          "slug": "cosmic-wizard",
+          "projectID": "global",
+          "directory": "C:\\Users\\hbk",
+          "title": "用bash执行echo命令测试输出",
+          "version": "26.11.11",
+          "summary": {
+            "additions": 0,
+            "deletions": 0,
+            "files": 0
+          },
+          "time": {
+            "created": 1795273529327,
+            "updated": 1795273536099
+          }
+        }
+      }
+    },
+    {
+      "type": "message.part.updated",
+      "properties": {
+        "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+        "part": {
+          "id": "prt_1fea43837001KCI0wCzDNzoOL8",
+          "messageID": "msg_1fea43189001CA1gTd7nxRQ2dB",
+          "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+          "type": "step-start"
+        },
+        "time": 1795273537591
+      }
+    },
+    {
+      "type": "message.part.updated",
+      "properties": {
+        "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+        "part": {
+          "id": "prt_1fea4383a001hBAgH34oe2m5ne",
+          "messageID": "msg_1fea43189001CA1gTd7nxRQ2dB",
+          "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+          "type": "text",
+          "text": "",
+          "time": {
+            "start": 1795273537594
+          }
+        },
+        "time": 1795273537595
+      }
+    },
+    {
+      "type": "message.part.delta",
+      "properties": {
+        "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+        "messageID": "msg_1fea43189001CA1gTd7nxRQ2dB",
+        "partID": "prt_1fea4383a001hBAgH34oe2m5ne",
+        "field": "text",
+        "delta": "命令已执行，输出为：\n\n"
+      }
+    },
+    {
+      "type": "message.part.delta",
+      "properties": {
+        "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+        "messageID": "msg_1fea43189001CA1gTd7nxRQ2dB",
+        "partID": "prt_1fea4383a001hBAgH34oe2m5ne",
+        "field": "text",
+        "delta": "```\nhi-alwaysask\n"
+      }
+    },
+    {
+      "type": "message.part.delta",
+      "properties": {
+        "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+        "messageID": "msg_1fea43189001CA1gTd7nxRQ2dB",
+        "partID": "prt_1fea4383a001hBAgH34oe2m5ne",
+        "field": "text",
+        "delta": "```"
+      }
+    },
+    {
+      "type": "message.part.updated",
+      "properties": {
+        "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+        "part": {
+          "id": "prt_1fea4383a001hBAgH34oe2m5ne",
+          "messageID": "msg_1fea43189001CA1gTd7nxRQ2dB",
+          "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+          "type": "text",
+          "text": "命令已执行，输出为：\n\n```\nhi-alwaysask\n```",
+          "time": {
+            "start": 1795273537902,
+            "end": 1795273537902
+          }
+        },
+        "time": 1795273537902
+      }
+    },
+    {
+      "type": "message.part.updated",
+      "properties": {
+        "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+        "part": {
+          "id": "prt_1fea43970001rhAY7vvR2U9kOZ",
+          "reason": "stop",
+          "messageID": "msg_1fea43189001CA1gTd7nxRQ2dB",
+          "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+          "type": "step-finish",
+          "tokens": {
+            "total": 16582,
+            "input": 182,
+            "output": 16,
+            "reasoning": 0,
+            "cache": {
+              "write": 0,
+              "read": 16384
+            },
+            "context": {
+              "tools": 43,
+              "mcp": 0,
+              "messages": 835,
+              "skills": 0,
+              "system_prompts": 15704
+            }
+          },
+          "cost": 0
+        },
+        "time": 1795273537905
+      }
+    },
+    {
+      "type": "message.updated",
+      "properties": {
+        "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+        "info": {
+          "id": "msg_1fea43189001CA1gTd7nxRQ2dB",
+          "parentID": "msgperm_alwaysask",
+          "role": "assistant",
+          "mode": "build",
+          "agent": "build",
+          "path": {
+            "cwd": "C:\\Users\\hbk",
+            "root": "/"
+          },
+          "cost": 0,
+          "tokens": {
+            "total": 16582,
+            "input": 182,
+            "output": 16,
+            "reasoning": 0,
+            "cache": {
+              "write": 0,
+              "read": 16384
+            },
+            "context": {
+              "tools": 43,
+              "mcp": 0,
+              "messages": 835,
+              "skills": 0,
+              "system_prompts": 15704
+            }
+          },
+          "modelID": "deepseek-v4.1-flash-1017",
+          "providerID": "huaweicloud-maas",
+          "time": {
+            "created": 1795273535881
+          },
+          "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+          "finish": "stop"
+        }
+      }
+    },
+    {
+      "type": "session.updated",
+      "properties": {
+        "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+        "info": {
+          "id": "ses_e015be811ffe1mT9zK4rdBhRik",
+          "slug": "cosmic-wizard",
+          "projectID": "global",
+          "directory": "C:\\Users\\hbk",
+          "title": "用bash执行echo命令测试输出",
+          "version": "26.11.11",
+          "summary": {
+            "additions": 0,
+            "deletions": 0,
+            "files": 0
+          },
+          "time": {
+            "created": 1795273529327,
+            "updated": 1795273537908
+          }
+        }
+      }
+    },
+    {
+      "type": "message.updated",
+      "properties": {
+        "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+        "info": {
+          "id": "msg_1fea43189001CA1gTd7nxRQ2dB",
+          "parentID": "msgperm_alwaysask",
+          "role": "assistant",
+          "mode": "build",
+          "agent": "build",
+          "path": {
+            "cwd": "C:\\Users\\hbk",
+            "root": "/"
+          },
+          "cost": 0,
+          "tokens": {
+            "total": 16582,
+            "input": 182,
+            "output": 16,
+            "reasoning": 0,
+            "cache": {
+              "write": 0,
+              "read": 16384
+            },
+            "context": {
+              "tools": 43,
+              "mcp": 0,
+              "messages": 835,
+              "skills": 0,
+              "system_prompts": 15704
+            }
+          },
+          "modelID": "deepseek-v4.1-flash-1017",
+          "providerID": "huaweicloud-maas",
+          "time": {
+            "created": 1795273535881,
+            "completed": 1795273537913
+          },
+          "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+          "finish": "stop"
+        }
+      }
+    },
+    {
+      "type": "session.status",
+      "properties": {
+        "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+        "status": {
+          "type": "busy"
+        }
+      }
+    },
+    {
+      "type": "session.status",
+      "properties": {
+        "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+        "status": {
+          "type": "idle"
+        }
+      }
+    },
+    {
+      "type": "session.idle",
+      "properties": {
+        "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik"
+      }
+    },
+    {
+      "type": "session.diff",
+      "properties": {
+        "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+        "diff": []
+      }
+    },
+    {
+      "type": "message.updated",
+      "properties": {
+        "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik",
+        "info": {
+          "role": "user",
+          "time": {
+            "created": 1795273530607
+          },
+          "agent": "build",
+          "model": {
+            "providerID": "huaweicloud-maas",
+            "modelID": "deepseek-v4.1-flash-1017"
+          },
+          "summary": {
+            "diffs": []
+          },
+          "id": "msgperm_alwaysask",
+          "sessionID": "ses_e015be811ffe1mT9zK4rdBhRik"
+        }
+      }
+    }
+  ]
+}

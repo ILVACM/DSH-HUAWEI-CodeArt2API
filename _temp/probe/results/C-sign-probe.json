@@ -1,0 +1,5 @@
+{
+  "status": 401,
+  "body": "{\"error_msg\":\"Incorrect IAM authentication information: Unauthorized\",\"error_code\":\"APIG.0301\",\"request_id\":\"f490681bef58494c796be4a099e29e23\"}\n",
+  "expired": "2026-11-20T11:07:29.765Z"
+}

@@ -1,0 +1,68 @@
+{
+  "sessions": [
+    "ses_e013eeb36ffe14l0GzxXA2IMGV",
+    "ses_e013eeb25ffehSvkLtzit5QowC",
+    "ses_e013eeb14ffeUIPyMXUf0if4Js"
+  ],
+  "words": [
+    "苹果",
+    "香蕉",
+    "橙子"
+  ],
+  "bySession": {
+    "ses_e013eeb36ffe14l0GzxXA2IMGV": {
+      "eventCount": 28,
+      "types": [
+        "message.updated",
+        "message.part.updated",
+        "session.updated",
+        "session.status",
+        "session.diff",
+        "message.part.delta",
+        "session.idle"
+      ],
+      "texts": "",
+      "models": [
+        "deepseek-v4.1-flash-1017",
+        "deepseek-v4.1-flash-1017",
+        "deepseek-v4.1-flash-1017"
+      ]
+    },
+    "ses_e013eeb25ffehSvkLtzit5QowC": {
+      "eventCount": 24,
+      "types": [
+        "message.updated",
+        "message.part.updated",
+        "session.updated",
+        "session.status",
+        "session.diff",
+        "message.part.delta",
+        "session.idle"
+      ],
+      "texts": "",
+      "models": [
+        "deepseek-v4.1-flash-1017",
+        "deepseek-v4.1-flash-1017",
+        "deepseek-v4.1-flash-1017"
+      ]
+    },
+    "ses_e013eeb14ffeUIPyMXUf0if4Js": {
+      "eventCount": 28,
+      "types": [
+        "message.updated",
+        "message.part.updated",
+        "session.updated",
+        "session.status",
+        "session.diff",
+        "message.part.delta",
+        "session.idle"
+      ],
+      "texts": "",
+      "models": [
+        "deepseek-v4.1-flash-1017",
+        "deepseek-v4.1-flash-1017",
+        "deepseek-v4.1-flash-1017"
+      ]
+    }
+  }
+}

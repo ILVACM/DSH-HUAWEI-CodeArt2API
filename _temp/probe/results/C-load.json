@@ -1,0 +1,38 @@
+{
+  "sessions": [
+    "ses_e01286cc3ffebXo47p89ERIscm",
+    "ses_e01286cb5ffePZAAdOGEA3EAaC",
+    "ses_e01286ca6ffeK7Iv53OXoW2M6S",
+    "ses_e01286c9effetK3M4BKgmP90gO",
+    "ses_e01286c97ffeCUyGE0lnCfCoWl",
+    "ses_e01286c87ffeh9GhosC02a02gc",
+    "ses_e01286c78fferg7wS8BS5WYwLB",
+    "ses_e01286c69ffeDliN3RkpGyHcrt"
+  ],
+  "promptStatuses": [
+    204,
+    204,
+    204,
+    204,
+    204,
+    204,
+    204,
+    204
+  ],
+  "eventTypes": {
+    "server.connected": 1,
+    "message.updated": 28,
+    "message.part.updated": 16,
+    "session.updated": 18,
+    "session.status": 24,
+    "session.diff": 8,
+    "session.error": 4,
+    "session.idle": 8
+  },
+  "errors": [
+    "APIError:并发会话数已达上限(3个)，请关闭部分会话后重试。",
+    "APIError:并发会话数已达上限(3个)，请关闭部分会话后重试。",
+    "APIError:并发会话数已达上限(3个)，请关闭部分会话后重试。",
+    "APIError:并发会话数已达上限(3个)，请关闭部分会话后重试。"
+  ]
+}

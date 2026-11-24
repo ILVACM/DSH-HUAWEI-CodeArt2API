@@ -1,0 +1,1472 @@
+{
+  "summary": {
+    "label": "webfetch-allow",
+    "permPatch": {
+      "webfetch": "allow",
+      "websearch": "allow"
+    },
+    "prompt": "请用 webfetch 工具抓取 https://example.com 并总结内容。如果失败请说明。",
+    "reply": "none",
+    "session": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+    "eventTypes": {
+      "server.connected": 1,
+      "message.updated": 14,
+      "message.part.updated": 24,
+      "session.updated": 6,
+      "session.status": 8,
+      "tui.toast.show": 1,
+      "session.diff": 4,
+      "message.part.delta": 15,
+      "server.heartbeat": 1,
+      "session.idle": 1
+    },
+    "asked": [],
+    "toolParts": [
+      {
+        "tool": "tool_describe",
+        "status": "pending"
+      },
+      {
+        "tool": "tool_describe",
+        "status": "running"
+      },
+      {
+        "tool": "tool_describe",
+        "status": "completed",
+        "output": "{\n  \"name\": \"webfetch\",\n  \"type\": \"builtin\",\n  \"category\": \"Web\",\n  \"description\": \"Fetch content from a URL and convert it to the requested format (markdown by default). Use this tool when you need to retrieve and analyze web content.\\n\\nUsage notes:\\n- The URL must be a fully-formed valid URL\\n- HTTP URLs will be automatically upgraded to HTTPS\\n- Format options: \\\"markdown\\\" (default), \\\"text\\\", or \\\"html\\\"\\n- This tool is read-only and does not modify any files\\n- Results may be summarized if the content is very large\\n\",\n  \"parameters\": {\n    \"$schema\": \"https://json-schema.org/draft/2020-12/schema\",\n    \"type\": \"object\",\n    \"properties\": {\n      \"url\": {\n        \"description\": \"The URL to fetch content from\",\n        \"type\": \"string\"\n      },\n      \"format\": {\n        \"description\": \"The format to return the content in (text, markdown, or html). Defaults to markdown.\",\n        \"default\": \"markdown\",\n        \"type\": \"string\",\n        \"enum\": [\n          \"text\",\n          \"markdown\",\n          \"html\"\n        ]\n      },\n      \"timeout\": {\n        \"description\": \"Optional timeout in seconds (max 120)\",\n        \"type\": \"number\"\n      }\n    },\n    \"required\": [\n      \"url\",\n      \"format\"\n    ],\n    \"additionalProperties\": false\n  },\n  \"inputSchema\": {\n    \"$schema\": \"https://json-schema.org/draft/2020-12/schema\",\n    \"type\": \"object\",\n    \"properties\": {\n      \"url\": {\n        \"description\": \"The URL to fetch content from\",\n        \"type\": \"string\"\n      },\n      \"format\": {\n        \"description\": \"The format to return the content in (text, markdown, or html). Defaults to markdown.\",\n        \"default\": \"markdown\",\n        \"type\": \"string\",\n        \"enum\": [\n          \"text\",\n          \"markdown\",\n          \"html\"\n        ]\n      },\n      \"timeout\": {\n        \"description\": \"Optional timeout in seconds (max 120)\",\n        \"type\": \"number\"\n      }\n    },\n    \"required\": [\n      \"url\",\n      \"format\"\n    ],\n    \"additionalProperties\": false\n  },\n  \"hint\": \"Call this tool via tool_call(\\\"webfetch\\\", args) with the schema above. If you already have its schema from a previous tool_describe in this conversation, call tool_call directly without re-describing.\"\n}"
+      },
+      {
+        "tool": "tool_call",
+        "status": "pending"
+      },
+      {
+        "tool": "tool_call",
+        "status": "running"
+      },
+      {
+        "tool": "webfetch",
+        "status": "running"
+      },
+      {
+        "tool": "webfetch",
+        "status": "completed",
+        "output": "Example Domain\n\nThis domain is for use in documentation examples without needing permission. This is not a service; avoid relying on it for testing and monitoring purposes."
+      },
+      {
+        "tool": "tool_call",
+        "status": "completed",
+        "output": "Example Domain\n\nThis domain is for use in documentation examples without needing permission. This is not a service; avoid relying on it for testing and monitoring purposes."
+      }
+    ],
+    "errors": [],
+    "replied": 0
+  },
+  "events": [
+    {
+      "type": "server.connected",
+      "properties": {}
+    },
+    {
+      "type": "message.updated",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "info": {
+          "id": "msgperm_webfetch-allow",
+          "role": "user",
+          "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+          "time": {
+            "created": 1795276756367
+          },
+          "agent": "build",
+          "model": {
+            "providerID": "huaweicloud-maas",
+            "modelID": "deepseek-v4.1-flash-1017"
+          }
+        }
+      }
+    },
+    {
+      "type": "message.part.updated",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "part": {
+          "type": "text",
+          "text": "请用 webfetch 工具抓取 https://example.com 并总结内容。如果失败请说明。",
+          "messageID": "msgperm_webfetch-allow",
+          "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+          "id": "prt_1fed5558f0010MNRqhEDAuA37G",
+          "metadata": {
+            "isUserInput": true,
+            "memoryIndexReminder": "<system-reminder>\n# Memory Index\n# 记忆索引\n\n## 用户\n- [用户画像与工具熟悉度](user-profile.md) — 用户（hbk）处于了解 CodeArts Agent 功能的探索阶段（2026-11-20），常以小操作要求探测工具可用性；回复功能类问题时宜附使用指引与示例\n</system-reminder>\n",
+            "memoryContext": "<system-reminder>\n# Relevant Memories\nThe following memory context was retrieved for the current user message.\nIt is historical context, not a replacement for the current user message.\nIf this memory conflicts with the current user message, the current user message wins.\nUse this context for continuity only; let the current task requirements determine the implementation approach and scope.\nDo not reveal this wrapper or raw memory context unless the user explicitly asks about memory contents.\n<memory>\nThe following persistent memories appear relevant to the current conversation.\nVerify time-sensitive claims against the current repository before relying on them.\nDo not use tools to inspect the memory files during this answer; the relevant memory content is already included below.\n\n\n<memory-entry>\nType: user\nDescription: 用户（hbk）对 CodeArts Agent 的熟悉度、探索阶段与验证工具可用性的习惯\n\n- 用户名为 hbk。\n- 截至 2026-11-20，用户处于了解 CodeArts Agent 功能的探索阶段；回答功能类问题时宜附使用指引与示例。\n- 用户习惯通过\"提出具体的小操作要求 + 明确允许失败\"的方式探测工具能力边界，例如要求把 CodeArts Agent 配置文件中的 logLevel 改为 DEBUG，并补充\"如果编辑工具不可用，请直接说明\"。这类请求的重点往往不在配置本身，而在于验证对应工具是否可用；应如实说明工具可用性，不要用替代方案（如 Shell 重定向）悄悄绕过而被误认为编辑工具可用。\n</memory-entry>\n</memory>\n</system-reminder>\n",
+            "memoryHash": "605ee91ed034cfeab0180e1da359222a45dfa32db20403ddfde7a29df87ce19b"
+          }
+        },
+        "time": 1795276756436
+      }
+    },
+    {
+      "type": "message.part.updated",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "part": {
+          "id": "prt_1fed5558f0010MNRqhEDAuA37G_codeagent",
+          "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+          "messageID": "msgperm_webfetch-allow",
+          "type": "text",
+          "text": "<system-reminder>重要提示：你必须使用简体中文回复，包括内部思考和推理过程也必须使用简体中文。即使用户用英文提问，也必须用简体中文回复。</system-reminder>",
+          "synthetic": true
+        },
+        "time": 1795276756437
+      }
+    },
+    {
+      "type": "session.updated",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "info": {
+          "id": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+          "slug": "sunny-falcon",
+          "projectID": "global",
+          "directory": "C:\\Users\\hbk",
+          "title": "perm-webfetch-allow",
+          "version": "26.11.11",
+          "time": {
+            "created": 1795276755118,
+            "updated": 1795276756438
+          }
+        }
+      }
+    },
+    {
+      "type": "session.status",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "status": {
+          "type": "busy"
+        }
+      }
+    },
+    {
+      "type": "tui.toast.show",
+      "properties": {
+        "message": "Initializing MCP server...",
+        "variant": "info",
+        "duration": 30000
+      }
+    },
+    {
+      "type": "message.updated",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "info": {
+          "id": "msg_1fed556b8001H4W1g6dhlszYYt",
+          "parentID": "msgperm_webfetch-allow",
+          "role": "assistant",
+          "mode": "build",
+          "agent": "build",
+          "path": {
+            "cwd": "C:\\Users\\hbk",
+            "root": "/"
+          },
+          "cost": 0,
+          "tokens": {
+            "input": 0,
+            "output": 0,
+            "reasoning": 0,
+            "cache": {
+              "read": 0,
+              "write": 0
+            }
+          },
+          "modelID": "deepseek-v4.1-flash-1017",
+          "providerID": "huaweicloud-maas",
+          "time": {
+            "created": 1795276756664
+          },
+          "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD"
+        }
+      }
+    },
+    {
+      "type": "session.updated",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "info": {
+          "id": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+          "slug": "sunny-falcon",
+          "projectID": "global",
+          "directory": "C:\\Users\\hbk",
+          "title": "perm-webfetch-allow",
+          "version": "26.11.11",
+          "summary": {
+            "additions": 0,
+            "deletions": 0,
+            "files": 0
+          },
+          "time": {
+            "created": 1795276755118,
+            "updated": 1795276756688
+          }
+        }
+      }
+    },
+    {
+      "type": "session.diff",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "diff": []
+      }
+    },
+    {
+      "type": "message.updated",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "info": {
+          "role": "user",
+          "time": {
+            "created": 1795276756367
+          },
+          "agent": "build",
+          "model": {
+            "providerID": "huaweicloud-maas",
+            "modelID": "deepseek-v4.1-flash-1017"
+          },
+          "id": "msgperm_webfetch-allow",
+          "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+          "summary": {
+            "diffs": []
+          }
+        }
+      }
+    },
+    {
+      "type": "session.status",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "status": {
+          "type": "busy"
+        }
+      }
+    },
+    {
+      "type": "session.updated",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "info": {
+          "id": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+          "slug": "sunny-falcon",
+          "projectID": "global",
+          "directory": "C:\\Users\\hbk",
+          "title": "抓取 example.com 并总结内容",
+          "version": "26.11.11",
+          "summary": {
+            "additions": 0,
+            "deletions": 0,
+            "files": 0
+          },
+          "time": {
+            "created": 1795276755118,
+            "updated": 1795276760809
+          }
+        }
+      }
+    },
+    {
+      "type": "message.part.updated",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "part": {
+          "id": "prt_1fed56820001utj5S2u0xwE9ip",
+          "messageID": "msg_1fed556b8001H4W1g6dhlszYYt",
+          "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+          "type": "step-start"
+        },
+        "time": 1795276761120
+      }
+    },
+    {
+      "type": "message.part.updated",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "part": {
+          "id": "prt_1fed56821001DdNfNFydmicfro",
+          "messageID": "msg_1fed556b8001H4W1g6dhlszYYt",
+          "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+          "type": "reasoning",
+          "text": "",
+          "time": {
+            "start": 1795276761121
+          }
+        },
+        "time": 1795276761121
+      }
+    },
+    {
+      "type": "message.part.delta",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "messageID": "msg_1fed556b8001H4W1g6dhlszYYt",
+        "partID": "prt_1fed56821001DdNfNFydmicfro",
+        "field": "text",
+        "delta": "用户"
+      }
+    },
+    {
+      "type": "message.part.delta",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "messageID": "msg_1fed556b8001H4W1g6dhlszYYt",
+        "partID": "prt_1fed56821001DdNfNFydmicfro",
+        "field": "text",
+        "delta": "要求用 webfetch 工具抓取 https://example.com 并总结内容。我需要先 tool_describe 加载 schema，然后 tool_call 执行。"
+      }
+    },
+    {
+      "type": "message.part.updated",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "part": {
+          "id": "prt_1fed56821001DdNfNFydmicfro",
+          "messageID": "msg_1fed556b8001H4W1g6dhlszYYt",
+          "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+          "type": "reasoning",
+          "text": "用户要求用 webfetch 工具抓取 https://example.com 并总结内容。我需要先 tool_describe 加载 schema，然后 tool_call 执行。",
+          "time": {
+            "start": 1795276761121,
+            "end": 1795276761337
+          }
+        },
+        "time": 1795276761337
+      }
+    },
+    {
+      "type": "message.part.updated",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "part": {
+          "id": "prt_1fed568fa001IlirKePixUQoiw",
+          "messageID": "msg_1fed556b8001H4W1g6dhlszYYt",
+          "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+          "type": "tool",
+          "tool": "tool_describe",
+          "callID": "call_e8861e412132488cb0c3ca28",
+          "state": {
+            "status": "pending",
+            "input": {},
+            "raw": ""
+          }
+        },
+        "time": 1795276761338
+      }
+    },
+    {
+      "type": "message.part.updated",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "part": {
+          "id": "prt_1fed568fa001IlirKePixUQoiw",
+          "messageID": "msg_1fed556b8001H4W1g6dhlszYYt",
+          "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+          "type": "tool-request-delta",
+          "tool": "tool_describe",
+          "callID": "call_e8861e412132488cb0c3ca28",
+          "state": {
+            "status": "pending",
+            "input": {
+              "id": "webfetch"
+            },
+            "raw": ""
+          }
+        },
+        "time": 1795276761403
+      }
+    },
+    {
+      "type": "message.part.updated",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "part": {
+          "id": "prt_1fed568fa001IlirKePixUQoiw",
+          "messageID": "msg_1fed556b8001H4W1g6dhlszYYt",
+          "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+          "type": "tool",
+          "tool": "tool_describe",
+          "callID": "call_e8861e412132488cb0c3ca28",
+          "state": {
+            "status": "running",
+            "input": {
+              "id": "webfetch"
+            },
+            "time": {
+              "start": 1795276761405
+            }
+          }
+        },
+        "time": 1795276761405
+      }
+    },
+    {
+      "type": "message.part.updated",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "part": {
+          "id": "prt_1fed568fa001IlirKePixUQoiw",
+          "messageID": "msg_1fed556b8001H4W1g6dhlszYYt",
+          "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+          "type": "tool",
+          "tool": "tool_describe",
+          "callID": "call_e8861e412132488cb0c3ca28",
+          "state": {
+            "status": "completed",
+            "input": {
+              "id": "webfetch"
+            },
+            "output": "{\n  \"name\": \"webfetch\",\n  \"type\": \"builtin\",\n  \"category\": \"Web\",\n  \"description\": \"Fetch content from a URL and convert it to the requested format (markdown by default). Use this tool when you need to retrieve and analyze web content.\\n\\nUsage notes:\\n- The URL must be a fully-formed valid URL\\n- HTTP URLs will be automatically upgraded to HTTPS\\n- Format options: \\\"markdown\\\" (default), \\\"text\\\", or \\\"html\\\"\\n- This tool is read-only and does not modify any files\\n- Results may be summarized if the content is very large\\n\",\n  \"parameters\": {\n    \"$schema\": \"https://json-schema.org/draft/2020-12/schema\",\n    \"type\": \"object\",\n    \"properties\": {\n      \"url\": {\n        \"description\": \"The URL to fetch content from\",\n        \"type\": \"string\"\n      },\n      \"format\": {\n        \"description\": \"The format to return the content in (text, markdown, or html). Defaults to markdown.\",\n        \"default\": \"markdown\",\n        \"type\": \"string\",\n        \"enum\": [\n          \"text\",\n          \"markdown\",\n          \"html\"\n        ]\n      },\n      \"timeout\": {\n        \"description\": \"Optional timeout in seconds (max 120)\",\n        \"type\": \"number\"\n      }\n    },\n    \"required\": [\n      \"url\",\n      \"format\"\n    ],\n    \"additionalProperties\": false\n  },\n  \"inputSchema\": {\n    \"$schema\": \"https://json-schema.org/draft/2020-12/schema\",\n    \"type\": \"object\",\n    \"properties\": {\n      \"url\": {\n        \"description\": \"The URL to fetch content from\",\n        \"type\": \"string\"\n      },\n      \"format\": {\n        \"description\": \"The format to return the content in (text, markdown, or html). Defaults to markdown.\",\n        \"default\": \"markdown\",\n        \"type\": \"string\",\n        \"enum\": [\n          \"text\",\n          \"markdown\",\n          \"html\"\n        ]\n      },\n      \"timeout\": {\n        \"description\": \"Optional timeout in seconds (max 120)\",\n        \"type\": \"number\"\n      }\n    },\n    \"required\": [\n      \"url\",\n      \"format\"\n    ],\n    \"additionalProperties\": false\n  },\n  \"hint\": \"Call this tool via tool_call(\\\"webfetch\\\", args) with the schema above. If you already have its schema from a previous tool_describe in this conversation, call tool_call directly without re-describing.\"\n}",
+            "metadata": {
+              "truncated": false
+            },
+            "title": "",
+            "time": {
+              "start": 1795276761405,
+              "end": 1795276761415
+            }
+          }
+        },
+        "time": 1795276761415
+      }
+    },
+    {
+      "type": "message.part.updated",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "part": {
+          "id": "prt_1fed56a6f001rnFp9YCP5vobfN",
+          "reason": "tool-calls",
+          "messageID": "msg_1fed556b8001H4W1g6dhlszYYt",
+          "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+          "type": "step-finish",
+          "tokens": {
+            "total": 15861,
+            "input": 935,
+            "output": 42,
+            "reasoning": 36,
+            "cache": {
+              "write": 0,
+              "read": 14848
+            },
+            "context": {
+              "tools": 0,
+              "mcp": 0,
+              "messages": 825,
+              "skills": 0,
+              "system_prompts": 15036
+            }
+          },
+          "cost": 0
+        },
+        "time": 1795276761712
+      }
+    },
+    {
+      "type": "message.updated",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "info": {
+          "id": "msg_1fed556b8001H4W1g6dhlszYYt",
+          "parentID": "msgperm_webfetch-allow",
+          "role": "assistant",
+          "mode": "build",
+          "agent": "build",
+          "path": {
+            "cwd": "C:\\Users\\hbk",
+            "root": "/"
+          },
+          "cost": 0,
+          "tokens": {
+            "total": 15861,
+            "input": 935,
+            "output": 42,
+            "reasoning": 36,
+            "cache": {
+              "write": 0,
+              "read": 14848
+            },
+            "context": {
+              "tools": 0,
+              "mcp": 0,
+              "messages": 825,
+              "skills": 0,
+              "system_prompts": 15036
+            }
+          },
+          "modelID": "deepseek-v4.1-flash-1017",
+          "providerID": "huaweicloud-maas",
+          "time": {
+            "created": 1795276756664
+          },
+          "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+          "finish": "tool-calls"
+        }
+      }
+    },
+    {
+      "type": "session.updated",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "info": {
+          "id": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+          "slug": "sunny-falcon",
+          "projectID": "global",
+          "directory": "C:\\Users\\hbk",
+          "title": "抓取 example.com 并总结内容",
+          "version": "26.11.11",
+          "summary": {
+            "additions": 0,
+            "deletions": 0,
+            "files": 0
+          },
+          "time": {
+            "created": 1795276755118,
+            "updated": 1795276761716
+          }
+        }
+      }
+    },
+    {
+      "type": "message.updated",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "info": {
+          "id": "msg_1fed556b8001H4W1g6dhlszYYt",
+          "parentID": "msgperm_webfetch-allow",
+          "role": "assistant",
+          "mode": "build",
+          "agent": "build",
+          "path": {
+            "cwd": "C:\\Users\\hbk",
+            "root": "/"
+          },
+          "cost": 0,
+          "tokens": {
+            "total": 15861,
+            "input": 935,
+            "output": 42,
+            "reasoning": 36,
+            "cache": {
+              "write": 0,
+              "read": 14848
+            },
+            "context": {
+              "tools": 0,
+              "mcp": 0,
+              "messages": 825,
+              "skills": 0,
+              "system_prompts": 15036
+            }
+          },
+          "modelID": "deepseek-v4.1-flash-1017",
+          "providerID": "huaweicloud-maas",
+          "time": {
+            "created": 1795276756664,
+            "completed": 1795276761719
+          },
+          "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+          "finish": "tool-calls"
+        }
+      }
+    },
+    {
+      "type": "session.status",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "status": {
+          "type": "busy"
+        }
+      }
+    },
+    {
+      "type": "session.diff",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "diff": []
+      }
+    },
+    {
+      "type": "message.updated",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "info": {
+          "role": "user",
+          "time": {
+            "created": 1795276756367
+          },
+          "agent": "build",
+          "model": {
+            "providerID": "huaweicloud-maas",
+            "modelID": "deepseek-v4.1-flash-1017"
+          },
+          "summary": {
+            "diffs": []
+          },
+          "id": "msgperm_webfetch-allow",
+          "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD"
+        }
+      }
+    },
+    {
+      "type": "message.updated",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "info": {
+          "id": "msg_1fed56a82001ldDvR5Wi0Yrg95",
+          "parentID": "msgperm_webfetch-allow",
+          "role": "assistant",
+          "mode": "build",
+          "agent": "build",
+          "path": {
+            "cwd": "C:\\Users\\hbk",
+            "root": "/"
+          },
+          "cost": 0,
+          "tokens": {
+            "input": 0,
+            "output": 0,
+            "reasoning": 0,
+            "cache": {
+              "read": 0,
+              "write": 0
+            }
+          },
+          "modelID": "deepseek-v4.1-flash-1017",
+          "providerID": "huaweicloud-maas",
+          "time": {
+            "created": 1795276761730
+          },
+          "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD"
+        }
+      }
+    },
+    {
+      "type": "session.status",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "status": {
+          "type": "busy"
+        }
+      }
+    },
+    {
+      "type": "message.part.updated",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "part": {
+          "id": "prt_1fed57282001KLdnmJxEPvI2VP",
+          "messageID": "msg_1fed56a82001ldDvR5Wi0Yrg95",
+          "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+          "type": "step-start"
+        },
+        "time": 1795276763778
+      }
+    },
+    {
+      "type": "message.part.updated",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "part": {
+          "id": "prt_1fed57283001aXrmKwxlLF4Yxf",
+          "messageID": "msg_1fed56a82001ldDvR5Wi0Yrg95",
+          "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+          "type": "tool",
+          "tool": "tool_call",
+          "callID": "call_2f993b9486d44bc6bb89df05",
+          "state": {
+            "status": "pending",
+            "input": {},
+            "raw": ""
+          }
+        },
+        "time": 1795276763779
+      }
+    },
+    {
+      "type": "message.part.updated",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "part": {
+          "id": "prt_1fed57283001aXrmKwxlLF4Yxf",
+          "messageID": "msg_1fed56a82001ldDvR5Wi0Yrg95",
+          "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+          "type": "tool-request-delta",
+          "tool": "tool_call",
+          "callID": "call_2f993b9486d44bc6bb89df05",
+          "state": {
+            "status": "pending",
+            "input": {
+              "id": "webfetch",
+              "args": {
+                "url": "https://example.com",
+                "format": "markdown",
+                "timeout": 30
+              }
+            },
+            "raw": ""
+          }
+        },
+        "time": 1795276763809
+      }
+    },
+    {
+      "type": "message.part.updated",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "part": {
+          "id": "prt_1fed57283001aXrmKwxlLF4Yxf",
+          "messageID": "msg_1fed56a82001ldDvR5Wi0Yrg95",
+          "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+          "type": "tool",
+          "tool": "tool_call",
+          "callID": "call_2f993b9486d44bc6bb89df05",
+          "state": {
+            "status": "running",
+            "input": {
+              "id": "webfetch",
+              "args": {
+                "url": "https://example.com",
+                "format": "markdown",
+                "timeout": 30
+              }
+            },
+            "time": {
+              "start": 1795276763810
+            }
+          }
+        },
+        "time": 1795276763810
+      }
+    },
+    {
+      "type": "message.part.updated",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "part": {
+          "id": "prt_1fed572a5001NTQK5Zu7e9XYsc",
+          "messageID": "msg_1fed56a82001ldDvR5Wi0Yrg95",
+          "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+          "type": "tool",
+          "tool": "webfetch",
+          "callID": "prt_1fed572a5001NTQK5Zu7e9XYsc",
+          "state": {
+            "status": "running",
+            "input": {
+              "url": "https://example.com",
+              "format": "markdown",
+              "timeout": 30
+            },
+            "time": {
+              "start": 1795276763813
+            }
+          }
+        },
+        "time": 1795276763815
+      }
+    },
+    {
+      "type": "message.part.updated",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "part": {
+          "id": "prt_1fed572a5001NTQK5Zu7e9XYsc",
+          "messageID": "msg_1fed56a82001ldDvR5Wi0Yrg95",
+          "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+          "type": "tool",
+          "tool": "webfetch",
+          "callID": "prt_1fed572a5001NTQK5Zu7e9XYsc",
+          "state": {
+            "status": "completed",
+            "input": {
+              "url": "https://example.com",
+              "format": "markdown",
+              "timeout": 30
+            },
+            "output": "Example Domain\n\nThis domain is for use in documentation examples without needing permission. This is not a service; avoid relying on it for testing and monitoring purposes.",
+            "title": "https://example.com (text/html; charset=utf-8)",
+            "metadata": {
+              "truncated": false
+            },
+            "time": {
+              "start": 1795276763813,
+              "end": 1795276764793
+            }
+          }
+        },
+        "time": 1795276764794
+      }
+    },
+    {
+      "type": "message.part.updated",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "part": {
+          "id": "prt_1fed57283001aXrmKwxlLF4Yxf",
+          "messageID": "msg_1fed56a82001ldDvR5Wi0Yrg95",
+          "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+          "type": "tool",
+          "tool": "tool_call",
+          "callID": "call_2f993b9486d44bc6bb89df05",
+          "state": {
+            "status": "completed",
+            "input": {
+              "id": "webfetch",
+              "args": {
+                "url": "https://example.com",
+                "format": "markdown",
+                "timeout": 30
+              }
+            },
+            "output": "Example Domain\n\nThis domain is for use in documentation examples without needing permission. This is not a service; avoid relying on it for testing and monitoring purposes.",
+            "metadata": {
+              "truncated": false
+            },
+            "title": "",
+            "time": {
+              "start": 1795276763810,
+              "end": 1795276764797
+            }
+          }
+        },
+        "time": 1795276764797
+      }
+    },
+    {
+      "type": "message.part.updated",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "part": {
+          "id": "prt_1fed5767e0015skTm7n5mhqGHL",
+          "reason": "tool-calls",
+          "messageID": "msg_1fed56a82001ldDvR5Wi0Yrg95",
+          "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+          "type": "step-finish",
+          "tokens": {
+            "total": 16512,
+            "input": 1586,
+            "output": 78,
+            "reasoning": 0,
+            "cache": {
+              "write": 0,
+              "read": 14848
+            },
+            "context": {
+              "tools": 867,
+              "mcp": 0,
+              "messages": 671,
+              "skills": 0,
+              "system_prompts": 14974
+            }
+          },
+          "cost": 0
+        },
+        "time": 1795276764798
+      }
+    },
+    {
+      "type": "message.updated",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "info": {
+          "id": "msg_1fed56a82001ldDvR5Wi0Yrg95",
+          "parentID": "msgperm_webfetch-allow",
+          "role": "assistant",
+          "mode": "build",
+          "agent": "build",
+          "path": {
+            "cwd": "C:\\Users\\hbk",
+            "root": "/"
+          },
+          "cost": 0,
+          "tokens": {
+            "total": 16512,
+            "input": 1586,
+            "output": 78,
+            "reasoning": 0,
+            "cache": {
+              "write": 0,
+              "read": 14848
+            },
+            "context": {
+              "tools": 867,
+              "mcp": 0,
+              "messages": 671,
+              "skills": 0,
+              "system_prompts": 14974
+            }
+          },
+          "modelID": "deepseek-v4.1-flash-1017",
+          "providerID": "huaweicloud-maas",
+          "time": {
+            "created": 1795276761730
+          },
+          "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+          "finish": "tool-calls"
+        }
+      }
+    },
+    {
+      "type": "session.updated",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "info": {
+          "id": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+          "slug": "sunny-falcon",
+          "projectID": "global",
+          "directory": "C:\\Users\\hbk",
+          "title": "抓取 example.com 并总结内容",
+          "version": "26.11.11",
+          "summary": {
+            "additions": 0,
+            "deletions": 0,
+            "files": 0
+          },
+          "time": {
+            "created": 1795276755118,
+            "updated": 1795276764801
+          }
+        }
+      }
+    },
+    {
+      "type": "message.updated",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "info": {
+          "id": "msg_1fed56a82001ldDvR5Wi0Yrg95",
+          "parentID": "msgperm_webfetch-allow",
+          "role": "assistant",
+          "mode": "build",
+          "agent": "build",
+          "path": {
+            "cwd": "C:\\Users\\hbk",
+            "root": "/"
+          },
+          "cost": 0,
+          "tokens": {
+            "total": 16512,
+            "input": 1586,
+            "output": 78,
+            "reasoning": 0,
+            "cache": {
+              "write": 0,
+              "read": 14848
+            },
+            "context": {
+              "tools": 867,
+              "mcp": 0,
+              "messages": 671,
+              "skills": 0,
+              "system_prompts": 14974
+            }
+          },
+          "modelID": "deepseek-v4.1-flash-1017",
+          "providerID": "huaweicloud-maas",
+          "time": {
+            "created": 1795276761730,
+            "completed": 1795276764804
+          },
+          "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+          "finish": "tool-calls"
+        }
+      }
+    },
+    {
+      "type": "session.status",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "status": {
+          "type": "busy"
+        }
+      }
+    },
+    {
+      "type": "session.diff",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "diff": []
+      }
+    },
+    {
+      "type": "message.updated",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "info": {
+          "role": "user",
+          "time": {
+            "created": 1795276756367
+          },
+          "agent": "build",
+          "model": {
+            "providerID": "huaweicloud-maas",
+            "modelID": "deepseek-v4.1-flash-1017"
+          },
+          "summary": {
+            "diffs": []
+          },
+          "id": "msgperm_webfetch-allow",
+          "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD"
+        }
+      }
+    },
+    {
+      "type": "message.updated",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "info": {
+          "id": "msg_1fed57692001TEAk77yRkODXRu",
+          "parentID": "msgperm_webfetch-allow",
+          "role": "assistant",
+          "mode": "build",
+          "agent": "build",
+          "path": {
+            "cwd": "C:\\Users\\hbk",
+            "root": "/"
+          },
+          "cost": 0,
+          "tokens": {
+            "input": 0,
+            "output": 0,
+            "reasoning": 0,
+            "cache": {
+              "read": 0,
+              "write": 0
+            }
+          },
+          "modelID": "deepseek-v4.1-flash-1017",
+          "providerID": "huaweicloud-maas",
+          "time": {
+            "created": 1795276764818
+          },
+          "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD"
+        }
+      }
+    },
+    {
+      "type": "session.status",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "status": {
+          "type": "busy"
+        }
+      }
+    },
+    {
+      "type": "server.heartbeat",
+      "properties": {}
+    },
+    {
+      "type": "message.part.updated",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "part": {
+          "id": "prt_1fed57b76001FHh076pnWaQiod",
+          "messageID": "msg_1fed57692001TEAk77yRkODXRu",
+          "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+          "type": "step-start"
+        },
+        "time": 1795276766070
+      }
+    },
+    {
+      "type": "message.part.updated",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "part": {
+          "id": "prt_1fed57b78001ovGZkR1ujyxHjB",
+          "messageID": "msg_1fed57692001TEAk77yRkODXRu",
+          "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+          "type": "reasoning",
+          "text": "",
+          "time": {
+            "start": 1795276766072
+          }
+        },
+        "time": 1795276766072
+      }
+    },
+    {
+      "type": "message.part.delta",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "messageID": "msg_1fed57692001TEAk77yRkODXRu",
+        "partID": "prt_1fed57b78001ovGZkR1ujyxHjB",
+        "field": "text",
+        "delta": "两次"
+      }
+    },
+    {
+      "type": "message.part.delta",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "messageID": "msg_1fed57692001TEAk77yRkODXRu",
+        "partID": "prt_1fed57b78001ovGZkR1ujyxHjB",
+        "field": "text",
+        "delta": "调用都成功了。总结内容。"
+      }
+    },
+    {
+      "type": "message.part.updated",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "part": {
+          "id": "prt_1fed57b78001ovGZkR1ujyxHjB",
+          "messageID": "msg_1fed57692001TEAk77yRkODXRu",
+          "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+          "type": "reasoning",
+          "text": "两次调用都成功了。总结内容。",
+          "time": {
+            "start": 1795276766072,
+            "end": 1795276766073
+          }
+        },
+        "time": 1795276766073
+      }
+    },
+    {
+      "type": "message.part.updated",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "part": {
+          "id": "prt_1fed57b7a001lkqiF6B4D3uOKt",
+          "messageID": "msg_1fed57692001TEAk77yRkODXRu",
+          "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+          "type": "text",
+          "text": "",
+          "time": {
+            "start": 1795276766074
+          }
+        },
+        "time": 1795276766074
+      }
+    },
+    {
+      "type": "message.part.delta",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "messageID": "msg_1fed57692001TEAk77yRkODXRu",
+        "partID": "prt_1fed57b7a001lkqiF6B4D3uOKt",
+        "field": "text",
+        "delta": "webfetch 工具调用成功（原生内置 webfetch 与延迟加载的 webfetch 两条路径均可用），返回内容如下。\n\n"
+      }
+    },
+    {
+      "type": "message.part.delta",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "messageID": "msg_1fed57692001TEAk77yRkODXRu",
+        "partID": "prt_1fed57b7a001lkqiF6B4D3uOKt",
+        "field": "text",
+        "delta": "## https://example.com 内容总结\n\n**页面"
+      }
+    },
+    {
+      "type": "message.part.delta",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "messageID": "msg_1fed57692001TEAk77yRkODXRu",
+        "partID": "prt_1fed57b7a001lkqiF6B4D3uOKt",
+        "field": "text",
+        "delta": "标题**：Example Domain\n\n"
+      }
+    },
+    {
+      "type": "message.part.delta",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "messageID": "msg_1fed57692001TEAk77yRkODXRu",
+        "partID": "prt_1fed57b7a001lkqiF6B4D3uOKt",
+        "field": "text",
+        "delta": "**核心内容**：\n- 该"
+      }
+    },
+    {
+      "type": "message.part.delta",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "messageID": "msg_1fed57692001TEAk77yRkODXRu",
+        "partID": "prt_1fed57b7a001lkqiF6B4D3uOKt",
+        "field": "text",
+        "delta": "域名专用于文档和示例场景（documentation examples），无需申请许可即可使用。\n- "
+      }
+    },
+    {
+      "type": "message.part.delta",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "messageID": "msg_1fed57692001TEAk77yRkODXRu",
+        "partID": "prt_1fed57b7a001lkqiF6B4D3uOKt",
+        "field": "text",
+        "delta": "明确声明：它**不是一个真实的在线服务**，不建议把它用于测试与监控用途。\n\n"
+      }
+    },
+    {
+      "type": "message.part.delta",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "messageID": "msg_1fed57692001TEAk77yRkODXRu",
+        "partID": "prt_1fed57b7a001lkqiF6B4D3uOKt",
+        "field": "text",
+        "delta": "页面本身只有一段说明性文字，没有导航、正文结构或其他信息，属于 IANA（互联网号码分配局）保留的示例域名页面。\n\n**"
+      }
+    },
+    {
+      "type": "message.part.delta",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "messageID": "msg_1fed57692001TEAk77yRkODXRu",
+        "partID": "prt_1fed57b7a001lkqiF6B4D3uOKt",
+        "field": "text",
+        "delta": "技术说明**：\n"
+      }
+    },
+    {
+      "type": "message.part.delta",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "messageID": "msg_1fed57692001TEAk77yRkODXRu",
+        "partID": "prt_1fed57b7a001lkqiF6B4D3uOKt",
+        "field": "text",
+        "delta": "- 原始请求为 HTTP 时会被自动升级为 HTTPS，此处已是 HTTPS。\n- 输出"
+      }
+    },
+    {
+      "type": "message.part.delta",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "messageID": "msg_1fed57692001TEAk77yRkODXRu",
+        "partID": "prt_1fed57b7a001lkqiF6B4D3uOKt",
+        "field": "text",
+        "delta": "格式为 Markdown，内容极少，未触发摘要截断。\n"
+      }
+    },
+    {
+      "type": "message.part.delta",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "messageID": "msg_1fed57692001TEAk77yRkODXRu",
+        "partID": "prt_1fed57b7a001lkqiF6B4D3uOKt",
+        "field": "text",
+        "delta": "- 该工具只读，不会修改任何本地文件。"
+      }
+    },
+    {
+      "type": "message.part.updated",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "part": {
+          "id": "prt_1fed57b7a001lkqiF6B4D3uOKt",
+          "messageID": "msg_1fed57692001TEAk77yRkODXRu",
+          "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+          "type": "text",
+          "text": "webfetch 工具调用成功（原生内置 webfetch 与延迟加载的 webfetch 两条路径均可用），返回内容如下。\n\n## https://example.com 内容总结\n\n**页面标题**：Example Domain\n\n**核心内容**：\n- 该域名专用于文档和示例场景（documentation examples），无需申请许可即可使用。\n- 明确声明：它**不是一个真实的在线服务**，不建议把它用于测试与监控用途。\n\n页面本身只有一段说明性文字，没有导航、正文结构或其他信息，属于 IANA（互联网号码分配局）保留的示例域名页面。\n\n**技术说明**：\n- 原始请求为 HTTP 时会被自动升级为 HTTPS，此处已是 HTTPS。\n- 输出格式为 Markdown，内容极少，未触发摘要截断。\n- 该工具只读，不会修改任何本地文件。",
+          "time": {
+            "start": 1795276767397,
+            "end": 1795276767397
+          }
+        },
+        "time": 1795276767397
+      }
+    },
+    {
+      "type": "message.part.updated",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "part": {
+          "id": "prt_1fed580a7001d7zFVJr83Iun0i",
+          "reason": "stop",
+          "messageID": "msg_1fed57692001TEAk77yRkODXRu",
+          "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+          "type": "step-finish",
+          "tokens": {
+            "total": 16846,
+            "input": 1041,
+            "output": 180,
+            "reasoning": 9,
+            "cache": {
+              "write": 0,
+              "read": 15616
+            },
+            "context": {
+              "tools": 892,
+              "mcp": 198,
+              "messages": 789,
+              "skills": 0,
+              "system_prompts": 14967
+            }
+          },
+          "cost": 0
+        },
+        "time": 1795276767399
+      }
+    },
+    {
+      "type": "message.updated",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "info": {
+          "id": "msg_1fed57692001TEAk77yRkODXRu",
+          "parentID": "msgperm_webfetch-allow",
+          "role": "assistant",
+          "mode": "build",
+          "agent": "build",
+          "path": {
+            "cwd": "C:\\Users\\hbk",
+            "root": "/"
+          },
+          "cost": 0,
+          "tokens": {
+            "total": 16846,
+            "input": 1041,
+            "output": 180,
+            "reasoning": 9,
+            "cache": {
+              "write": 0,
+              "read": 15616
+            },
+            "context": {
+              "tools": 892,
+              "mcp": 198,
+              "messages": 789,
+              "skills": 0,
+              "system_prompts": 14967
+            }
+          },
+          "modelID": "deepseek-v4.1-flash-1017",
+          "providerID": "huaweicloud-maas",
+          "time": {
+            "created": 1795276764818
+          },
+          "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+          "finish": "stop"
+        }
+      }
+    },
+    {
+      "type": "session.updated",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "info": {
+          "id": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+          "slug": "sunny-falcon",
+          "projectID": "global",
+          "directory": "C:\\Users\\hbk",
+          "title": "抓取 example.com 并总结内容",
+          "version": "26.11.11",
+          "summary": {
+            "additions": 0,
+            "deletions": 0,
+            "files": 0
+          },
+          "time": {
+            "created": 1795276755118,
+            "updated": 1795276767402
+          }
+        }
+      }
+    },
+    {
+      "type": "message.updated",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "info": {
+          "id": "msg_1fed57692001TEAk77yRkODXRu",
+          "parentID": "msgperm_webfetch-allow",
+          "role": "assistant",
+          "mode": "build",
+          "agent": "build",
+          "path": {
+            "cwd": "C:\\Users\\hbk",
+            "root": "/"
+          },
+          "cost": 0,
+          "tokens": {
+            "total": 16846,
+            "input": 1041,
+            "output": 180,
+            "reasoning": 9,
+            "cache": {
+              "write": 0,
+              "read": 15616
+            },
+            "context": {
+              "tools": 892,
+              "mcp": 198,
+              "messages": 789,
+              "skills": 0,
+              "system_prompts": 14967
+            }
+          },
+          "modelID": "deepseek-v4.1-flash-1017",
+          "providerID": "huaweicloud-maas",
+          "time": {
+            "created": 1795276764818,
+            "completed": 1795276767405
+          },
+          "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+          "finish": "stop"
+        }
+      }
+    },
+    {
+      "type": "session.status",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "status": {
+          "type": "busy"
+        }
+      }
+    },
+    {
+      "type": "session.status",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "status": {
+          "type": "idle"
+        }
+      }
+    },
+    {
+      "type": "session.idle",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD"
+      }
+    },
+    {
+      "type": "session.diff",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "diff": []
+      }
+    },
+    {
+      "type": "message.updated",
+      "properties": {
+        "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD",
+        "info": {
+          "role": "user",
+          "time": {
+            "created": 1795276756367
+          },
+          "agent": "build",
+          "model": {
+            "providerID": "huaweicloud-maas",
+            "modelID": "deepseek-v4.1-flash-1017"
+          },
+          "summary": {
+            "diffs": []
+          },
+          "id": "msgperm_webfetch-allow",
+          "sessionID": "ses_e012aaf51ffe5mfDpgfwpRzQeD"
+        }
+      }
+    }
+  ]
+}

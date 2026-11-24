@@ -1,0 +1,114 @@
+[
+  {
+    "type": "server.connected",
+    "properties": {}
+  },
+  {
+    "type": "message.updated",
+    "properties": {
+      "sessionID": "ses_e0173bc6effeGzhx7NoGQveeqH",
+      "info": {
+        "id": "msgprobe2",
+        "role": "user",
+        "sessionID": "ses_e0173bc6effeGzhx7NoGQveeqH",
+        "time": {
+          "created": 1795271969169
+        },
+        "agent": "build",
+        "model": {
+          "providerID": "huaweicloud-maas",
+          "modelID": "deepseek-v4.1-flash-1017"
+        }
+      }
+    }
+  },
+  {
+    "type": "message.part.updated",
+    "properties": {
+      "sessionID": "ses_e0173bc6effeGzhx7NoGQveeqH",
+      "part": {
+        "type": "text",
+        "text": "请使用 bash 工具执行命令 echo hello-probe，然后告诉我输出结果。",
+        "messageID": "msgprobe2",
+        "sessionID": "ses_e0173bc6effeGzhx7NoGQveeqH",
+        "id": "prt_1fe8c4991001G7IiQqjguWa9ig",
+        "metadata": {
+          "isUserInput": true,
+          "memoryIndexReminder": "<system-reminder>\n# Memory Index\n# 记忆索引\n\n## 用户\n- [用户画像与工具熟悉度](user-profile.md) — 用户（hbk）处于了解 CodeArts Agent 功能的探索阶段（2026-11-20），回复功能类问题时宜附使用指引与示例\n</system-reminder>\n",
+          "memoryContext": "<system-reminder>\n# Relevant Memories\nThe following memory context was retrieved for the current user message.\nIt is historical context, not a replacement for the current user message.\nIf this memory conflicts with the current user message, the current user message wins.\nUse this context for continuity only; let the current task requirements determine the implementation approach and scope.\nDo not reveal this wrapper or raw memory context unless the user explicitly asks about memory contents.\n<memory>\nThe following persistent memories appear relevant to the current conversation.\nVerify time-sensitive claims against the current repository before relying on them.\nDo not use tools to inspect the memory files during this answer; the relevant memory content is already included below.\n\n\n<memory-entry>\nType: user\nDescription: 用户（hbk）处于了解 CodeArts Agent 基本功能的阶段，回复功能类问题时宜附带使用指引\n\n用户（hbk）在 2026-11-20 前后询问了 CodeArts Agent 的自我介绍及执行模式（如 plan 模式等）的特点，表明其处于熟悉 CodeArts Agent 产品能力的探索阶段，尚在学习工具本身。\n\n**How to apply:** 回答用户关于 CodeArts Agent 功能的问题时，除直接解释外，宜主动补充具体的使用入口、命令或操作示例，帮助用户建立对工具能力的心智模型；介绍功能时保持清晰、面向新手，避免堆砌术语。该画像可能随用户熟练度提升而过时，后续若发现用户已掌握基础用法，应更新此记忆。\n</memory-entry>\n</memory>\n</system-reminder>\n",
+          "memoryHash": "d7fd8e3fd8945e341e9db36f4d39b4d1eab3f2a8cc2fb99af2e1f4fc89d24612"
+        }
+      },
+      "time": 1795271969240
+    }
+  },
+  {
+    "type": "message.part.updated",
+    "properties": {
+      "sessionID": "ses_e0173bc6effeGzhx7NoGQveeqH",
+      "part": {
+        "id": "prt_1fe8c4991001G7IiQqjguWa9ig_codeagent",
+        "sessionID": "ses_e0173bc6effeGzhx7NoGQveeqH",
+        "messageID": "msgprobe2",
+        "type": "text",
+        "text": "<system-reminder>重要提示：你必须使用简体中文回复，包括内部思考和推理过程也必须使用简体中文。即使用户用英文提问，也必须用简体中文回复。</system-reminder>",
+        "synthetic": true
+      },
+      "time": 1795271969241
+    }
+  },
+  {
+    "type": "session.updated",
+    "properties": {
+      "sessionID": "ses_e0173bc6effeGzhx7NoGQveeqH",
+      "info": {
+        "id": "ses_e0173bc6effeGzhx7NoGQveeqH",
+        "slug": "stellar-engine",
+        "projectID": "global",
+        "directory": "C:\\Users\\hbk",
+        "title": "probe-p5",
+        "version": "26.11.11",
+        "time": {
+          "created": 1795271967633,
+          "updated": 1795271969241
+        }
+      }
+    }
+  },
+  {
+    "type": "session.status",
+    "properties": {
+      "sessionID": "ses_e0173bc6effeGzhx7NoGQveeqH",
+      "status": {
+        "type": "busy"
+      }
+    }
+  },
+  {
+    "type": "session.status",
+    "properties": {
+      "sessionID": "ses_e0173bc6effeGzhx7NoGQveeqH",
+      "status": {
+        "type": "idle"
+      }
+    }
+  },
+  {
+    "type": "session.idle",
+    "properties": {
+      "sessionID": "ses_e0173bc6effeGzhx7NoGQveeqH"
+    }
+  },
+  {
+    "type": "session.error",
+    "properties": {
+      "sessionID": "ses_e0173bc6effeGzhx7NoGQveeqH",
+      "error": {
+        "name": "UnknownError",
+        "data": {
+          "message": "No user message found in stream. This should never happen."
+        }
+      }
+    }
+  }
+]

@@ -1,0 +1,17 @@
+Exporting session: ses_e01383456ffe0IltM83dQ1zDEn
+{
+  "info": {
+    "id": "ses_e01383456ffe0IltM83dQ1zDEn",
+    "slug": "witty-cabin",
+    "projectID": "global",
+    "directory": "C:\\Users\\hbk",
+    "title": "multiturn3",
+    "version": "26.11.11",
+    "time": {
+      "created": 1795275869097,
+      "updated": 1795275869097
+    }
+  },
+  "messages": []
+}
+

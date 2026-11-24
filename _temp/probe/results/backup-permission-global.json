@@ -1,0 +1,22 @@
+[
+  {
+    "permission": "websearch",
+    "pattern": "*",
+    "action": "allow"
+  },
+  {
+    "permission": "external_directory_write",
+    "pattern": "*",
+    "action": "allow"
+  },
+  {
+    "permission": "external_directory_read",
+    "pattern": "*",
+    "action": "allow"
+  },
+  {
+    "permission": "dotfile",
+    "pattern": "*",
+    "action": "allow"
+  }
+]
